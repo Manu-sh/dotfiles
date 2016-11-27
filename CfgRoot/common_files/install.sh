@@ -5,6 +5,7 @@ mythemegtk() {
 	cd Greybird-Ocean
 	sudo mkdir -p /usr/share/themes/Greybird-Ocean
 	sudo cp -r * /usr/share/themes/Greybird-Ocean
+	cd ..
 	rm -rf Greybird-Ocean
 }
 

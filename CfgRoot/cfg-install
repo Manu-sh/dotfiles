@@ -6,7 +6,7 @@
 WORKDIR="$(dirname "$PWD/$0")"
 
 dosym() {
-	ln -sf "$WORKDIR/${1}" "$HOME/${2}"
+	ln -snf "$WORKDIR/${1}" "$HOME/${2}"
 }
 
 recdosym() {
