@@ -1,0 +1,9 @@
+Remember to put the next line on to your preferences file if you would like
+to deactivate some IceWM function such as the taskbar and the desktop menu.
+
+AutoDetectGNOME=1 
+
+
+Author: Xabi García
+Gtk theme shown in the screenshot at themes.org is a modification of ThinIce
+Thanks.

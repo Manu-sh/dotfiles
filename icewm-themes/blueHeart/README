@@ -1,0 +1,41 @@
+blueHeart (kind of) for iceWM
+-----------------------------
+
+INTRODUCTION
+
+I love blueHeart; unfortunately, my poor little box 
+can't quite handle E, so I switched over to icewm when
+I found out about it.
+
+I began "porting" blueHeart to iceWM and learning GIMP
+at more or less the same time.  Lots of little problems
+(the biggest, of course, being that the theme doesn't
+look a whole lot like the theme for E :) ... but the
+end result is something that's pleasing enough for _my_
+eye. :)
+
+
+
+INSTALLATION
+
+I'm not sure if this will work _perfectly_ for everyone
+else, but as far as I know, put untar the puppy in your
+~/.icewm/themes directory.  Then, switch themes to
+blueheart. :)
+
+I've been successfully running this theme on icewm
+0.9.57 (and the last few versions before) for about the
+last two (?) months or so without any difficulties.  I
+can report that it works fine with icewm 1.0.0 now that
+I've installed it. :)
+
+
+CREDITS
+
+Chris Fofiu :: chr@gw.total-web.net :: creator of the original blueHeart
+Tony Tang :: tonyt@sfu.ca :: me :) w00h! dig the webpage: (http://www.sfu.ca/~tonyt/)
+
+
+THANKS
+
+Shaji N V :: ... :: ShowMenuButtonIcon hint

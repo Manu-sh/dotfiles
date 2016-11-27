@@ -1,0 +1,29 @@
+NAME
+	Aeteria, the Icewm theme
+
+AUTHOR 
+	Micha³ Szota <michal@k.pl>
+	http://samael.k.pl/~michal/
+
+ABOUT 
+	Aeteria is the result of an effort of making an Icewm theme
+	which would look well with bright (or at least not completly
+	dark) window contents (e.g. gtk widgets). Aeteria features
+	pixmap window borders, modified mail-notifier pixmaps, nice
+	background image and coherent overall appearance. It comes in
+	three flavours (varying by menu background color and titlebar
+	button placement) and with three background pixmaps (800x600,
+	1024x768 and 1280x1024). It was made from scratch using GIMP
+	and Moonlight Atelier on a Debian GNU/Linux box.
+
+BUGS 
+	For the sake of smallness, the background pixmaps are trimmed
+	down to 64 colours, thus making dithering visible (although
+	not totally disturbing :).
+
+COMMENTS
+	If you have any, share them with me.
+
+LICENCE	
+	All files contained in this package are licensed on the terms
+	of GPL (See the 'COPYING' file for details).

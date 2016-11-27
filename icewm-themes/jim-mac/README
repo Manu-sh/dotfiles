@@ -1,0 +1,15 @@
+last update: 6.6.1999
+
+Based on a theme3 by Daniel Lacroix
+
+The macintosh-like titlefont is a truetype font. Therefore you need a TTF Xfontserver. The standard RH6 font server can render TT fonts for example. Just copy the font 'Chicaho.ttf' to your font directory and add the following line to your fonts.dir and fonts.scale. 
+
+Chicago.ttf -2Rebels-Chicago-medium-r-normal--0-0-0-0-p-0-ascii-0
+
+Don't forget to restart your font server before expecting it to work. If you know of some iso-8859-2 version, let me know.
+
+The theme goes well with the 'Metal2' gtk theme (my favourite). The Metal2 themefor icewm is cool, but took too much space on my small notebook screen. The blueice gtk theme is also recommended ;)
+
+
+-= Jakub Steiner <jimmac@pinknet.cz> =-
+  --[ http://jimmac.musichall.cz ]--

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# THIS SCRIPT IS NOT FOR FINAL USER
+# CFG CAN BE OVERWRITTEN OR DAMAGED
+
+WORKDIR="$(dirname "$PWD/$0")"
+
+dosym() {
+	ln -sf "$WORKDIR/${1}" "$HOME/${2}"
+}
+
+recdosym() {
+	for i in $(ls -A $1); do
+		dosym "$1/$i" "$2"
+	done
+	unset i
+}
+
+vimcfg() {
+	recdosym "vim"
+}
+
+
+bashcfg() {
+	recdosym "bash"
+}
+
+
+tmuxcfg() {
+	dosym "tmux/.tmux.conf"
+}
+
+
+i3cfg() {
+	dosym "i3" ".config"
+}
+
+gtkcfg() {
+	dosym "gtk/.gtkrc-2.0"
+}
+
+rangercfg() {
+	dosym "ranger" ".config"
+}
+
+icewmcfg() {
+	dosym "icewm" ".icewm"
+}
+
+nanocfg() {
+	dosym "nano/.nanorc"
+}
+
+vimcfg
+bashcfg
+tmuxcfg
+i3cfg
+gtkcfg
+rangercfg
+icewmcfg

@@ -1,0 +1,122 @@
+ThemeDescription="Emerge2"
+ThemeAuthor="daman"
+Look=flat
+Gradients="menubg.xpm menusep.xpm taskbarbg.xpm taskbuttonactive.xpm menusel.xpm 
+workspacebuttonactive.xpm workspacebuttonbg.xpm taskbuttonbg.xpm taskbuttonminimized.xpm toolbuttonbg.xpm"
+RolloverButtonsSupported=1
+MenuMouseTracking=1
+TaskBarDoubleHeight=0
+TaskBarShowTray=1 # 0/1
+TrayDrawBevel=0
+SmallIconSize=25
+
+TitleButtonsLeft="si"
+TitleButtonsRight="xm"
+TitleButtonsSupported="xmis"
+TitleBarHeight=24
+
+ShowMenuButtonIcon=0  # 0/1 Set here to not show menu button icons
+
+# Justification of the window title text (Left-Right)
+TitleBarJustify=50 # [0-100]
+
+# Vertical offset for the window title text (Up-Down)
+TitleBarVertOffset=0 # [-128-128]
+
+
+BorderSizeX=4
+BorderSizeY=4
+CornerSizeX=8
+CornerSizeY=8
+DlgBorderSizeX=4
+DlgBorderSizeY=4
+
+ColorNormalButton="rgb:40/40/40"
+ColorNormalButtonText="#3D4952"
+ColorActiveButton="rgb:00/00/00"
+ColorActiveButtonText="rgb:ff/ff/ff"
+
+ColorNormalTitleBarText="#B3BFE6"
+ColorNormalTitleBarShadow="#273344"
+ColorActiveTitleBarText="#E5F0FE"
+ColorActiveTitleBarShadow="#161D2D"
+
+ColorActiveBorder="#606A80"
+ColorNormalBorder="#606A80"
+
+ColorDialog="rgb:f4/f4/f4"
+ColorListBox="#596980"
+ColorListBoxText="#000000"
+ColorListBoxSelection="#778DB1"
+ColorListBoxSelectionText="#FFFFFF"
+ColorScrollBar="#4F5763"
+ColorScrollBarSlider="#8796AC"
+ColorScrollBarButton="#A4B3C9"
+ColorScrollBarBu#A4B3C9ttonArrow="#000000"
+
+ColorNormalMenu="#263142"  # sets the quick switch active/selected bg & menu bg highlights
+ColorActiveMenuItem="#151B1F" # menu border & menu select border when using menu gradients
+ColorNormalMenuItemText="#000000"
+ColorActiveMenuItemText="#FFFFFF"
+ColorDisabledMenuItemText="#40454D"
+
+ColorDefaultTaskBar="#2E3A4D" # tray bg color
+ColorNormalTaskBarApp="rgb:40/40/40"
+ColorNormalTaskBarAppText="#242A33"
+ColorInvisibleTaskBarApp="rgb:40/40/40"
+ColorInvisibleTaskBarAppText="rgb:ff/ff/ff"
+ColorActiveTaskBarApp="rgb:30/30/30"
+ColorActiveTaskBarAppText="#E5F0FE"
+ColorMinimizedTaskBarApp="rgb:40/40/40"
+ColorMinimizedTaskBarAppText="#440010"
+
+ColorInput="#668083"
+ColorInputText="rgb:00/00/00"
+ColorInputSelection="#415369"
+ColorInputSelectionText="#6D8DB8"
+
+ColorClock=""
+ColorClockText="#FFFFFF"
+
+ColorCPUStatusUser="rgb:4c/59/a6"
+ColorCPUStatusSystem="rgb:74/7c/b0"
+ColorCPUStatusNice="rgb:00/00/00"
+ColorCPUStatusIdle=""  # so (this is poor-man's pseudo-transparency instead :)
+ColorCPUStatusIdle=""
+
+ColorNetSend="rgb:00/00/00"
+ColorNetReceive="rgb:00/00/00"
+ColorNetIdle=""
+
+ColorToolTip="#440010"
+ColorToolTipText="#A3999C"
+
+ColorMoveSizeStatus="rgb:30/30/30"
+ColorMoveSizeStatusText="rgb:3b/9d/dc"
+
+ColorLabel="#43576E"
+ColorLabelText="#B4C2D1"
+ColorQuickSwitch="#3E5067"
+ColorQuickSwitchText="#B4C2D1"
+
+# Font Specification
+TitleFontNameXft			=	Roboto:size=12:condensed
+MenuFontNameXft				=	Roboto:size=13:condensed
+ActiveButtonFontNameXft			=	Roboto:size=12:condensed
+NormalButtonFontNameXft			=	Roboto:size=12:condensed
+ToolButtonFontNameXft			=	Roboto:size=12:condensed
+QuickSwitchFontNameXft			=	Roboto:size=12:condensed
+ListBoxFontNameXft			=	Roboto:size=13:condensed
+StatusFontNameXft			=	Roboto:size=12:condensed
+ToolTipFontNameXft			=	Roboto:size=13:condensed
+ActiveTaskBarFontNameXft		=	Roboto:size=12:condensed:italic
+NormalTaskBarFontNameXft		=	Roboto:size=12:condensed
+ClockFontNameXft			=	Roboto:size=12:condensed
+InputFontNameXft			=	Roboto:size=12:condensed
+
+TaskBarClockLeds=0
+DesktopBackgroundCenter = 1
+DesktopBackgroundImage = ""
+TaskBarShowNetStatus=0
+TaskBarShowCPUStatus=0
+TimeFormat="%X"

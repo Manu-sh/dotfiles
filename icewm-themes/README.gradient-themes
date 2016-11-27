@@ -1,0 +1,11 @@
+Gradient and shape enabled themes for IceWM 1.0.9
+Copyright (C) 2001 by Mathias Hasselmann <mathias.hasselmann@gmx.de>
+
+    This is a set of more or less simple themes demonstrating
+IceWM  1.0.9's support for gradients and shaped decorations. To use 
+them you'll either need to compile IceWM with the experimental
+--enable-gradients and --enable-shaped-decorations flags or you'll
+have to install the icewm-experimental packages.
+
+    All the themes in this package are released under the terms
+of the GNU General Public License Version 2.

@@ -1,0 +1,179 @@
+prog "Chromium" - chromium
+prog "Firefox" - firefox
+prog "Urxvt" - urxvt
+prog "Weechat" - urxvt -e weechat
+prog "Hexchat" - hexchat
+prog "Thunderbird" - thunderbird
+prog "Thunar" -  thunar
+prog "Nano" - urxvt -e nano
+prog "Vim" - urxvt -e vim
+
+menu "Development" folder {
+	prog "Atom" - atom
+	prog "BlueFish" - bluefish
+	prog "Fluid" - fluid
+	prog "GDB" - urxvt -e gdb
+	prog "gitg" - gitg
+	prog "IDLE" - idle
+	prog "Python" - urxvt -e python
+	prog "Python (v2.7)" - urxvt -e python2.7
+	prog "Qt Assistant" - /usr/lib/qt/bin/assistant
+	prog "Qt Creator" - qtcreator
+	prog "Qt Designer" - /usr/lib/qt/bin/designer
+	prog "Qt Linguist" - /usr/lib/qt/bin/linguist
+	prog "Qt QDbusViewer" - /usr/lib/qt/bin/qdbusviewer
+	prog "Qt4 Assistant" - assistant-qt4
+	prog "Qt4 Designer" - designer-qt4
+	prog "Qt4 Linguist" - linguist-qt4
+	prog "Qt4 QDbusViewer" - qdbusviewer-qt4
+	prog "Tclsh8.6" - urxvt -e tclsh8.6
+}
+menu "Editors" folder {
+	prog "AA Fire" - urxvt -e aafire -driver slang
+	prog "Emacs" - urxvt -e emacs
+	prog "GVim" - gvim
+	prog "Mousepad" - mousepad
+	prog "Nano" - urxvt -e nano
+	prog "Vim" - urxvt -e vim
+	prog "Vi" - urxvt -e vi
+}
+menu "Games" folder {
+	menu "Adventure" folder {
+		prog "Sclient" - sclient
+	}
+	menu "Arcade" folder {
+		prog "PacMan" - pacman
+	}
+	prog "DeSmuME (Gtk)" - desmume
+	prog "mGBA" - mgba-qt
+	prog "VBA-M (GTK+ frontend)" - gvbam
+}
+menu "Graphics" folder {
+	prog "Bitmap" - bitmap
+	prog "E-book Viewer" - ebook-viewer
+	prog "Geeqie" - geeqie
+	prog "GNU Image Manipulation Program" - gimp-2.8
+	prog "Gpick" - gpick
+	prog "Image Viewer" - gpicview
+	prog "Inkscape" - inkscape
+	prog "LibreOffice Draw" - libreoffice --draw
+	prog "LRF Viewer" - lrfviewer
+	prog "The GIMP" - gimp
+	prog "XGlyph" - xglyph
+}
+menu "Multimedia" folder {
+	prog "ALSA mixer" - urxvt -e alsamixer
+	prog "Brasero" - brasero
+	prog "Grip" - grip
+	prog "Kodi media center" - kodi
+	prog "LXMusic simple music player" - lxmusic
+	prog "PulseAudio Volume Control" - pavucontrol
+	prog "VLC media player" - vlc
+	prog "VLC media player" - qvlc
+}
+menu "Network" folder {
+	prog "Armitage" - armitage
+	prog "Chromium" - chromium
+	prog "ELinks" - urxvt -e elinks
+	prog "FTP" - urxvt -e ftp
+	prog "HexChat" - hexchat
+	prog "Links" - urxvt -e links
+	prog "Links" - xlinks -g
+	prog "Mail" - urxvt -e mail
+	prog "Mail Reader" - exo-open --launch MailReader
+	prog "Midori Private Browsing" - midori
+	prog "Steam" - steam
+	prog "Talk" - urxvt -e talk
+	prog "Telnet" - urxvt -e telnet
+	prog "Thunderbird" - thunderbird
+	prog "TkVNC" - urxvt -e tkvnc
+	prog "Transmission" - transmission-gtk
+	prog "W3m" - urxvt -e w3m
+	prog "w3m" - urxvt -e w3m /usr/share/doc/w3m/MANUAL.html
+	prog "Web Browser" - exo-open --launch WebBrowser
+	prog "Zenmap" - zenmap
+	prog "Zenmap (as root)" - /usr/share/zenmap/su-to-zenmap.sh
+}
+menu "Office" folder {
+	prog "Document Viewer" - evince
+	prog "LibreOffice Calc" - libreoffice --calc
+	prog "LibreOffice Impress" - libreoffice
+	prog "LibreOffice Impress" - libreoffice --impress
+	prog "LibreOffice Math" - libreoffice --math
+	prog "LibreOffice Writer" - libreoffice --writer
+	prog "PostgreSQL Database" - urxvt -e psql template1
+}
+menu "Other" folder {
+	prog "Calibre" - calibre
+	prog "CMake" - cmake-gui
+	prog "compton" - compton --xrender-sync-fence
+	prog "Edit E-book" - ebook-edit
+	prog "FreeMind" - freemind
+	prog "Hardware Locality lstopo" - lstopo
+	prog "IBus Preferences" - ibus-setup
+	prog "Qt V4L2 test Utility" - qv4l2
+	prog "XMind" - XMind
+}
+menu "Science" folder {
+	prog "GNU Octave" - octave
+}
+menu "Shells" folder {
+	prog "Double Commander" - doublecmd
+	prog "File Manager PCManFM" - pcmanfm
+	prog "GIT" - urxvt -e git
+	prog "MC" - urxvt -e mc
+	prog "Termite" - termite
+	prog "Thunar File Manager" - thunar
+	prog "urxvt" - urxvt
+	prog "urxvt (client)" - urxvtc
+	prog "urxvt (tabbed)" - urxvt-tabbed
+	prog "UXTerm" - uurxvt
+	prog "Xterm" - urxvt
+}
+menu "System" folder {
+	menu "Settings" folder {
+		menu "GNOME" folder {
+			prog "Network Connections" - nm-connection-editor
+			prog "Pointing devices" - gpointing-device-settings
+			prog "Privilege granting" - gksu-properties
+		}
+		prog "Customize Look and Feel" - lxappearance
+		prog "Default applications for LXSession" - lxsession-default-apps
+		prog "Desktop Preferences" - pcmanfm --desktop-pref
+		prog "Desktop Session Settings" - lxsession-edit
+		prog "File Manager" - thunar-settings
+		prog "Keyboard and Mouse" - lxinput
+		prog "Manage Printing" - xdg-open http://localhost:631/
+		prog "Monitor Settings" - lxrandr
+		prog "Openbox Configuration Manager" - obconf
+		prog "Panel" - xfce4-panel --preferences
+		prog "Preferred Applications" - exo-preferred-applications
+		prog "Preferred Applications" - libfm-pref-apps
+		prog "Print Settings" - system-config-printer
+	}
+	prog "Bulk Rename" - /usr/lib/Thunar/ThunarBulkRename
+	prog "dconf Editor" - dconf-editor
+	prog "GDM Setup" - gksu gdmsetup
+	prog "GParted" - gparted_polkit
+	prog "Htop" - urxvt -e htop
+	prog "LSHW" - gtk-lshw
+	prog "Pstree" - urxvt -e pstree.x11
+	prog "pstree" - urxvt -e /usr/bin/pstree.x11
+	prog "pstree" - urxvt -e pstree
+	prog "Task Manager" - lxtask
+	prog "Top" - urxvt -e top
+	prog "Xkill" - xkill
+	prog "Xrefresh" - xrefresh
+}
+menu "Utilities" folder {
+	prog "About Xfce" - xfce4-about
+	prog "Archive Manager" - file-roller
+	prog "Bc" - urxvt -e bc
+	prog "Dc" - urxvt -e dc
+	prog "File Manager" - exo-open --launch FileManager
+	prog "Info" - urxvt -e info
+	prog "Screenshot" - gnome-screenshot --interactive
+	prog "Terminal Emulator" - exo-open --launch TerminalEmulator
+	prog "Xev" - urxvt -e xev
+	prog "Xsetroot" - xsetroot
+}

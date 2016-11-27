@@ -1,0 +1,27 @@
+XTerm*background: #3f3f3f
+XTerm*foreground: #dcdccc
+XTerm*pointerColor: white
+XTerm*scrollBar: False
+XTerm*title: Shell
+XTerm*saveLines: 10000
+XTerm*locale: true
+XTerm*borderWidth: 0
+XTerm*VT100.geometry: 80x32
+XTerm.VT100*dynamicColors: On 
+
+XTerm*color0: #3f3f3f
+XTerm*color1: #705050
+XTerm*color2: #60b48a
+XTerm*color3: #dfaf8f
+XTerm*color4: #506070
+XTerm*color5: #dc8cc3
+XTerm*color6: #8cd0d3
+XTerm*color7: #dcdccc
+XTerm*color8: #709080
+XTerm*color9: #dca3a3
+XTerm*color10: #c3bf9f
+XTerm*color11: #f0dfaf
+XTerm*color12: #94bff3
+XTerm*color13: #ec93d3
+XTerm*color14: #93e0e3
+XTerm*color15: #ffffff

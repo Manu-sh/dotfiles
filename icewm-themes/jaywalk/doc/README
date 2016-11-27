@@ -1,0 +1,35 @@
+This is the JAYWALK theme for Icewm
+free distributable & unputdownable
+__________________________________
+          29 . VI . 98
+__________________________________
+
+
+INSTALLATION
+
+
+(1) copy your old ~/.xinitrc to ~/.xinitrc-bak
+and move xinitrc from this archive to ~/.xinitrc
+(2) if you don't already have a ~/.icewm 
+directory, make one, and copy:
+- menu
+- winoptions
+- preferences 
+to this directory.
+Otherwise backup your files first, before copying these ones.
+(3) check the settings in these files
+[if you want: (4) download Marco's Gimp-icons, and follow the instructions]
+(4) unzip and -tar and copy the whole directory named jaywalk to:
+/usr/X11/lib/X11/icewm/themes/
+or
+/usr/X11R6/lib/X11/icewm/themes
+(depending on where your icewm-files are located).
+(5) exit the X window system, and start all over again.
+
+________________________________________________________
+                          made with vi, fte and The Gimp
+--------------------------------------------------------
+rragas@xs4all.nl
+Amsterdam ~ The Netherlands
+www.xs4all.nl/~rragas
+

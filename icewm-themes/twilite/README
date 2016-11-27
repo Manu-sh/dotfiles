@@ -1,0 +1,10 @@
+Twilite Theme
+Copyright (C) 1999 Richard Hestilow
+This theme inherits some of Metal2's features, namely the frames and color
+config.
+
+Installation instructions:
+cd (icewm install dir)/themes (usually /usr/local/lib/X11/icewm/themes)
+tar zxvf (path to theme tarball)/twilite.tar.gz 
+(example: /home/bob/twilite.tar.gz)
+

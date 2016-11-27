@@ -1,0 +1,30 @@
+#basical muttrc
+set from = TUAMAIL@yahoo.com #ANCHE SE AVETE UN IND..IT
+set use_from = yes
+set envelope_from = yes
+set realname = "set from = TUAMAIL@yahoo.com #ANCHE SE AVETE UN IND..IT
+set use_from = yes
+set envelope_from = yes
+set realname = "ILTUO NOME" #NOME
+set imap_user = TUAMAIL@yahoo.com #ANCHE SE AVETE UN INDI... IT
+set imap_pass = YOURPASSWORD
+set spoolfile = imaps://TUAMAIL@yahoo.com@imap.mail.yahoo.com #ANCHE SE AVETE UN INDIZZO CON DOMINIO .IT
+set smtp_url = smtps://TUAMAIL@yahoo.com@smtp.mail.yahoo.com:465 #ANCHE SE AVETE UN INDIRIZZO CON DOMINIO IT
+set smtp_pass = PASSWORD
+set folder = imaps://imap.yahoo.com:993
+#set record = "+[Gmail]/Sent Mail"
+#set postponed = "+[Gmail]/Drafts"
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set move = no
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set editor="nano"
+
+#465 (porta ssl)
+#
+#smtps al posto di smtp indica un procollo sicuro
+#587 (porta tls/ssl)
+#993 imap ssl
+#stesso discorso per imaps al posto di imap (cifratura)
