@@ -14,6 +14,11 @@ TEXT
 
 [
 
+{ "full_text" : "CPU usage: ${exec $HOME/.config/i3/scripts/cpu.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : "Battery: ${exec $HOME/.config/i3/scripts/battery.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : "Volume: ${exec $HOME/.config/i3/scripts/volume.sh}" , "color" : "\#c9ecca" },
+
+
 { "full_text" : "TIME ${exec date "+%H:%M" }" , "color" : "\#c9ecca" },
 { "full_text" : "Kernel ★ ${exec uname -r } " , "color" : "\#c9ecca" },
 { "full_text" : "Proc ⚡ ${exec grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//' } " , "color" : "\#c9ecca"},
