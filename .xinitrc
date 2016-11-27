@@ -1,9 +1,10 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
+ROOTBG=$HOME/Immagini/wallpaper
 
 bash $CFGROOT/Xresources/Xresources-load.sh
 setxkbmap it
 
-WALLWM=$HOME/Immagini/vaporwawe_wall/flat/00.png 
+WALLWM=$ROOTBG/flat/00.png
 
 pantheon_de() {
 	gsettings-data-convert &
