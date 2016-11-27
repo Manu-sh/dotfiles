@@ -4,6 +4,11 @@ yellow='\033[38;5;11m'
 normal='\033[0m'
 bold='\033[1m'
 
+# red=$(tput setaf 1)
+# green=$(tput setaf 3)
+# yellow=$(tput setaf 12)
+# normal=$(tput sgr0)
+
 alias mutt='mutt -F /home/user/.mail_cfg/.muttrc'
 
 export LANG="it_IT.UTF-8"
@@ -359,9 +364,8 @@ echo -ne "Data: $(date)\n
 \b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
-#problem with escape + tmux + long history line
-#PS1="${red}\u${normal}@\h[${green}\t${normal}]\w ${yellow}⚡${normal}}➤"
-PS1="\u@\h[\t]\w ⚡}➤"
+PS1="\[${red}\]\u\[${normal}\]@\h[\[${green}\]\t\[${normal}\]]\w \[${yellow}\]⚡\[${normal}\]}➤"
+#PS1="\u@\h[\t]\w ⚡}➤"
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.bash-scripts/:/opt/javamm:$PATH
 }
