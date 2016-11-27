@@ -9,11 +9,11 @@ mythemegtk() {
 }
 
 
-FONTS_A=/usr/share/fonts/TTF
-FONTS_B=${FONTS_A,,}
+FONTS_A="/usr/share/fonts/TTF"
+FONTS_B="${FONTS_A,,}"
 
-[ -e "$FONTS_A" ] && sudo cp *.ttf ${FONT_A}
-[ -e "$FONTS_B" ] && sudo cp *.ttf ${FONT_B}
+[ -e "$FONTS_A" ] && sudo cp *.ttf "${FONTS_A}"
+[ -e "$FONTS_B" ] && sudo cp *.ttf "${FONTS_B}"
 
 
 ROOTBG=$HOME/Immagini
