@@ -14,3 +14,9 @@ FONTS_B=${FONTS_A,,}
 
 [ -e "$FONTS_A" ] && sudo cp *.ttf ${FONT_A}
 [ -e "$FONTS_B" ] && sudo cp *.ttf ${FONT_B}
+
+
+ROOTBG=$HOME/Immagini
+
+mkdir -p $ROOTBG
+cp -rf wallpaper $ROOTBG
