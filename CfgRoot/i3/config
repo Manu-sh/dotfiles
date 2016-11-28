@@ -29,7 +29,10 @@ for_window [ workspace="9" ] floating enable
 assign [class="(?i)Thunderbird"] 7
 
 # add ascii decoration
-for_window [class="(?i)Chromium*"] title_format "== %title =="
+for_window [class="(?i)chromium*"] title_format " %title"
+for_window [class="(?i)telegram*"] title_format " %title"
+for_window [instance="(?i)urxvt*"] title_format " %title"
+for_window [instance="(?i)eclipse*"] title_format " %title"
 
 #exec --no-startup-id xfce4-panel --disable-wm-check
 
@@ -76,7 +79,7 @@ floating_modifier $mod
 
 
 # File Manager Thunar
-assign [class="(?i)Thunar"] Thunar
+assign [class="(?i)Thunar"] Thunar 
 for_window [class="Thunar"] border pixel normal
 #for_window [instance=thunar] border pixel 10
 bindsym $mod+u exec thunar
