@@ -1,6 +1,7 @@
-sudo pacman -S sox ranger w3m mutt conky mplayer tmux network-manager-applet mupdf feh compton sysstat sxiv ncmpcpp mpv mpc
+sudo pacman -S sox ranger w3m mutt conky mplayer tmux networkmanager network-manager-applet mupdf feh compton sysstat sxiv ncmpcpp mpv mpc mpd
 
-sudo pacman -S terminus-font tamsyn-font
+yaourt  -S terminus-font ttf-font-awesome
 
-yaourt -S phallus-fonts-git stlarch_font ttf-font-awesome ttf-font-icons
+# yaourt -S phallus-fonts-git stlarch_font ttf-font-iconstamsyn-font
+
 
