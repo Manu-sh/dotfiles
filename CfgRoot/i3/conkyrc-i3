@@ -11,19 +11,25 @@ short_units yes
 TEXT
 
 #JSON for i3bar
+#{ "image" : "${image -s 10x10 $HOME/.config/i3/conky_images/test.png}" },
+#prompt shell unicode: 
+#wifi: 
+#iw dev wlp4s0 link | grep SSID | cut -d " " -f 2-
 
 [
 
-{ "full_text" : "CPU usage: ${exec $HOME/.config/i3/scripts/cpu.sh}" , "color" : "\#c9ecca" },
-{ "full_text" : "Battery: ${exec $HOME/.config/i3/scripts/battery.sh}" , "color" : "\#c9ecca" },
-{ "full_text" : "Volume: ${exec $HOME/.config/i3/scripts/volume.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : " ${exec $HOME/.config/i3/conky_scripts/cpu.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : " ${exec $HOME/.config/i3/conky_scripts/volume.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : " ${exec date "+%H:%M" }" , "color" : "\#c9ecca" },
+
+{ "full_text" : " ${exec iw dev wlp4s0 link | grep SSID | cut -d " " -f 2-}" , "color" : "\#c9ecca" },
+{ "full_text" : " ${exec $HOME/.config/i3/conky_scripts/battery.sh}" , "color" : "\#c9ecca" },
 
 
-{ "full_text" : "TIME ${exec date "+%H:%M" }" , "color" : "\#c9ecca" },
 { "full_text" : "Kernel ★ ${exec uname -r } " , "color" : "\#c9ecca" },
 { "full_text" : "Proc ⚡ ${exec grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//' } " , "color" : "\#c9ecca"},
 { "full_text" : " Core ⚡ ${exec nproc --all} " , "color" : "\#c9ecca"},
-{ "full_text" : " Mnt / ${fs_free /} Free " , "color" : "\#c9ecca" },
+{ "full_text" : " Mnt /🖴 ${fs_free /} Free " , "color" : "\#c9ecca" },
 { "full_text" : " RAM [ $mem/$memmax ]" , "color" :
     ${if_match ${memperc}<90}"\#c9ecca"${else}"\#dc322f"${endif} }
 

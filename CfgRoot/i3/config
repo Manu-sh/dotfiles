@@ -224,6 +224,7 @@ bar {
 	position top
 
 	font pango:DejaVu Sans Mono, Icons 8
+#	font pango:terminus 9
 
 	set $black #2c3338
 	set $cyan #87D7FF
