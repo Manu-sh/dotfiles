@@ -63,12 +63,11 @@ visualizer_fifo_path = /tmp/mpd.fifo
 ## are some problems with it.
 ##
 #
-#visualizer_output_name = Visualizer feed
+#visualizer_output_name = myfifo
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-visualizer_in_stereo = yes
 #
 ##
 ## Multiply received samples by given value. Very
@@ -93,16 +92,14 @@ visualizer_sync_interval = 30
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-visualizer_type = wave
-#
-visualizer_look = ●▮
-#
-#visualizer_color = blue, cyan, green, yellow, magenta, red
-#
-## Alternative subset of 256 colors for terminals that support it.
-##
-visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
-#
+
+visualizer_type = spectrum
+visualizer_color = cyan, blue, green, cyan
+
+# Alternative subset of 256 colors for terminals that support it.
+# visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+# visualizer_color = 33, 34, 35, 36, 37, 38
+
 ##### system encoding #####
 ##
 ## ncmpcpp should detect your charset encoding
@@ -376,7 +373,7 @@ visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 ## Note: Language has to be expressed as an ISO 639 alpha-2 code.
 ##
 #lastfm_preferred_language = en
-#
+2#
 #show_hidden_files_in_local_browser = no
 #
 ##
@@ -492,38 +489,52 @@ visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 ## default background color, or all pairs from 1_1 up to 254_127,
 ## depending on the ncurses version used.
 ##
-#
-#colors_enabled = yes
-#
 #empty_tag_color = cyan
-#
 #header_window_color = default
-#
 #volume_color = default
-#
 #state_line_color = default
-#
 #state_flags_color = default
-#
 #main_window_color = yellow
-#
 #color1 = white
-#
 #color2 = green
-#
 #main_window_highlight_color = yellow
-#
 #progressbar_color = black
-#
 #progressbar_elapsed_color = green
-#
 #statusbar_color = default
-#
 #alternative_ui_separator_color = black
-#
 #active_column_color = red
-#
 #window_border_color = green
-#
 #active_window_border = red
-#
+
+visualizer_look = ||
+visualizer_in_stereo = no
+colors_enabled = yes
+#visualizer_look = ▒▒
+playlist_disable_highlight_delay = 2
+message_delay_time = 1
+browser_sort_format = {%l} | {%f}
+
+#selected_item_suffix = $9
+#selected_item_prefix = $6
+#modified_item_prefix = $3> $9
+
+now_playing_suffix = "$/b"
+song_list_format = "{ $8%a  ✘♬  $2}{%t}$8"
+song_status_format = "$8%a $2»» $8%t $2"
+statusbar_visibility = "no"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+song_window_title_format = : { - }{%t}
+playlist_display_mode = "columns"
+now_playing_prefix = "$b ♫ "
+progressbar_look = "─╼─"
+user_interface = "alternative"
+empty_tag_color = "red"
+main_window_color = "green"
+main_window_highlight_color = "blue"
+progressbar_color = "blue"
+statusbar_color = "green"
+active_column_color = "green"
+window_border_color = "red"
+active_window_border = "yellow"
