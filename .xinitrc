@@ -22,6 +22,7 @@ all_wm() {
 	compton -b
 	dunst &
 	feh --bg-fill ${WALLWM}
+	# conky
 	case $1 in
 		i3) i3 ;;
 		openbox) openbox ;;

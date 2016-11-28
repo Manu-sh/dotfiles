@@ -67,6 +67,15 @@ dunstcfg() {
 	dosym "dunst" ".config"
 }
 
+comptoncfg() {
+	dosym "compton/compton.conf" ".config"
+}
+
+conkycfg() {
+	dosym "conky" ".config"
+}
+
+
 vimcfg
 bashcfg
 tmuxcfg
@@ -76,3 +85,5 @@ rangercfg
 icewmcfg
 ncmpcppcfg
 dunstcfg
+comptoncfg
+conkycfg
