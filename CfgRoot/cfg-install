@@ -58,6 +58,12 @@ nanocfg() {
 	dosym "nano/.nanorc"
 }
 
+ncmpcppcfg() {
+	dosym "mpd/.mpd"
+	dosym "ncmpcpp/.ncmpcpp"
+}
+
+
 vimcfg
 bashcfg
 tmuxcfg
@@ -65,3 +71,4 @@ i3cfg
 gtkcfg
 rangercfg
 icewmcfg
+ncmpcppcfg
