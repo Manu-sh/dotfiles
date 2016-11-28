@@ -18,8 +18,8 @@ access_point() {
 
 	local iface="$(ip a|awk '/BROADCAST,MULTICAST,UP,LOWER_UP/{print $2}'|sed s'@:@@')"
 
-	local ap="$(iswifi)"
-	local ip=$(route -n 2>/dev/null || routel|awk $'{print $2}'|grep -w "."|head -n1)
+	local ap="$(iswifi "$iface")"
+	local ip=$((route -n 2>/dev/null || routel)|awk $'{print $2}'|grep -w "."|head -n1)
 
 	[ "$(_wcl "$iface")" != "0" ] || return 1
 
