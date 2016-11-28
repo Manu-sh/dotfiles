@@ -506,7 +506,7 @@ visualizer_color = cyan, blue, green, cyan
 #window_border_color = green
 #active_window_border = red
 
-
+visualizer_look = ||x
 playlist_display_mode = "columns"
 now_playing_prefix = "♫ "
 progressbar_look = "─╼·"
