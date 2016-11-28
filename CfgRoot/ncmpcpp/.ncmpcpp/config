@@ -506,30 +506,13 @@ visualizer_color = cyan, blue, green, cyan
 #window_border_color = green
 #active_window_border = red
 
-visualizer_look = ||
-visualizer_in_stereo = no
-colors_enabled = yes
-#visualizer_look = ▒▒
-playlist_disable_highlight_delay = 2
-message_delay_time = 1
-browser_sort_format = {%l} | {%f}
 
-#selected_item_suffix = $9
-#selected_item_prefix = $6
-#modified_item_prefix = $3> $9
-
-now_playing_suffix = "$/b"
-song_list_format = "{ $8%a  ✘♬  $2}{%t}$8"
-song_status_format = "$8%a $2»» $8%t $2"
-statusbar_visibility = "no"
-autocenter_mode = "yes"
-centered_cursor = "yes"
-
-song_window_title_format = : { - }{%t}
 playlist_display_mode = "columns"
-now_playing_prefix = "$b ♫ "
-progressbar_look = "─╼─"
+now_playing_prefix = "♫ "
+progressbar_look = "─╼·"
 user_interface = "alternative"
+colors_enabled = "yes"
+song_list_format = "$7$9$3%l$7$9 $7%a:$1$9 $2%t$R(%b)$9"
 empty_tag_color = "red"
 main_window_color = "green"
 main_window_highlight_color = "blue"
