@@ -19,6 +19,7 @@ TEXT
 [
 
 { "full_text" : " ${exec $HOME/.config/i3/conky_scripts/cpu.sh}" , "color" : "\#c9ecca" },
+{ "full_text" : "Weather: ${exec $HOME/.config/i3/conky_scripts/external_scripts/IconicWeather.sh florence}" , "color" : "\#c9ecca" },
 { "full_text" : "${exec $HOME/.config/i3/conky_scripts/battery.sh}" , "color" : "\#c9ecca" },
 { "full_text" : "${exec $HOME/.config/i3/conky_scripts/volume.sh}" , "color" : "\#c9ecca" },
 { "full_text" : " ${exec date "+%H:%M" }" , "color" : "\#c9ecca" },
