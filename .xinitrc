@@ -20,6 +20,7 @@ pantheon_de() {
 
 all_wm() {
 	compton -b
+	dunst &
 	feh --bg-fill ${WALLWM}
 	case $1 in
 		i3) i3 ;;

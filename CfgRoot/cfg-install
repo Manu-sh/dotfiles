@@ -63,6 +63,9 @@ ncmpcppcfg() {
 	dosym "ncmpcpp/.ncmpcpp"
 }
 
+dunstcfg() {
+	dosym "dunst" ".config"
+}
 
 vimcfg
 bashcfg
@@ -72,3 +75,4 @@ gtkcfg
 rangercfg
 icewmcfg
 ncmpcppcfg
+dunstcfg
