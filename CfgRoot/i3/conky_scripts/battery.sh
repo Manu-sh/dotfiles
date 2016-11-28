@@ -2,9 +2,9 @@
 
 styleval() {
 	# assuming that those value are expressed in %
-	[ "$1" -lt 20 ] && echo -e "" "$1" && return 0
-	[ "$1" -lt 50 ] && echo -e "" "$1" && return 0
-	[ "$1" -gt 50 ] && echo -e "" "$1" && return 0
+	[ "$1" -le 20 ] && echo -e "" "$1" && return 0
+	[ "$1" -le 50 ] && echo -e "" "$1" && return 0
+	[ "$1" -ge 50 ] && echo -e "" "$1" && return 0
 }
 
 battery() {
