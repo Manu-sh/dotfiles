@@ -4,7 +4,7 @@ ROOTBG=$HOME/Immagini/wallpaper
 bash $CFGROOT/Xresources/Xresources-load.sh
 setxkbmap it
 
-WALLWM=$ROOTBG/flat/00.png
+WALLWM=$ROOTBG/flat/04.png
 
 pantheon_de() {
 	gsettings-data-convert &
@@ -22,7 +22,7 @@ all_wm() {
 	compton -b
 	dunst &
 	feh --bg-fill ${WALLWM}
-	# conky
+#	conky
 	case $1 in
 		i3) i3 ;;
 		openbox) openbox ;;
