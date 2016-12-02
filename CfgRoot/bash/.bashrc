@@ -4,11 +4,6 @@ yellow='\033[38;5;11m'
 normal='\033[0m'
 bold='\033[1m'
 
-# red=$(tput setaf 1)
-# green=$(tput setaf 3)
-# yellow=$(tput setaf 12)
-# normal=$(tput sgr0)
-
 alias mutt='mutt -F /home/user/.mail_cfg/.muttrc'
 
 export LANG="it_IT.UTF-8"
@@ -16,17 +11,22 @@ export LANGUAGE="it_IT:en_GB:en"
 export LC_COLLATE="C"
 export LC_TIME="it_IT.UTF-8"
 export LC_ALL="it_IT.UTF-8"
-#urxvt -imlocale it_IT.UTF-8
-LESS_CHARSET="utf-8"
-
-#for my local git server
-GIT_SSL_NO_VERIFY=true
+export EDITOR=nano
+export VISUAL=$EDITOR
+export FCEDIT=$EDITOR
+export LESS_CHARSET="utf-8"
+export GROFF_NO_SGR=1
 
 gitrpi() {
-	gurl="ssh://pi@192.168.1.12/var/www/cgit/git"
-	repo="$(cut -d / -f6,7 <<<$1)"
+
+	#for my local git server
+	local GIT_SSL_NO_VERIFY=true
+
+	local gurl="ssh://pi@192.168.1.12/var/www/cgit/git"
+	local repo="$(cut -d / -f6,7 <<<$1)"
 	git clone "$gurl/$repo"
 }
+
 
 man() {
 env \
@@ -39,20 +39,7 @@ LESS_TERMCAP_ue=$'\033[0m' \
 LESS_TERMCAP_us=$'\033[01;35m' \
 man "$@"
 }
-export GROFF_NO_SGR=1
 
-
-f_scrot() {
-	sleep 5
-	mkdir -p $HOME/$RANDOM_SHOT || return 1
-	cd $HOME/$RANDOM_SHOT || return 1
-
-	declare -i time=30
-	while [ $time -ne 0 ]; do
-		scrot
-		time=$((--time))
-	done
-}
 
 f_buildlatex() {
 	pdflatex "${1}"
@@ -79,8 +66,8 @@ echo -e '
 
 }' >>$PWD/$1.java
 
-
 }
+
 
 f_modelatex() {
 cat > $PWD/$1.tex << "EOF"
@@ -108,28 +95,29 @@ cat > $PWD/$1.tex << "EOF"
 EOF
 }
 
+
 f_editx11() {
 	local archlinux=/etc/X11/xinit/xinitrc
 	$EDITOR $archlinux
 }
 
+
 f_editurxvt() {
-	local __conf=$HOME/Xresources-urxvt
+	local __conf=$HOME/dotfiles/CfgRoot/Xresources/Xresources-urxvt
 	$EDITOR $__conf
 	xrdb $__conf
 }
 
+
 f_i3edit() {
- $EDITOR $HOME/.config/i3/config
+	$EDITOR $HOME/.config/i3/config
 }
 
-#NEW
-GITREPO=https://github.com/Manu-sh/VINTAGE
 
 f_gitget() {
-git clone $GITREPO
+	local GITREPO=https://github.com/Manu-sh/VINTAGE
+	git clone $GITREPO
 }
-
 
 ##BEGIN COMPLETION BLOCK OF FUNCTION
 _sendaringa() {
@@ -154,8 +142,6 @@ esac
 }
 complete -o bashdefault -F _sendaringa F_sendaringa
 ##END COMPLETION BLOCK OF FUNCTION
-
-
 
 ##BEGIN FUNCTION MAIN BLOCK 
 
@@ -213,9 +199,6 @@ int main(void)
 EOF
 }
 
-
-
-
 #EDIT BASHRC
 f_editrc() {
 local rc=$HOME/.bashrc
@@ -228,32 +211,10 @@ f_save-session() {
         kill 2 $(pidof firefox)
         }
 
-
-
 ##END FUNCTION MAIN BLOCK 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export EDITOR=nano
-export VISUAL=$EDITOR
-export FCEDIT=$EDITOR
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -354,8 +315,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Informazioni di Sistema:
-
 regen() {
 clear
 figlet -c "AC/DC"
@@ -365,13 +324,12 @@ echo -ne "Data: $(date)\n
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
 PS1="\[${red}\]\u\[${normal}\]@\h[\[${green}\]\t\[${normal}\]]\w \[${yellow}\]⚡\[${normal}\]}➤"
-#PS1="\u@\h[\t]\w ⚡}➤"
+# PS1="\u@\h[\t]\w ⚡}➤"
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.bash-scripts/:/opt/javamm:$PATH
 }
 
 regen
 
-
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-#source /usr/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+# source /usr/bin/virtualenvwrapper.sh

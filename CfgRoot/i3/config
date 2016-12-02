@@ -24,7 +24,6 @@ new_window pixel 3
 # for_window [class=".*"] title_format "<b>%title</b>"
 # for_window [class="^.*"] border normal
 
-
 for_window [ workspace="6" ] floating enable
 for_window [ workspace="7" ] floating enable
 for_window [ workspace="8" ] floating enable
@@ -233,43 +232,36 @@ bar {
 
 #	font pango:DejaVu Sans Mono, Icons 8
 	font pango:terminus 9
-#	font pango:fontawesome 9
 
-	set $black #2c3338
-	set $cyan #87D7FF
-	set $blue #268bd2
+	set $color00 #2c3338
+	set $color01 #87D7FF
+	set $color02 #268bd2
 
-	set $green #949ed0
+	set $color03 #949ed0
 	#e74242 
 
-	set $magenta #e74242
-	set $yellow #D7D787
-	set $grey #93a1a1
+	set $color04 #e74242
+	set $color05 #D7D787
+	set $color07 #93a1a1
 
-	set $pink #eee8d5
+	set $color06 #eee8d5
 	#fdf6e3
 
 	#### i3bar PALETTE
 	colors {
-		separator $blue
-		background $black
-		statusline $grey
-		focused_workspace $cyan $black $cyan
-		active_workspace $pink $black $pink
-		inactive_workspace $yellow $black $yellow 
-		urgent_workspace $magenta $magenta $pink
+		separator $color02
+		background $color00
+		statusline $color07
+		focused_workspace $color01 $color00 $color01
+		active_workspace $color06 $color00 $color06
+		inactive_workspace $color05 $color00 $color05 
+		urgent_workspace $color04 $color04 $color06
 	}
 
 }
 
 #### TITLE BAR PALETTE
-client.focused $black $black $green $black 
-client.focused_inactive $black $black $pink $black
-client.unfocused $black $black $grey $black
-client.urgent $magenta $magenta $pink #dc322f
-
-#backgroud cyan green
-#073642 #2aa198 #859900
-#1C1C1C #D7D787 #87D7FF
-#               #60B48A
-# #fdf6e3
+client.focused $color00 $color00 $color03 $color00 
+client.focused_inactive $color00 $color00 $color06 $color00
+client.unfocused $color00 $color00 $color07 $color00
+client.urgent $color04 $color04 $color06 #dc322f

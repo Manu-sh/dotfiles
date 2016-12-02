@@ -1,7 +1,5 @@
-sudo pacman -S sox ranger w3m mutt conky mplayer tmux networkmanager network-manager-applet mupdf feh compton sysstat sxiv ncmpcpp mpv mpc mpd dunst
+sudo pacman -S i3status rxvt-unicode sox ranger w3m mutt conky mplayer tmux networkmanager mupdf feh compton sysstat sxiv ncmpcpp mpv mpd dunst urxvt-pearls screenfetch figlet
+yaourt -S terminus-font ttf-font-awesome i3gaps
 
-yaourt  -S terminus-font ttf-font-awesome
-
-# yaourt -S phallus-fonts-git stlarch_font ttf-font-iconstamsyn-font
 
 
