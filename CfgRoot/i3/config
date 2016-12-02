@@ -14,11 +14,16 @@ font pango:Monospace 10.5
 gaps inner 10
 gaps outer 15
 
+# workspace 3 gaps inner 10
+# workspace 3 gaps outer 15
+
 # i3-msg border pixel
 new_window pixel 3
 
 # all windows with title bold
 # for_window [class=".*"] title_format "<b>%title</b>"
+# for_window [class="^.*"] border normal
+
 
 for_window [ workspace="6" ] floating enable
 for_window [ workspace="7" ] floating enable
