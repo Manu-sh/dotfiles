@@ -23,6 +23,7 @@ all_wm() {
 	dunst &
 	feh --bg-fill ${WALLWM}
 #	conky
+	mpd ~/.mpd/mpd.conf
 	case $1 in
 		i3) i3 ;;
 		openbox) openbox ;;
