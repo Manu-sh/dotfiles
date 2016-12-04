@@ -105,7 +105,7 @@ f_editx11() {
 f_editurxvt() {
 	local __conf=$HOME/dotfiles/CfgRoot/Xresources/Xresources-urxvt
 	$EDITOR $__conf
-	xrdb $__conf
+	bash $HOME/dotfiles/CfgRoot/Xresources/Xresources-load.sh
 }
 
 
