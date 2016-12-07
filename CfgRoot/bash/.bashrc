@@ -47,11 +47,6 @@ f_buildlatex() {
 }
 
 
-f_metaxec() {
-	exec $1 &>/dev/null &
-}
-
-
 f_modeljava() {
 
 echo -n "public class ${1} {" >$PWD/$1.java
@@ -95,6 +90,9 @@ cat > $PWD/$1.tex << "EOF"
 EOF
 }
 
+f_metaxec() {
+	exec $1 &>/dev/null &
+}
 
 f_editx11() {
 	local archlinux=/etc/X11/xinit/xinitrc
@@ -119,8 +117,11 @@ f_gitget() {
 	git clone $GITREPO
 }
 
-##BEGIN COMPLETION BLOCK OF FUNCTION
-_sendaringa() {
+
+
+#### BEGIN COMPLETION BLOCK OF FUNCTION
+
+sendaringa() {
 local cur prev frst
 
 COMPREPLY=()
@@ -140,8 +141,32 @@ case $cur in
 	;;
 esac
 }
-complete -o bashdefault -F _sendaringa F_sendaringa
-##END COMPLETION BLOCK OF FUNCTION
+complete -o bashdefault -F sendaringa f_sendaringa
+
+
+metaxec() {
+local cur prev frst
+
+COMPREPLY=()
+	cur="${COMP_WORDS[$COMP_CWORD]}";
+	prev="${COMP_WORDS[$COMP_CWORD - 1]}";
+	sub="${COMP_WORDS[1]}";
+
+OPTS="`compgen -c`"
+
+case $cur in
+	*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
+	return 0
+	;;
+	
+	sendaringa) COMPREPLY=( $(compgen -W "${OPTS}" $cur) )
+	return 0
+	;;
+esac
+}
+complete -o bashdefault -F metaxec f_metaxec
+
+#### END COMPLETION BLOCK OF FUNCTION
 
 ##BEGIN FUNCTION MAIN BLOCK 
 
@@ -151,6 +176,9 @@ for FILE in $@; do
 	curl -F "aringa=<$FILE" arin.ga
 done
 }
+
+
+
 
 #SEND FILE TO RPI HD
 f_send_scp() {
