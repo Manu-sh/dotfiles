@@ -4,7 +4,7 @@ ROOTBG=$HOME/Immagini/wallpaper
 bash $CFGROOT/Xresources/Xresources-load.sh
 setxkbmap it
 
-WALLWM=$ROOTBG/flat/04.png
+WALLWM=$ROOTBG/favorite/08.jpg
 
 pantheon_de() {
 	gsettings-data-convert &
@@ -19,16 +19,20 @@ pantheon_de() {
 
 
 all_wm() {
-	compton -b
-	dunst &
+
 	feh --bg-fill ${WALLWM}
-#	conky
 	mpd ~/.mpd/mpd.conf
+	dunst &
+	# conky
 	case $1 in
-		i3) i3 ;;
+		i3)	i3
+			compton -b
+		;;
+		dwm) dwm ;;
 		openbox) openbox ;;
 		fluxbox) fluxbox ;;
 		blackbox) blackbox ;;
+		fvwm2) fvwm2 ;;
 	esac
 }
 
@@ -47,7 +51,9 @@ all_wm() {
 #cinnamon-session
 #mate-session
 
+#all_wm dwm
 all_wm i3
+#all_wm fvwm2
 
 unset WALLWM CFGROOT
 unset -f all_wm pantheon_de
