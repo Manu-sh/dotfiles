@@ -1,9 +1,10 @@
 #!/bin/bash
 
 RELATIVEDIR="$(dirname "$0")"
+cfg="$RELATIVEDIR/Xresources"
 
-colorscheme="Xresources-palette"
+xrdb $cfg-urxvt
+xrdb -merge $cfg-palette
+xrdb -merge $cfg-xterm
 
-xrdb $RELATIVEDIR/Xresources-urxvt
-xrdb -merge "$RELATIVEDIR/$colorscheme"
-unset RELATIVEDIR colorscheme
+unset RELATIVEDIR cfg
