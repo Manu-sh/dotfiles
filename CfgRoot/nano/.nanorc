@@ -244,3 +244,14 @@
 
 ## Set this if your backspace key sends Del most of the time.
 # bind Del backspace all
+
+
+
+## start of myrc
+unset backup
+unset autoindent
+unset casesensitive
+unset linenumbers
+unset nonewlines
+set regexp
+set nowrap

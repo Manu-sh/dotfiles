@@ -36,7 +36,7 @@ Xft.lcdfilter: lcddefault
 
 !keep disable for real trasparency
 !URxvt.inheritPixmap: true
-URxvt.tintColor: #3f3f3f
+!URxvt.tintColor: #3f3f3f
 
 !enable trasparency
 !URxvt.transparent: true

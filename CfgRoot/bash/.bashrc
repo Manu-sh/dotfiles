@@ -5,6 +5,8 @@ normal='\033[0m'
 bold='\033[1m'
 
 alias mutt='mutt -F /home/user/.mail_cfg/.muttrc'
+alias nano='nano --enable-utf8'
+
 
 export LANG="it_IT.UTF-8"
 export LANGUAGE="it_IT:en_GB:en"
