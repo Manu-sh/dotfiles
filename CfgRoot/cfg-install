@@ -75,6 +75,10 @@ conkycfg() {
 	dosym "conky" ".config"
 }
 
+fvwmcfg() {
+dosym "fvwm" ".fvwm"
+
+}
 
 vimcfg
 nanocfg
