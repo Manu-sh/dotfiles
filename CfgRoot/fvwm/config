@@ -38,6 +38,11 @@ InfoStoreAdd ide geany
 InfoStoreAdd image_viewer eom
 InfoStoreAdd mail thunderbird
 
+#####################################################
+# Colorset 23 Transparent, fg rgb:ff/ff/c4, bg darkgray
+# Colorset 43 RootTransparent buffer, fg rgb:ff/ff/c4
+#, Tint cyan 15 , bgTint cyan 15  # tint is optional
+#####################################################
 
 ###########
 # 1: Functions
@@ -66,7 +71,7 @@ AddToFunc   StartFunction
 + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
     Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
 + I TestRc (NoMatch) Exec exec fvwm-root \
-    $[FVWM_DATADIR]/default-config/images/background/bg1.png
+    $[FVWM_DATADIR]/default-config/images/background/spiral0.png
 + I Test (Init) Module FvwmBanner
 + I Module FvwmButtons RightPanel
 + I Module FvwmEvent EventNewDesk
@@ -265,19 +270,19 @@ Style FvwmIdent WindowListSkip
 #      12 - Module ActiveButton (Mouse Hover)
 #      13 - FvwmPager Active Page
 ###########
-Colorset 0  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
-Colorset 1  fg #000000, bg #8f9f8f, hi, sh, Plain, NoShape
-Colorset 2  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
+Colorset 0  fg #ffffff, bg black, hi, sh, Plain, NoShape
+Colorset 1  fg #000000, bg black, hi, sh, Plain, NoShape
+Colorset 2  fg #ffffff, bg black, hi, sh, Plain, NoShape
 Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030, Plain, NoShape
 Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010, Plain, NoShape
 Colorset 5  fg #000000, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 6  fg #ffffff, bg #2d2d2d, hi, sh, Plain, NoShape
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 8  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
-Colorset 10 fg #ffffff, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
-Colorset 11 fg #ffffff, bg #1a6e99, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 8  fg #ffffff, bg black, hi, sh, Plain, NoShape
+Colorset 10 fg #ffffff, bg black, hi #aaaaaa, sh #999999, Plain, NoShape
+Colorset 11 fg black, bg white, hi #ffffff, sh #ffffff, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 13 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
+Colorset 13 fg #ffffff, bg black, hi, sh, Plain, NoShape
 
 #######
 # 4: Menus
@@ -511,6 +516,7 @@ Mouse 3 I    A Menu MenuIconOps
 ###########
 DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
+#+ TitleStyle AllActive   Colorset 43 -- flat
 + TitleStyle Centered Height 18 -- Flat
 + ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
 + ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
@@ -548,7 +554,7 @@ DestroyModuleConfig FvwmIdent:*
 # when fvwm starts.
 DestroyModuleConfig FvwmBanner:*
 *FvwmBanner: NoDecor
-*FvwmBanner: Timeout 5
+*FvwmBanner: Timeout 2
 
 # FvwmScript
 #

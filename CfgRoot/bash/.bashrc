@@ -41,6 +41,10 @@ man "$@"
 }
 
 
+f_screenshot() {
+	import -window root "$(date "+%d_%m_%Y-%H:%M:%S")"_xorg.png
+}
+
 f_buildlatex() {
 	pdflatex "${1}"
 	rm -v "${1%%.tex}.aux"
