@@ -37,6 +37,7 @@ InfoStoreAdd editor nano
 InfoStoreAdd ide geany
 InfoStoreAdd image_viewer eom
 InfoStoreAdd mail thunderbird
+InfoStoreAdd audio_ctl pavucontrol
 
 Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.png"
 
@@ -310,6 +311,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "$[infostore.browser]%icons/terminal.png%" Exec exec $[infostore.browser]
 + "$[infostore.mail]%icons/terminal.png%" Exec exec $[infostore.mail]
 + "$[infostore.ide]%icons/terminal.png%" Exec exec $[infostore.ide]
++ "$[infostore.audio_ctl]%icons/terminal.png%" Exec exec $[infostore.audio_ctl]
 + "Eclipse%icons/terminal.png%" Exec exec eclipse
 
 + "" Nop
