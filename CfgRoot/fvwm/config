@@ -41,6 +41,9 @@ InfoStoreAdd audio_ctl pavucontrol
 
 Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.png"
 
+Style Steam !Title, !Borders, !Handles
+Style metro !Title, !Borders, !Handles
+
 #####################################################
 # Colorset 23 Transparent, fg rgb:ff/ff/c4, bg darkgray
 # Colorset 43 RootTransparent buffer, fg rgb:ff/ff/c4
@@ -313,6 +316,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "$[infostore.ide]%icons/terminal.png%" Exec exec $[infostore.ide]
 + "$[infostore.audio_ctl]%icons/terminal.png%" Exec exec $[infostore.audio_ctl]
 + "Eclipse%icons/terminal.png%" Exec exec eclipse
++ "Steam%icons/terminal.png%" Exec exec steam
 
 + "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
