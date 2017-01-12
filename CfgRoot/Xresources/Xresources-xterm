@@ -6,8 +6,8 @@ XTerm*eightBitInput: false
 XTerm*background: black
 XTerm*foreground: white
 XTerm*pointerColor: white
-!XTerm*font: -*-terminus-medium-*13*
-XTerm*font: xft:terminus-medium:size=13:antialias=true
+! XTerm*font: xft:terminus-medium:size=13:antialias=true
+! XTerm*font: -*-terminus-medium-*13*
 
 !XTerm*scrollBar: false
 !XTerm*VT100.geometry: 80x32

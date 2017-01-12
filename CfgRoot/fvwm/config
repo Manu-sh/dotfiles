@@ -39,7 +39,7 @@ InfoStoreAdd image_viewer eom
 InfoStoreAdd mail thunderbird
 InfoStoreAdd audio_ctl pavucontrol
 
-Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.png"
+Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.jpg"
 
 Style Steam !Title, !Borders, !Handles
 Style metro !Title, !Borders, !Handles
@@ -352,8 +352,8 @@ Test (x vlc) + "VLC" Exec exec vlc
 # Menu icons are located in ~/.fvwm/images/bgicons/
 DestroyMenu BGMenu
 AddToMenu   BGMenu "Wallpapers" Title
-+ "Floral%bgicons/bg1.png%" Exec exec notify-send "(TODO) Im die !"
-+ "Circles%bgicons/bg1.png" Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.png"
++ "Floral%bgicons/bg1.jpg%" Exec exec notify-send "(TODO) Im die !"
++ "Circles%bgicons/bg1.jpg" Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.jpg"
 #+ "Circles%bgicons/bg2.png%" SetBG bg2.png
 #+ "Space%bgicons/bg3.png%" SetBG bg3.png
 
