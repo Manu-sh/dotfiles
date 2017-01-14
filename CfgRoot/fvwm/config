@@ -38,6 +38,7 @@ InfoStoreAdd ide geany
 InfoStoreAdd image_viewer eom
 InfoStoreAdd mail thunderbird
 InfoStoreAdd audio_ctl pavucontrol
+InfoStoreAdd logo /home/user/.fvwm/images/fvwm-logo-small.png
 
 Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.jpg"
 
@@ -317,6 +318,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "$[infostore.audio_ctl]%icons/terminal.png%" Exec exec $[infostore.audio_ctl]
 + "Eclipse%icons/terminal.png%" Exec exec eclipse
 + "Steam%icons/terminal.png%" Exec exec steam
++ "Transmission%icons/terminal.png%" Exec exec transmission-gtk
 
 + "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
@@ -592,7 +594,7 @@ DestroyModuleConfig RightPanel:*
 *RightPanel: Columns 120
 *RightPanel: Frame 0
 *RightPanel: Font "xft:Sans:Terminus:size=10:antialias=True"
-*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
+*RightPanel: (120x45, Icon $[infostore.logo], Frame 0)
 *RightPanel: (120x5, Frame 0)
 *RightPanel: (10x20, Frame 0)
 *RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
