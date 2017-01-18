@@ -319,6 +319,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Eclipse%icons/terminal.png%" Exec exec eclipse
 + "Steam%icons/terminal.png%" Exec exec steam
 + "Transmission%icons/terminal.png%" Exec exec transmission-gtk
++ "QOwnNotes%icons/terminal.png%" Exec exec QOwnNotes
 
 + "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
