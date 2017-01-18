@@ -320,6 +320,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Steam%icons/terminal.png%" Exec exec steam
 + "Transmission%icons/terminal.png%" Exec exec transmission-gtk
 + "QOwnNotes%icons/terminal.png%" Exec exec QOwnNotes
++ "Texmaker%icons/terminal.png%" Exec exec texmaker
 
 + "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
