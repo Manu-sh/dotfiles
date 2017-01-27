@@ -9,7 +9,7 @@
 #### GENERAL OPT WINDOWS
 
 # Font
-font pango:Monospace 10.5
+### font pango:Monospace 10.5
 
 gaps inner 10
 gaps outer 15
@@ -231,7 +231,7 @@ bar {
 	position top
 
 #	font pango:DejaVu Sans Mono, Icons 8
-	font pango:terminus 9
+	font pango:Terminal 8
 
 	set $color00 #2c3338
 	set $color01 #87D7FF
