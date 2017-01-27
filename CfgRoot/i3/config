@@ -9,7 +9,7 @@
 #### GENERAL OPT WINDOWS
 
 # Font
-### font pango:Monospace 10.5
+font pango:Monospace 10.5
 
 gaps inner 10
 gaps outer 15
