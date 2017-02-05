@@ -7,15 +7,20 @@ else
 	finish
 endif
 
-" cian 122
-" pastel blue 45
-" fucsia 197
-" neon purple 207
-" neon fucsia 213
-" other 109, 92, 177
-" pink pastel 225
-" neon yellow pastel 229 
-" pastel green 120
+" cian 122 #87ffd7
+" pastel blue 45 #00d7ff
+" fucsia 197 #ff005f
+" neon purple 207 #ff5fff
+" neon fucsia 213 #ff87ff
+" other 109 #87afaf, 92 #8700d7, 177 #d787ff
+" pink pastel 225 #ffdfff
+" neon yellow pastel 229 #ffffaf
+" pastel green 120 #87ff87
+" light neon purple 99 #875fff,
+" deep neon pink 13 #ff00ff
+"
+"
+"
 "hi*Commentany comment
 "
 "hi*Constantany constant

@@ -31,7 +31,7 @@ URxvt.shading: 80
 ! URxvt*fadeColor: rgb:63/63/63
 ! URxvt*fading: 150
 
-URxvt*background: #ffffff
+! URxvt*background: #ffffff
 URxvt*foreground: #000000
 
 ! palette
