@@ -29,7 +29,27 @@
 #
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
-InfoStoreAdd terminal xterm
+
+InfoStoreAdd terminal urxvt
+InfoStoreAdd file_manager thunar
+InfoStoreAdd browser chromium
+InfoStoreAdd editor nano
+InfoStoreAdd ide geany
+InfoStoreAdd image_viewer eom
+InfoStoreAdd mail thunderbird
+InfoStoreAdd audio_ctl pavucontrol
+InfoStoreAdd logo /home/user/.fvwm/images/fvwm-logo-small.png
+
+Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.jpg"
+
+Style Steam !Title, !Borders, !Handles
+Style metro !Title, !Borders, !Handles
+
+#####################################################
+# Colorset 23 Transparent, fg rgb:ff/ff/c4, bg darkgray
+# Colorset 43 RootTransparent buffer, fg rgb:ff/ff/c4
+#, Tint cyan 15 , bgTint cyan 15  # tint is optional
+#####################################################
 
 ###########
 # 1: Functions
@@ -58,7 +78,7 @@ AddToFunc   StartFunction
 + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
     Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
 + I TestRc (NoMatch) Exec exec fvwm-root \
-    $[FVWM_DATADIR]/default-config/images/background/bg1.png
+    $[FVWM_DATADIR]/default-config/images/background/spiral0.png
 + I Test (Init) Module FvwmBanner
 + I Module FvwmButtons RightPanel
 + I Module FvwmEvent EventNewDesk
@@ -99,17 +119,18 @@ AddToFunc   ViewManPage
 # image and configure it to be loaded the next time fvwm is run.
 # Note, fvwm-root can't use .jpeg or resize images. Use something
 # like display, feh, etc.
-DestroyFunc SetBG
-AddToFunc   SetBG
-+ I Test (f $[FVWM_USERDIR]/images/background/$0) \
-    Exec exec fvwm-root $[FVWM_USERDIR]/images/background/$0
-+ I TestRc (Match) Exec exec ln -fs images/background/$0 \
-    $[FVWM_USERDIR]/.BGdefault
-+ I TestRc (Match) Break
-+ I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
-+ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
-+ I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
-    $[FVWM_USERDIR]/.BGdefault
+#DestroyFunc SetBG
+#AddToFunc   SetBG
+#+ I Test (f $[FVWM_USERDIR]/images/background/$0) \
+#    Exec exec fvwm-root $[FVWM_USERDIR]/images/background/$0
+#+ I TestRc (Match) Exec exec ln -fs images/background/$0 \
+#    $[FVWM_USERDIR]/.BGdefault
+#+ I TestRc (Match) Break
+#+ I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
+#+ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
+#+ I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
+#
+#$[FVWM_USERDIR]/.BGdefault
 
 
 # Function: IconManClick
@@ -195,7 +216,7 @@ MoveThreshold 3
 Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
-DefaultFont "xft:Sans:Bold:size=8:antialias=True"
+DefaultFont "xft:Terminus:Bold:size=10:antialias=True"
 
 # Window Placement
 Style * TileCascadePlacement, GrabFocusOff, !UsePPosition
@@ -257,19 +278,29 @@ Style FvwmIdent WindowListSkip
 #      12 - Module ActiveButton (Mouse Hover)
 #      13 - FvwmPager Active Page
 ###########
-Colorset 0  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
-Colorset 1  fg #000000, bg #8f9f8f, hi, sh, Plain, NoShape
-Colorset 2  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
+#
+#Warning: The highest colorset number used determines memory consumption. 
+#Thus, if you define 'Colorset 100000', the memory for 100001 colorsets is used. 
+#Keep your colorset numbers as small as possible.
+
+# Colorset manpages
+# http://fvwm.org/documentation/manpages/fvwm.html#lbCB
+
+
+Colorset 0  fg #ffffff, bg black, hi, sh, Plain, NoShape
+Colorset 1  fg #000000, bg black, hi, sh, Plain, NoShape
+Colorset 2  fg #ffffff, bg black, hi, sh, Plain, NoShape
 Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030, Plain, NoShape
 Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010, Plain, NoShape
 Colorset 5  fg #000000, bg #ffffff, hi, sh, Plain, NoShape
+
 Colorset 6  fg #ffffff, bg #2d2d2d, hi, sh, Plain, NoShape
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 8  fg #ffffff, bg #003c3c, hi, sh, Plain, NoShape
-Colorset 10 fg #ffffff, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
-Colorset 11 fg #ffffff, bg #1a6e99, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 8  fg #ffffff, bg black, hi, sh, Plain, NoShape
+Colorset 10 fg #ffffff, bg black, hi #aaaaaa, sh #999999, Plain, NoShape
+Colorset 11 fg black, bg white, hi #ffffff, sh #ffffff, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 13 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
+Colorset 13 fg #ffffff, bg black, hi, sh, Plain, NoShape
 
 #######
 # 4: Menus
@@ -278,7 +309,7 @@ MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
 MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
-MenuStyle * Font "xft:Sans:Bold:size=8:antialias=True"
+MenuStyle * Font "xft:Terminus:Bold:size=8:antialias=True"
 
 # Root Menu
 #
@@ -288,7 +319,19 @@ DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Programs%icons/programs.png%" Popup MenuPrograms
 + "XDG Menu%icons/apps.png%" Popup XDGMenu
-+ "XTerm%icons/terminal.png%" Exec exec $[infostore.terminal]
++ "Urxvt%icons/terminal.png%" Exec exec $[infostore.terminal]
+
++ "$[infostore.file_manager]%icons/terminal.png%" Exec exec $[infostore.file_manager]
++ "$[infostore.browser]%icons/terminal.png%" Exec exec $[infostore.browser]
++ "$[infostore.mail]%icons/terminal.png%" Exec exec $[infostore.mail]
++ "$[infostore.ide]%icons/terminal.png%" Exec exec $[infostore.ide]
++ "$[infostore.audio_ctl]%icons/terminal.png%" Exec exec $[infostore.audio_ctl]
++ "Eclipse%icons/terminal.png%" Exec exec eclipse
++ "Steam%icons/terminal.png%" Exec exec steam
++ "Transmission%icons/terminal.png%" Exec exec transmission-gtk
++ "QOwnNotes%icons/terminal.png%" Exec exec QOwnNotes
++ "Texmaker%icons/terminal.png%" Exec exec texmaker
+
 + "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
 + "Wallpapers%icons/wallpaper.png%" Popup BGMenu
@@ -323,9 +366,10 @@ Test (x vlc) + "VLC" Exec exec vlc
 # Menu icons are located in ~/.fvwm/images/bgicons/
 DestroyMenu BGMenu
 AddToMenu   BGMenu "Wallpapers" Title
-+ "Floral%bgicons/bg1.png%" SetBG bg1.png
-+ "Circles%bgicons/bg2.png%" SetBG bg2.png
-+ "Space%bgicons/bg3.png%" SetBG bg3.png
++ "Floral%bgicons/bg1.jpg%" Exec exec notify-send "(TODO) Im die !"
++ "Circles%bgicons/bg1.jpg" Exec exec feh --bg-fill "$[FVWM_USERDIR]/images/background/bg1.jpg"
+#+ "Circles%bgicons/bg2.png%" SetBG bg2.png
+#+ "Space%bgicons/bg3.png%" SetBG bg3.png
 
 # Window Operations Menus
 DestroyMenu MenuWindowOps
@@ -496,6 +540,7 @@ Mouse 3 I    A Menu MenuIconOps
 ###########
 DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
+#+ TitleStyle AllActive   Colorset 43 -- flat
 + TitleStyle Centered Height 18 -- Flat
 + ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
 + ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
@@ -525,7 +570,7 @@ AddToDecor   FvwmDecor
 # a window. One use is getting the class/resource/name of a window.
 DestroyModuleConfig FvwmIdent:*
 *FvwmIdent: Colorset 10
-*FvwmIdent: Font "xft:Sans:size=10:antialias=True"
+*FvwmIdent: Font "xft:Terminus:size=10:antialias=True"
 
 # FvwmBanner
 #
@@ -533,7 +578,7 @@ DestroyModuleConfig FvwmIdent:*
 # when fvwm starts.
 DestroyModuleConfig FvwmBanner:*
 *FvwmBanner: NoDecor
-*FvwmBanner: Timeout 5
+*FvwmBanner: Timeout 2
 
 # FvwmScript
 #
@@ -560,8 +605,8 @@ DestroyModuleConfig RightPanel:*
 *RightPanel: Rows $[vp.height]
 *RightPanel: Columns 120
 *RightPanel: Frame 0
-*RightPanel: Font "xft:Sans:Bold:size=10:antialias=True"
-*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
+*RightPanel: Font "xft:Sans:Terminus:size=10:antialias=True"
+*RightPanel: (120x45, Icon $[infostore.logo], Frame 0)
 *RightPanel: (120x5, Frame 0)
 *RightPanel: (10x20, Frame 0)
 *RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
@@ -595,7 +640,7 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: WindowColorsets 10 11
 *FvwmPager: Font None
 *FvwmPager: Balloons All
-*FvwmPager: BalloonFont "xft:Sans:Bold:size=8:antialias=True"
+*FvwmPager: BalloonFont "xft:Terminus:Bold:size=8:antialias=True"
 *FvwmPager: BallonYOffset +2
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
@@ -615,7 +660,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: DrawIcons always
 *FvwmIconMan: ReliefThickness 0
 *FvwmIconMan: Format "%t"
-*FvwmIconMan: Font "xft:Sans:Bold:size=8:antialias=True"
+*FvwmIconMan: Font "xft:Terminus:Bold:size=8:antialias=True"
 *FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
 *FvwmIconMan: Action Mouse 2 A sendcommand Nop
 *FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
