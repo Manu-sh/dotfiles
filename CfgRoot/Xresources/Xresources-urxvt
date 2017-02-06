@@ -12,8 +12,8 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-! invert color (es. selection)
-URxvt*reverseVideo: true
+! invert color (es. selection) this can cause some problem with fg colors
+! URxvt*reverseVideo: true
 
 URxvt*perl-lib: /usr/lib/URxvt/perl/
 URxvt*perl-ext-common: default,matcher
