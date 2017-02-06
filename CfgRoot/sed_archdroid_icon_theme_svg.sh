@@ -3,6 +3,7 @@
 # This script is for create my neon icon theme variant from Archdroid-Pink theme
 # don't use if you don't know exactly how to work
 # bash sed_archdroid_icon_theme_svg.sh Archdroid-Pink Archdroid-Test
+# git clone https://github.com/GreenRaccoon23/archdroid-icon-theme
 
 src_theme=$1 dest_theme=$2
 
