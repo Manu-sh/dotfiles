@@ -1,3 +1,9 @@
-gtk-icon-theme-name = "Vivacious-NonMono-Dark-Blue"
-gtk-theme-name = "Greybird-Ocean"
-gtk-font-name = "Sawasdee 8"
+#gtk-icon-theme-name = "Vivacious-NonMono-Dark-Blue"
+#gtk-theme-name = "Greybird-Ocean"
+#gtk-font-name = "Sawasdee 8"
+#gtk-icon-theme-name = "Acvamarin-Icons"
+
+#Archdroid-Purple
+gtk-icon-theme-name = "Archdroid-Custom"
+gtk-theme-name = "Diehard4"
+gtk-font-name = "Terminus 8"

@@ -15,7 +15,7 @@ URxvt.pointerColor: #60b48a
 
 ! keep disable for real trasparency
 ! URxvt.inheritPixmap: true
-URxvt.tintColor: #ff5fff !#ff5fff !#FC005A !#8700d7
+URxvt.tintColor: #3f3f3f
 
 ! should to be real trasparency with compositor enabled
 !urxvt*depth: 32
@@ -32,9 +32,7 @@ URxvt.shading: 80
 ! URxvt*fading: 150
 
 ! URxvt*background: #ffffff
-! URxvt*foreground: #FC005A
-URxvt*foreground: #FE5FE4
-! URxvt*foreground: #8700d7
+URxvt*foreground: #000000
 
 ! palette
 URxvt*color0: #3f3f3f
