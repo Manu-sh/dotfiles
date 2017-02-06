@@ -30,6 +30,26 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 
+# QuickTerminal from https://bbs.archlinux.org/viewtopic.php?id=59474&p=3
+Key F12         A       N       QuickTerminal
+
+PipeRead "echo Setenv qt.width $(($[vp.width] * 3 / 5))"
+PipeRead "echo Setenv qt.height $(($[vp.height] * 2 / 4))"
+PipeRead "echo Setenv qt.xpos $((($[vp.width] - $[qt.width]) / 2))"
+
+DestroyFunc QuickTerminal
+AddToFunc QuickTerminal
++ I All (QuickTerminal, CurrentDesk) Iconify
++ I All (QuickTerminal, CurrentDesk, Visible) WarpToWindow 30 30
++ I All (QuickTerminal, CurrentDesk) break
++ I TestRc (NoMatch) Exec exec urxvt -title QuickTerminal -xrm QuickTerminal -name QuickTerminal -tint pink -sh 101 -blr 10x3
++ I wait QuickTerminal
++ I All (QuickTerminal, CurrentDesk) Resize $[qt.width]p $[qt.height]p
++ I All (QuickTerminal, CurrentDesk) Move $[qt.xpos]p 0p
++ I All (QuickTerminal, CurrentDesk) WarpToWindow 30 30
+Style QuickTerminal Sticky, !Title, !Handles, !Borders, BorderWidth 0, HandleWidth 0, WindowListSkip, FPGrabFocus, layer 99
+
+
 InfoStoreAdd terminal urxvt
 InfoStoreAdd file_manager thunar
 InfoStoreAdd browser chromium
@@ -287,29 +307,39 @@ Style FvwmIdent WindowListSkip
 # http://fvwm.org/documentation/manpages/fvwm.html#lbCB
 
 
-Colorset 0  fg #ffffff, bg black, hi, sh, Plain, NoShape
-Colorset 1  fg #000000, bg black, hi, sh, Plain, NoShape
-Colorset 2  fg #ffffff, bg black, hi, sh, Plain, NoShape
+Colorset 0  fg #ffffff, bg black
+Colorset 1  fg #8700d7, bg #8700d7
+Colorset 2  fg #ff5fff, bg #8700d7
 Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030, Plain, NoShape
 Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010, Plain, NoShape
-Colorset 5  fg #000000, bg #ffffff, hi, sh, Plain, NoShape
 
-Colorset 6  fg #ffffff, bg #2d2d2d, hi, sh, Plain, NoShape
+Colorset 5  fg #ff5fff, bg #ffffff, hi, sh, Tint #ff5fff 36, RootTransparent
+Colorset 6  fg #8700d7, bg #00d7ff, sh #87ffd7
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 8  fg #ffffff, bg black, hi, sh, Plain, NoShape
-Colorset 10 fg #ffffff, bg black, hi #aaaaaa, sh #999999, Plain, NoShape
-Colorset 11 fg black, bg white, hi #ffffff, sh #ffffff, Plain, NoShape
-Colorset 12 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 13 fg #ffffff, bg black, hi, sh, Plain, NoShape
+
+Colorset 8  fg #ff5fff, bg #8700d7, Tint #3D174E 36, RootTransparent
+
+#Colorset 5  fg #ff5fff, bg #ffffff, Tint #3D174E 36, RootTransparent
+#Colorset 6  fg #8700d7, bg #ff5fff, sh #87ffd7
+#Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
+#Colorset 8  fg #ff5fff, bg #8700d7, Tint #3D174E 36, RootTransparent
+
+Colorset 10 fg #8700d7, bg black, Tint #3D174E 36, RootTransparent
+Colorset 11 fg black, bg #ff5fff, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 12 fg #ff5fff, bg #8700d7, hi, sh, Plain, NoShape
+Colorset 13 fg #ffffff, bg #ff5fff, hi, sh, Plain, NoShape
 
 #######
 # 4: Menus
 ###########
 MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
-MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsShort
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
 MenuStyle * Font "xft:Terminus:Bold:size=8:antialias=True"
+MenuStyle * Animation
+MenuStyle * BorderWidth 0
+
 
 # Root Menu
 #
@@ -332,12 +362,12 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "QOwnNotes%icons/terminal.png%" Exec exec QOwnNotes
 + "Texmaker%icons/terminal.png%" Exec exec texmaker
 
-+ "" Nop
+#+ "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
 + "Wallpapers%icons/wallpaper.png%" Popup BGMenu
 + "Man Pages%icons/help.png%" Popup MenuFvwmManPages
 + "Copy Config%icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
-+ "" Nop
+#+ "" Nop
 + "Refresh%icons/refresh.png%" Refresh
 + "Restart%icons/restart.png%" Restart
 + "Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
@@ -559,6 +589,14 @@ AddToDecor   FvwmDecor
 + ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 4 - MwmDecorMax
 + ButtonStyle 6 - MwmDecorMin
+
+# WINDOW BORDER
+#+ BorderStyle -- HiddenHandles
+#+ BorderStyle -- Flat
+
+# Disable window border
+Style * HandleWidth 0 
+
 
 ############
 # 7: Modules
