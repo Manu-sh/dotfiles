@@ -1,6 +1,12 @@
 green='\033[38;5;10m'
 red='\033[38;5;9m'
 yellow='\033[38;5;11m'
+cian='\033[38;5;36m'
+neon_cian_256='\033[38;5;122m'
+neon_fucsia_256='\033[38;5;197m'
+neon_yellow_256='\033[38;5;229m'
+neon_purple_256='\033[38;5;207m'
+neon_other_256='\033[38;5;177m'
 normal='\033[0m'
 bold='\033[1m'
 
@@ -361,7 +367,7 @@ echo -ne "Data: $(date)\n
 \b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
-PS1="\[${red}\]\u\[${normal}\]@\h[\[${green}\]\t\[${normal}\]]\w \[${yellow}\]⚡\[${normal}\]}➤"
+PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
 # PS1="\u@\h[\t]\w ⚡}➤"
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.bash-scripts/:/opt/javamm:$PATH
