@@ -23,12 +23,5 @@ fi
 
 sudo cp -R "$src_theme" "$dest_theme"
 
-# neon pink no 1
-cd "$dest_theme" && sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#212121" stroke="#ff5fff" stroke-width="1.5" opacity="100"/'g {} \;
-
-# neon cian no 1
-#cd Archdroid-Custom && sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#212121" stroke="#87ffd7" stroke-width="1.5" opacity="100"/'g {} \;
-
 # neon purple no 1
-#cd Archdroid-Custom && sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#212121" stroke="#8700d7" stroke-width="1.5" opacity="100"/'g {} \;
-#sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#ff5fff"/'g {} \;
+cd "$dest_theme" && sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#212121" stroke="#8700d7" stroke-width="1.5" opacity="100"/'g {} \;
