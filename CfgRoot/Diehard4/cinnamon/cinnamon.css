@@ -34,11 +34,11 @@ StScrollBar StBin#trough {
 }
 StScrollBar StButton#vhandle {
     border-radius: 2px;
-    background: #9F440D;
+    background: #8700d7;
 }
 StScrollBar StButton#hhandle {
     border-radius: 2px;
-    background: #9F440D;
+    background: #8700d7;
 }
 StTooltip StLabel {
     padding: 2px 4px;
@@ -66,7 +66,7 @@ StTooltip StLabel {
     border: 1px solid #131F2A;
 }
 .toggle-switch-us:checked {
-    background: #9F440D;
+    background: #8700d7;
     border-radius: 3px;
     border: 1px solid #0C1219;
 }
@@ -77,7 +77,7 @@ StTooltip StLabel {
     border: 1px solid #131F2A;
 }
 .toggle-switch-intl:checked {
-    background: #9F440D;
+    background: #8700d7;
     border-radius: 3px;
     border: 1px solid #0C1219;
 }
@@ -124,7 +124,7 @@ StTooltip StLabel {
     spacing: 10px;
 }
 .popup-menu-item:active {
-    background: #9F440D;
+    background: #8700d7;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0,0,0, 0.1);
     border-radius: 2px;
@@ -220,7 +220,7 @@ StTooltip StLabel {
 }
 .panel-status-button:hover,
 .panel-button:hover {
-    background: #9F440D;
+    background: #8700d7;
     border-radius: 3px;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0,0,0, 0.1);
@@ -233,7 +233,7 @@ StTooltip StLabel {
     background: #0D151D;
 }
 #panelCenter:dnd {
-    background: #9F440D;
+    background: #8700d7;
 }
 #panelRight:dnd {
     background: #0D151D;
@@ -513,7 +513,7 @@ StTooltip StLabel {
 
 .calendar-today {
   border-image: none;
-  background: #9F440D;
+  background: #8700d7;
   border-radius: 2px;
   color: #ABADB0;
 }
@@ -601,7 +601,7 @@ StTooltip StLabel {
 }
 .switcher-list .item-box:outlined {} 
 .switcher-list .item-box:selected {
-    background: #9F440D;
+    background: #8700d7;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
@@ -654,7 +654,7 @@ StTooltip StLabel {
 }
 .modal-dialog-button:hover {} .modal-dialog-button:active,
 .modal-dialog-button:pressed {
-    background: #9F440D;
+    background: #8700d7;
     border-radius: 2px;
     padding: 6px 0px 5px 0px;
 }
@@ -810,7 +810,7 @@ StTooltip StLabel {
 }
 .keyboard-key:checked,
 .keyboard-key:hover {
-    background: #9F440D;
+    background: #8700d7;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     border: 1px solid #A3460D;
@@ -846,7 +846,7 @@ StTooltip StLabel {
     border: 1px solid transparent;
 }
 .menu-favorites-button:hover {
-    background-color: #9F440D;
+    background-color: #8700d7;
     border: 1px solid #0C1219;
     color: #ABADB0;
     border-radius: 3px;
@@ -869,7 +869,7 @@ StTooltip StLabel {
 .menu-application-button:hover,
 .menu-application-button-selected {
     padding: 5px;
-    background-color: #9F440D;
+    background-color: #8700d7;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -890,7 +890,7 @@ StTooltip StLabel {
 }
 .menu-category-button-selected {
     padding: 5px;
-    background-color: #9F440D;
+    background-color: #8700d7;
     color: #ABADB0;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -969,7 +969,7 @@ StTooltip StLabel {
 .window-list-item-box:focus,
 .window-list-item-demands-attention,
 .window-list-item-box:hover {
-    background: #9F440D;
+    background: #8700d7;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     color: #ABADB0;
     border-radius: 2px;
@@ -1073,7 +1073,7 @@ StTooltip StLabel {
     transition-duration: 0;
 }
 .workspace-button:outlined {
-    background: #9F440D;
+    background: #8700d7;
     border-radius: 2px;
     transition-duration: 0;
 }
@@ -1103,7 +1103,7 @@ StTooltip StLabel {
     transition-duration: 0;
 }
 .applet-box:hover {
-    background: #9F440D;
+    background: #8700d7;
     border: 1px solid #0D151D;
     text-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.1);
     color: #ABADB0;
@@ -1111,13 +1111,13 @@ StTooltip StLabel {
     transition-duration: 0;
 }
 #panelLeft .applet-box:first-child:hover {
-    background: #9F440D;
+    background: #8700d7;
     color: #ABADB0;
     border-radius: 3px;
     transition-duration: 0;
 }
 #panelRight .applet-box:last-child:hover {
-    background: #9F440D;
+    background: #8700d7;
     color: #ABADB0;
     border-radius: 3px;
     transition-duration: 0;

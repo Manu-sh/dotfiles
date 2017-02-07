@@ -25,3 +25,11 @@ sudo cp -R "$src_theme" "$dest_theme"
 
 # neon purple no 1
 cd "$dest_theme" && sudo find -name "*.svg" -exec sed -i s'/fill="#E91E63"/fill="#212121" stroke="#8700d7" stroke-width="1.5" opacity="100"/'g {} \;
+
+
+#Diehard4 theme
+#find -name "*rc" -exec sed -i s'/#9F440D/#8700d7/'g {} \;; find -name "*rc" -exec sed -i s'/#95410E/#8700d7/'g {} \;; find -name "*rc" -exec sed -i s'/#9D430D/#8700d7/'g {} \;
+#find -name "*.xpm" -exec sed -i s'/#9F440D/#8700d7/'g {} \;; find -name "*.xpm" -exec sed -i s'/#95410E/#8700d7/'g {} \;; find -name "*.xpm" -exec sed -i s'/#9D430D/#8700d7/'g {} \;
+
+# then install image magic and launch in Diehard4/gtk-2.0
+#find -name "*.png" -exec convert {} -fuzz 30% -fill ' #8700d7' -opaque '#9f440d' {} \;

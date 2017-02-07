@@ -20,7 +20,7 @@ menu.items.text.color:#99A9B8
 menu.items.justify: left
 menu.items.disabled.text.color: #13202B
 menu.items.active.bg: flat solid
-menu.items.active.bg.color:#9F440D
+menu.items.active.bg.color:#8700d7
 menu.items.active.text.color:#abadb0
 
 window.handle.width: 2
@@ -36,7 +36,7 @@ window.inactive.handle.bg.color: #0D151D
 
 !! window title
 window.active.title.bg: flat solid
-window.active.title.bg.color: #9F440D
+window.active.title.bg.color: #8700d7
 window.active.title.bg.shadow: 1
 
 window.inactive.title.bg: flat solid
@@ -62,7 +62,7 @@ window.active.button.pressed.image.color: #abadb0
 
 
 window.active.button.disabled.bg: parentrelative
-window.active.button.disabled.image.color: #9F440D
+window.active.button.disabled.image.color: #8700d7
 
 
 window.active.button.hover.bg: parentrelative
@@ -119,7 +119,7 @@ osd.bg: flat solid
 osd.bg.color: #0D151D
 osd.label.text.color: #99A9B8
 osd.hilight.bg: flat solid
-osd.hilight.bg.color: #9F440D
+osd.hilight.bg.color: #8700d7
 
 osd.unhilight.bg: flat solid
 osd.unhilight.bg.color: #0D151D

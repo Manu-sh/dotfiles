@@ -264,7 +264,7 @@ Menu {
   	}
   	Selected {
     		Font = "$font"
-    		Background = "Solid #9F440D"
+    		Background = "Solid #8700d7"
 		Item = "Empty"
     		Text = "#ABADB0"
                 Arrow = "Empty"
