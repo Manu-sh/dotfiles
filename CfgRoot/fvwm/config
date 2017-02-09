@@ -361,6 +361,11 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Transmission%icons/terminal.png%" Exec exec transmission-gtk
 + "QOwnNotes%icons/terminal.png%" Exec exec QOwnNotes
 + "Texmaker%icons/terminal.png%" Exec exec texmaker
++ "Calibre%icons/terminal.png%" Exec exec calibre
++ "Ranger%icons/terminal.png%" Exec exec urxvt -e ranger
++ "Owncloud%icons/terminal.png%" Exec exec owncloud 
++ "Gpick%icons/terminal.png%" Exec exec gpick
+
 
 #+ "" Nop
 + "FvwmConsole%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
