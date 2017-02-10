@@ -1,6 +1,6 @@
 [global]
 
-    font = Terminus 9
+    font = Terminal 9
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -75,7 +75,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 50
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -116,7 +116,7 @@
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 1
     
     # Padding between text and separator.
     padding = 20
@@ -141,7 +141,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/chromium
 
     # Align icons left/right/off
     icon_position = off
@@ -150,8 +150,9 @@
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 3
-    color = "#c9ecca"
+    width = 1
+    #color = "#c9ecca"
+    color = "#ff5fff"
 
 [shortcuts]
 
@@ -177,18 +178,24 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2c3338"
-    foreground = "#60B48A"
+    #background = "#2c3338"
+    background = "#8700d7"
+    #foreground = "#60B48A"
+    foreground = "#ff5fff"
     timeout = 3
 
 [urgency_normal]
-    background = "#2c3338"
-    foreground = "#60B48A"
+    #background = "#2c3338"
+    background = "#8700d7"
+    #foreground = "#60B48A"
+    foreground = "#ff5fff"
     timeout = 3
 
 [urgency_critical]
-    background = "#2c3338"
-    foreground = "#60B48A"
+    #background = "#2c3338"
+    background = "#8700d7"
+    #foreground = "#60B48A"
+    foreground = "#ff5fff"
     timeout = 3
 
 # Every section that isn't one of the above is interpreted as a rules to
