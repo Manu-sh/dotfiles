@@ -22,6 +22,8 @@ export VISUAL=$EDITOR
 export FCEDIT=$EDITOR
 export LESS_CHARSET="utf-8"
 export GROFF_NO_SGR=1
+export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 
 gitrpi() {
 
