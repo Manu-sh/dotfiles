@@ -69,26 +69,27 @@ endif
 "ctermfgkeywords TODO FIXME and XXX
 "
 "
-hi NonText	ctermfg=197 ctermbg=NONE cterm=NONE
-hi Normal	ctermfg=177 ctermbg=NONE cterm=NONE " 122
-hi Type		ctermfg=197 ctermbg=NONE cterm=NONE
-hi LineNr	ctermfg=122 ctermbg=NONE cterm=NONE
-hi Include	ctermfg=197 ctermbg=NONE cterm=bold
-hi Statement	ctermfg=207 ctermbg=NONE cterm=NONE
+
+hi NonText	ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Normal	ctermfg=177	ctermbg=NONE	cterm=NONE	guifg=#d787ff		guibg=#0D151D
+hi Type		ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi LineNr	ctermfg=122	ctermbg=NONE	cterm=NONE	guifg=#87ffd7		"guibg=NONE
+hi Include	ctermfg=197	ctermbg=NONE	cterm=bold	guifg=#ff005f		"guibg=NONE
+hi Statement	ctermfg=207	ctermbg=NONE	cterm=NONE	guifg=#ff5fff		"guibg=NONE
 
 " the C string and <*.h>
-hi String	ctermfg=122	cterm=NONE "177
-hi Macro	ctermfg=99	cterm=NONE
-hi Constant	ctermfg=92	cterm=NONE
-hi Structure	ctermfg=207	cterm=bold
-hi Comment	ctermfg=225	cterm=NONE
-hi Character	ctermfg=197
-hi Number	ctermfg=197
-hi Operator	ctermfg=225
-hi Repeat	ctermfg=99	cterm=NONE
-hi Conditional  ctermfg=99	cterm=NONE
-hi SpecialChar	ctermfg=197	cterm=NONE
-hi Label	ctermfg=197	cterm=NONE
+hi String	ctermfg=122	ctermbg=NONE	cterm=NONE	guifg=#87ffd7		"guibg=NONE
+hi Macro	ctermfg=99	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
+hi Constant	ctermfg=92	ctermbg=NONE	cterm=NONE	guifg=#8700d7		"guibg=NONE
+hi Structure	ctermfg=207	ctermbg=NONE	cterm=bold	guifg=#ff5fff		"guibg=NONE
+hi Comment	ctermfg=225	ctermbg=NONE	cterm=NONE	guifg=#ffdfff		"guibg=NONE
+hi Character	ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Number	ctermfg=197     ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Operator	ctermfg=225     ctermbg=NONE	cterm=NONE	guifg=#ffdfff		"guibg=NONE
+hi Repeat	ctermfg=99	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
+hi Conditional  ctermfg=99	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
+hi SpecialChar	ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Label	ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 
-hi cBraces	ctermfg=13	cterm=bold
-hi cAnsiFunction ctermfg=229	cterm=bold
+hi cBraces	ctermfg=13	ctermbg=NONE	cterm=bold	guifg=#ff00ff		"guibg=NONE
+hi cAnsiFunction ctermfg=229	ctermbg=NONE	cterm=bold	guifg=#ffffaf		"guibg=NONE
