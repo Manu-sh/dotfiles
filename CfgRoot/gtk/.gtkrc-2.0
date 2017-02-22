@@ -3,7 +3,6 @@
 #gtk-font-name = "Sawasdee 8"
 #gtk-icon-theme-name = "Acvamarin-Icons"
 
-#Archdroid-Purple
-gtk-icon-theme-name = "Archdroid-Custom"
-gtk-theme-name = "Diehard4"
+gtk-icon-theme-name = "NeonFvwmIcon"
+gtk-theme-name = "NeonFvwmGtk"
 gtk-font-name = "Terminus 8"
