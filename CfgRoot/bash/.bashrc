@@ -17,13 +17,14 @@ export LANGUAGE="it_IT:en_GB:en"
 export LC_COLLATE="C"
 export LC_TIME="it_IT.UTF-8"
 export LC_ALL="it_IT.UTF-8"
-export EDITOR=nano
-export VISUAL=$EDITOR
+export EDITOR=vim
+export VISUAL="vim -n --noplugin"
 export FCEDIT=$EDITOR
 export LESS_CHARSET="utf-8"
 export GROFF_NO_SGR=1
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+export PAGER=less
 
 gitrpi() {
 
@@ -332,10 +333,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias visudo='sudo VISUAL="$VISUAL" visudo'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
