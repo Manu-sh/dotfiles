@@ -52,9 +52,10 @@ man "$@"
 f_screenshot() {
 
 	# notify has not an exit code for failure
-	notify-send "Screenshot in 3.."; sleep 1
-	notify-send "2.. "; sleep 1
-	notify-send "1.."; sleep 1
+
+	! [ "$1" == "-s" ] && notify-send "Screenshot in 3.."; sleep 1
+	! [ "$1" == "-s" ] && notify-send "2.. "; sleep 1
+	! [ "$1" == "-s" ] && notify-send "1.."; sleep 1
 
 	import -window root "$(date "+%d_%m_%Y-%H:%M:%S")"_xorg.png
 }
