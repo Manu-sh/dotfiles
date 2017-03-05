@@ -29,12 +29,24 @@ export PAGER=less
 # https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
 export TZ='Europe/Rome'
 
+RPI_USER='pi'
+RPI_IP='192.168.1.12'
+
+
+
+f_scpget() {
+	local serveroot=/home/${RPI_USER}/GIT
+	path=$(sed s@https://${RPI_IP}@@g <<< ${1%%/})
+	dir=${path##*/}
+	scp -r ${RPI_USER}@${RPI_IP}:${serveroot}${path} $dir
+}
+
 gitrpi() {
 
 	#for my local git server
 	local GIT_SSL_NO_VERIFY=true
 
-	local gurl="ssh://pi@192.168.1.12/var/www/cgit/git"
+	local gurl="ssh://${RPI_USER}@${RPI_IP}/var/www/cgit/git"
 	local repo="$(cut -d / -f6,7 <<<$1)"
 	git clone "$gurl/$repo"
 }
@@ -135,13 +147,6 @@ f_i3edit() {
 }
 
 
-f_gitget() {
-	local GITREPO=https://github.com/Manu-sh/VINTAGE
-	git clone $GITREPO
-}
-
-
-
 #### BEGIN COMPLETION BLOCK OF FUNCTION
 
 sendaringa() {
@@ -203,24 +208,23 @@ done
 
 
 
-#SEND FILE TO RPI HD
-f_send_scp() {
-local DIR=/home/pi
-local USERSSH=pi
-local HOSTSSH=192.168.1.12
-local PORTSSH=22
- scp $@ ${USERSSH}@${HOSTSSH}:$DIR
- unset DIR
-}
+#SEND FILE TO RPI HD 
+#f_send_scp() {
+#local DIR=/home/pi
+#local USERSSH=pi
+#local PORTSSH=22
+# scp $@ ${USERSSH}@${RPI_IP}:$DIR
+# unset DIR
+#}
 
 #OPEN SFTP COMMUNICATION RPI
-f_sftp_rpi() {
- local USER_PI=pi
- local IP=192.168.1.11
- local UUID=4bc2e482-adea-473e-94da-d6c359fbc44a
- local destination=USER_PI@$IP/media/pi/$UUID
- sftp $destination 
-}
+#f_sftp_rpi() {
+#local USER_PI=pi
+#local IP=192.168.1.11
+#local UUID=4bc2e482-adea-473e-94da-d6c359fbc44a
+#local destination=USER_PI@$IP/media/pi/$UUID
+#sftp $destination 
+#}
 
 #BUILD C SOURCE
 f_buildc() {
@@ -253,14 +257,14 @@ EOF
 #EDIT BASHRC
 f_editrc() {
 local rc=$HOME/.bashrc
-   nano $rc && \
-   source $rc
+	$EDITOR $rc && \
+	source $rc
 }
 
 #SAVE SESSION FOR MOZILLA
 f_save-session() {
         kill 2 $(pidof firefox)
-        }
+}
 
 ##END FUNCTION MAIN BLOCK 
 
