@@ -43,7 +43,7 @@ endif
 set statusline=%F%m%r%h%w\ %y\ [row=%l/%L]\ [col=%02v]\ [%02p%%]\
 
 
-filetype off                  " required
+" filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -53,10 +53,17 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
-	Plugin 'ervandew/supertab'
-	let g:SuperTabDefaultCompletionType = "<c-n>"
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ervandew/supertab'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'artur-shaik/vim-javacomplete2'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'mileszs/ack.vim'
+" Plugin 'tyok/nerdtree-ack'
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,3 +81,60 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+
+" JavaComplete Plugin
+
+" To enable smart (trying to guess import option) inserting class imports with F4
+" http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+
+" nmap: Display normal mode maps
+" imap: Display insert mode maps
+
+"nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+"
+"" To enable usual (will ask for import option) inserting class imports with F5
+"nmap <F5> <Plug>(JavaComplete-Imports-Add)
+"imap <F5> <Plug>(JavaComplete-Imports-Add)
+"
+"" To add all missing imports with F6
+"nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+"
+"" To remove all missing imports with F7:
+"nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+"imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+"
+"  nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+"  nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+"  nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+"  nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
+"
+"  imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
+"  imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
+"  imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
+"  imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
+"
+"  nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+"
+"  imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+"
+"  nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
+"  nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+"  nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+"  nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+"  nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
+"  nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
+"  nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
+"  nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
+"
+"  imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
+"  imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
+"  imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+"
+"  vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+"  vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+"  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+"
+"  nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
+"  nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
