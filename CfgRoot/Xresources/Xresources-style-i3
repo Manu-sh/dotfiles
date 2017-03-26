@@ -27,12 +27,12 @@ URxvt.shading: 80
 ! URxvt*fadeColor: rgb:63/63/63
 ! URxvt*fading: 150
 
-URxvt*background: #94cbd0
+URxvt*background: #2c3338 
 ! #DB7A69
 ! #e74242
 ! #DCDCCC
 
-URxvt*foreground: #2c3338
+URxvt*foreground: #94cbd0
 
 !palette
 URxvt*color0: #3f3f3f
