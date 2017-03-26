@@ -114,7 +114,7 @@ cat > $PWD/$1.tex << "EOF"
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{cancel,amsmath,xspace,chemarrow,graphicx}
+\usepackage{cancel,amsmath,xspace,chemarrow,graphicx,url,hyperref}
 \usepackage{listings} %mathpazo
 % \usepackage[ocr-b]{ocr}
 \usepackage{xcolor}
