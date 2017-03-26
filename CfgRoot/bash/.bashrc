@@ -102,26 +102,30 @@ echo -e '
 
 f_modelatex() {
 cat > $PWD/$1.tex << "EOF"
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,10.5pt]{report}
+
+% geometry change page size and settings
+% sectsty change default section command setting
+% \usepackage[paperwidth=7.5in, paperheight=8.5in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{sectsty}
+% subsectionfont is part of pkg secsty
+\subsectionfont{\fontsize{10}{10}\selectfont}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{cancel,amsmath,xspace,chemarrow,graphicx}
 \usepackage{listings} %mathpazo
-%\usepackage[ocr-b]{ocr}
+% \usepackage[ocr-b]{ocr}
 \usepackage{xcolor}
 
 \newcommand{\frecciadx}{\ensuremath{\mathrel{%
     \mkern1.5mu\textrm{\arro\symbol{71}}%
     \mkern-1.1mu\textrm{\arro\symbol{65}}%
     }}\xspace}
-    
 
 \begin{document}
-
 %model latex document
-
-
 \end{document}
 EOF
 }
