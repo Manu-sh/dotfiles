@@ -29,10 +29,11 @@ all_wm() {
 			i3
 		;;
 		fvwm2) fvwm2 ;;
+		dwm) dwm ;;
 		openbox)
 			feh --bg-fill ${WALLPAPER}
 			openbox
-			;;
+		;;
 		fluxbox) fluxbox ;;
 		blackbox) blackbox ;;
 	esac
@@ -61,6 +62,7 @@ all_wm() {
 for i in ${@}; do
 	case "$i" in
 		i3) all_wm i3 ; break ;;
+		dwm) all_wm dwm ; break ;;
 		fvwm|fvwm2) all_wm fvwm2 ; break ;;
 		xfce) xfce4-session ; break ;;
 		gnome) gnome-session ; break ;;
