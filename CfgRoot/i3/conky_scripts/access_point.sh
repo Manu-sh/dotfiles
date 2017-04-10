@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 _wcl() {
 	sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l
 }
@@ -16,7 +15,8 @@ iswifi() {
 
 access_point() {
 
-	local iface="$(ip a|awk '/BROADCAST,MULTICAST,UP,LOWER_UP/{print $2}'|sed s'@:@@')"
+	#local iface="$(ip a|awk '/BROADCAST,MULTICAST,UP,LOWER_UP/{print $2}'|sed s'@:@@')"
+	local iface="$(ip a|awk '/.BROADCAST.MULTICAST./{print $2}'|sed s'@:@@')"
 
 	local ap="$(iswifi "$iface")"
 	local ip=$((route -n 2>/dev/null || routel)|awk $'{print $2}'|grep -w "."|head -n1)
