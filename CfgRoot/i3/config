@@ -235,6 +235,7 @@ bar {
 
 #	i3bar --bar_id bar-0
 	position top
+	workspace_buttons no
 
 #	font pango:DejaVu Sans Mono, Icons 8
 	font pango:Terminal 8
@@ -254,6 +255,36 @@ bar {
 	#fdf6e3
 
 	#### i3bar PALETTE
+	colors {
+		separator $color02
+		background $color00
+		statusline $color07
+		focused_workspace $color01 $color00 $color01
+		active_workspace $color06 $color00 $color06
+		inactive_workspace $color05 $color00 $color05 
+		urgent_workspace $color04 $color04 $color06
+	}
+
+}
+
+bar {
+
+#	status_command lemonbar
+#	status_command i3status -c /etc/i3status.conf
+#	status_command i3blocks -c /etc/i3blocks.conf
+
+	position bottom 
+	font pango:Terminal 8
+
+	set $color00 #2c3338
+	set $color01 #87D7FF
+	set $color02 #268bd2
+	set $color03 #949ed0
+	set $color04 #e74242
+	set $color05 #D7D787
+	set $color06 #eee8d5
+	set $color07 #93a1a1
+
 	colors {
 		separator $color02
 		background $color00

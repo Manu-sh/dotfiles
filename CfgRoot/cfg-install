@@ -78,8 +78,11 @@ conkycfg() {
 }
 
 fvwmcfg() {
-dosym "fvwm" ".fvwm"
+	dosym "fvwm" ".fvwm"
+}
 
+polybarcfg() {
+	dosym "polybar" ".config"
 }
 
 vimcfg
@@ -95,3 +98,4 @@ dunstcfg
 comptoncfg
 conkycfg
 fvwmcfg
+polybarcfg
