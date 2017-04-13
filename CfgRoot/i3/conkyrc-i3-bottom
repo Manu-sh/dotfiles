@@ -1,0 +1,21 @@
+out_to_x no
+own_window no
+out_to_console yes
+
+update_interval 3.0
+
+#Short units (Gib -> G)
+short_units yes
+
+#Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+#JSON for i3bar
+#{ "image" : "${image -s 10x10 $HOME/.config/i3/conky_images/test.png}" },
+
+[
+
+{ "full_text" : " ${exec date "+%H:%M" }" , "color" : "\#c9ecca" },
+{ "full_text" : " ${exec date "+%a %d/%m/%Y" }" , "color" : "\#c9ecca" }
+
+],

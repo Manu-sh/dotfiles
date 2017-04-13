@@ -229,7 +229,7 @@ bindsym $mod+r mode "resize"
 bar {
 
 #	status_command lemonbar
-	status_command $HOME/.config/i3/conky-wrapper-i3
+	status_command $HOME/.config/i3/conky-wrapper-i3 "conkyrc-i3-top"
 #	status_command i3status -c /etc/i3status.conf
 #	status_command i3blocks -c /etc/i3blocks.conf
 
@@ -272,6 +272,7 @@ bar {
 #	status_command lemonbar
 #	status_command i3status -c /etc/i3status.conf
 #	status_command i3blocks -c /etc/i3blocks.conf
+	status_command $HOME/.config/i3/conky-wrapper-i3 "conkyrc-i3-bottom"
 
 	position bottom 
 	font pango:Terminal 8
