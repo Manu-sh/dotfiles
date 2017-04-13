@@ -1,8 +1,15 @@
 #!/bin/bash
 
-_wcl() {
-	sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l
-}
+#echo "$((route -n 2>/dev/null || routel)|awk $'{print $2}'|grep -w "."|head -n1)"
+#local iface="$(ip a|awk '/BROADCAST,MULTICAST,UP,LOWER_UP/{print $2}'|sed s'@:@@')"
+#local iface="$(ip a|awk '/.BROADCAST.MULTICAST./{print $2}'|sed s'@:@@')"
+#local iface="$((route -n 2>/dev/null || routel)|grep '^default'|grep -o '[^ ]*$')"
+#echo "$iface, $ap, $ip"
+
+buf="$(ip route list table 0)"
+_wcl() { sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l; }
+getGatewayIP() {  awk '/default via .* dev/{ print $3 }'<<<"${buf}"; }
+getIface() { awk '/default via .* dev/{ print $5 }'<<<"${buf}"; }
 
 iswifi() {
 	if local ap=$(iw dev "$1" link 2>/dev/null|grep SSID|cut -d " " -f 2-); then
@@ -12,26 +19,15 @@ iswifi() {
 	fi
 }
 
-getGatewayIP() {
-	echo "$((route -n 2>/dev/null || routel)|awk $'{print $2}'|grep -w "."|head -n1)"
-}
-
 access_point() {
 
-	#local iface="$(ip a|awk '/BROADCAST,MULTICAST,UP,LOWER_UP/{print $2}'|sed s'@:@@')"
-	local iface="$(ip a|awk '/.BROADCAST.MULTICAST./{print $2}'|sed s'@:@@')"
-
-	local ap="$(iswifi "$iface")"
+	local iface="$(getIface)"
 	local ip="$(getGatewayIP)"
-
+	local ap="$(iswifi "$iface")"
 
 	[ "$(_wcl "$iface")" != "0" ] || return 1
 
-
-	if [ -z "$ap" ]; then
-		echo "ethernet: $ip"
-		return 0
-	else
+	if [ -n "$ap" ]; then
 		declare -i x=$(_wcl "$ap")
 
 		if [ $x -ne 0 ]; then
@@ -42,8 +38,7 @@ access_point() {
 	fi
 }
 
-
-[ "$1" == "-g" ] && getGatewayIP && exit # with opt -g return gateway
+[ "$1" == "-g" ] && echo "ethernet: `getGatewayIP`" && exit # with opt -g return gateway
 
 if AP=$(access_point); then
 	echo " $AP"
