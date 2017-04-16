@@ -30,11 +30,14 @@ access_point() {
 	if [ -n "$ap" ]; then
 		declare -i x=$(_wcl "$ap")
 
-		if [ $x -ne 0 ]; then
+		if [ $x -ne 0 ]; then # TODO im tired
 			echo "$ap $(getGatewayIP)"
 		else
 			echo "ethernet $(getGatewayIP)"
 		fi
+	else
+		echo "ethernet $(getGatewayIP)"
+
 	fi
 }
 
