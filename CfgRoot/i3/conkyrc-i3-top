@@ -22,7 +22,7 @@ TEXT
 { "full_text" : "${exec $HOME/.config/i3/conky_scripts/external_scripts/IconicWeather.sh florence}" , "color" : "\#c9ecca" },
 { "full_text" : "${exec $HOME/.config/i3/conky_scripts/battery.sh}" , "color" : "\#c9ecca" },
 { "full_text" : "${exec $HOME/.config/i3/conky_scripts/volume.sh}" , "color" : "\#c9ecca" },
-{ "full_text" : "${exec $HOME/.config/i3/conky_scripts/access_point.sh} ${exec $HOME/.config/i3/conky_scripts/access_point.sh -g}" , "color" : "\#c9ecca" },
+{ "full_text" : "${exec $HOME/.config/i3/conky_scripts/access_point.sh}" , "color" : "\#c9ecca" },
 
 { "full_text" : "Kernel ★ ${exec uname -r }" , "color" : "\#c9ecca" },
 { "full_text" : "Proc ⚡ ${exec grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//' } " , "color" : "\#c9ecca"},

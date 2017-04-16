@@ -31,14 +31,12 @@ access_point() {
 		declare -i x=$(_wcl "$ap")
 
 		if [ $x -ne 0 ]; then
-			echo "$ap"
+			echo "$ap $(getGatewayIP)"
 		else
-			return 1
+			echo "ethernet $(getGatewayIP)"
 		fi
 	fi
 }
-
-[ "$1" == "-g" ] && echo "ethernet: `getGatewayIP`" && exit # with opt -g return gateway
 
 if AP=$(access_point); then
 	echo " $AP"
