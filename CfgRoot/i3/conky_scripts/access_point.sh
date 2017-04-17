@@ -8,8 +8,8 @@
 
 buf="$(ip route list table 0)"
 _wcl() { sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l; }
-getGatewayIP() {  awk '/default via .* dev/{ print $3 }'<<<"${buf}"; }
-getIface() { awk '/default via .* dev/{ print $5 }'<<<"${buf}"; }
+getGatewayIP() {  awk '/default via .* dev/{ print $3; exit }'<<<"${buf}"; }
+getIface() { awk '/default via .* dev/{ print $5; exit }'<<<"${buf}"; }
 
 iswifi() {
 	if local ap=$(iw dev "$1" link 2>/dev/null|grep SSID|cut -d " " -f 2-); then
