@@ -18,7 +18,6 @@ ismute() {
 }
 
 volume() {
-
 	if ! ismute; then
 		volume=$(amixer get $ctl|tail -1|cut -sd% -f1)
 		volume=$(sed -u s'@\[@@'g <<<${volume:(-3)})

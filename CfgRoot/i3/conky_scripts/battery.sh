@@ -1,6 +1,7 @@
 #!/bin/bash
 
-_wcl() { sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l; }
+#styleval "${battery%%%*}"
+wcl() { sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l; }
 
 styleval() {
 	# assuming that those value are expressed in %
@@ -11,9 +12,8 @@ styleval() {
 
 battery() {
 	local buf="$(acpi -b 2>/dev/null || exit)"
-	! [ "$(_wcl "$buf")" == 0 ] || exit
+	! [ "$(wcl "$buf")" == 0 ] || exit
 	local battery=$(awk '{print $4}' <<< "${buf}")
-	#styleval "${battery%%%*}"
 	styleval "$(grep -o "[0-9]." <<< "${battery}")"
 }
 
