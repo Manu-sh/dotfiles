@@ -46,6 +46,7 @@ i3cfg() {
 
 gtkcfg() {
 	dosym "gtk/.gtkrc-2.0"
+	dosym "gtk/settings.ini" ".config/gtk-3.0"
 }
 
 rangercfg() {
