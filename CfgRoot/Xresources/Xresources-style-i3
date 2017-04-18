@@ -10,8 +10,9 @@ URxvt*scrollBar: false
 ! URxvt*font: xft:Terminal:size=11:antialias=true
 URxvt*font: xft:Monospace:size=10:antialias=true
 
-URxvt.cursorColor: #60b48a
-URxvt.pointerColor: #60b48a
+URxvt*cursorColor: #60b48a
+URxvt*cursorUnderline: false 
+URxvt*pointerColor: #60b48a
 
 ! keep disable for real trasparency
 ! URxvt.inheritPixmap: true
@@ -21,7 +22,7 @@ URxvt.pointerColor: #60b48a
 ! URxvt.transparent: true
 
 ! set shadow
-URxvt.shading: 80
+URxvt*shading: 80
 
 ! hover
 ! URxvt*fadeColor: rgb:63/63/63
