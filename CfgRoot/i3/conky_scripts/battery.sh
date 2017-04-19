@@ -14,7 +14,8 @@ battery() {
 	local buf="$(acpi -b 2>/dev/null || exit)"
 	! [ "$(wcl "$buf")" == 0 ] || exit
 	local battery=$(awk '{print $4}' <<< "${buf}")
-	styleval "$(grep -o "[0-9]." <<< "${battery}")"
+
+	styleval "$(grep -o "[0-9].*" <<< "${battery%%%*}")"
 }
 
 battery
