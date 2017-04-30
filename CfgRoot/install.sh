@@ -3,3 +3,8 @@ yaourt -S terminus-font ttf-font-awesome i3gaps
 
 
 
+# gnome themes:
+
+# deepin cursor
+# paper icons
+# Adapta gtk

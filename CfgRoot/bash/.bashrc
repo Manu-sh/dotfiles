@@ -233,7 +233,8 @@ done
 
 #BUILD C SOURCE
 f_buildc() {
- gcc -o ${1%%.c} $1
+	# gcc -o ${1%%.c} $1
+	make "${1%%.c}"
 }
 
 #CREATE C SOURCE FROM MODEL

@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/user/Esercizi-C/ssl_tcp_shlib'
-let g:netrw_dirhist_2='/home/user/dotfiles'
-let g:netrw_dirhist_3='/home/user/VINTAGE/vintage_environment'
-let g:netrw_dirhist_4='/home/user/jellybeans.vim'
-let g:netrw_dirhist_5='/home/user'
-let g:netrw_dirhist_6='/home'
-let g:netrw_dirhist_7='/home/user'
-let g:netrw_dirhist_8='/home/user/.vim'
-let g:netrw_dirhist_9='/home/user/Esercizi-C/myclient/LibSslClient'
+let g:netrw_dirhist_cnt =0

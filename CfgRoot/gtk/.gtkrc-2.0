@@ -3,6 +3,10 @@
 #gtk-font-name = "Sawasdee 8"
 #gtk-icon-theme-name = "Acvamarin-Icons"
 
-gtk-icon-theme-name = "NeonFvwmIcon"
-gtk-theme-name = "NeonFvwmGtk"
-gtk-font-name = "Terminus 8"
+#gtk-icon-theme-name = "NeonFvwmIcon"
+#gtk-theme-name = "NeonFvwmGtk"
+#gtk-font-name = "Terminus 8"
+
+gtk-icon-theme-name = "Paper"
+gtk-theme-name = "Adapta-Nokto"
+gtk-font-name = "Cantarell"
