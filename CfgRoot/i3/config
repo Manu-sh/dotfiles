@@ -3,7 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
+
 
 # Set some variables
 set $terminal urxvt
@@ -243,12 +243,14 @@ bindsym $mod+r mode "resize"
 # Top bar
 bar {
 
+# i3gaps experimental feature
+#	i3bar_command i3bar -t 
+
 	status_command $HOME/.config/i3/conky-wrapper-i3 "conkyrc-i3-top"
 #	status_command lemonbar
 #	status_command i3status -c /etc/i3status.conf
 #	status_command i3blocks -c /etc/i3blocks.conf
 
-#	i3bar --bar_id bar-0
 	position top
 	workspace_buttons no
 
