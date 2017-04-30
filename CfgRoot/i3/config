@@ -5,14 +5,32 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# Set some variables
+set $terminal urxvt
+set $terminal.icon   
+for_window [instance="(?i)$terminal*"] title_format "$terminal.icon %title", border none
+
+set $filemanager nautilus
+set $filemanager.icon  
+for_window [class="$filemanager"] border pixel normal
+assign [class="(?i)$filemanager"] $filemanager $filemanager.icon 
+
+set $browser chromium
+set $browser.icon 
+assign [class="(?i)$browser $browser.icon"] $browser
+
+set $mail thunderbird
+set $mail.icon 
+for_window [class="(?i)$mail*"] title_format " %title"
+assign [class="(?i)$mail"] 7 # put mail client in workspace 7
+
+set $font Monospace 10.5 
+set $font.bar_top Monospace 8
+set $font.bar_bottom Terminal 8
 
 #### QUICKTERMINAL
 #for_window [title="(?i)QuickTerminal*"] resize set 640 480 focus
 #bindsym F12 exec "urxvt -title QuickTerminal -xrm QuickTerminal -name QuickTerminal -tint pink -sh 101 -blr 10x3"
-
-for_window [instance="(?i)urxvt*"] title_format " %title"
-for_window [instance=urxvt] border none
-bindsym $mod+Return exec urxvt
 
 #### GENERAL OPT WINDOWS
 
@@ -24,7 +42,7 @@ gaps outer 15
 # workspace 4 gaps outer 15
 
 # Font
-font pango:Monospace 10.5
+font pango: $font 
 
 # i3-msg border pixel
 new_window pixel 3
@@ -39,13 +57,9 @@ for_window [ workspace="7" ] floating enable
 for_window [ workspace="8" ] floating enable
 for_window [ workspace="9" ] floating enable
 
-# put thunderbird in workspace 7
-assign [class="(?i)Thunderbird"] 7
-
 # add ascii decoration
-for_window [class="(?i)chromium*"] title_format " %title"
-for_window [class="(?i)telegram*"] title_format " %title"
-for_window [instance="(?i)eclipse*"] title_format " %title"
+# for_window [class="(?i)telegram*"] title_format " %title"
+# for_window [instance="(?i)eclipse*"] title_format " %title"
 
 #exec --no-startup-id xfce4-panel --disable-wm-check
 
@@ -91,23 +105,26 @@ floating_modifier $mod
 # new_float pixel 5
 
 
-# File Manager Thunar
-assign [class="(?i)Thunar"] Thunar 
-for_window [class="Thunar"] border pixel normal
-#for_window [instance=thunar] border pixel 10
-bindsym $mod+u exec thunar
 
+# Terminal
+bindsym $mod+Return exec $terminal 
+
+# File Manager
+bindsym $mod+u exec $filemanager 
+
+# Screenshot
 bindsym Print exec sleep 3 && import -window root "$(date "+%d_%m_%Y-%H:%M:%S")"_xorg.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # browser
-bindsym $mod+Shift+f exec chromium
-
+bindsym $mod+Shift+f exec $browser
+ 
 # editor
-bindsym $mod+1 exec emacs
-bindsym $mod+p exec vimb
+# bindsym $mod+p exec vimb
+
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -223,13 +240,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
+# Top bar
 bar {
 
-#	status_command lemonbar
 	status_command $HOME/.config/i3/conky-wrapper-i3 "conkyrc-i3-top"
+#	status_command lemonbar
 #	status_command i3status -c /etc/i3status.conf
 #	status_command i3blocks -c /etc/i3blocks.conf
 
@@ -237,45 +252,37 @@ bar {
 	position top
 	workspace_buttons no
 
-#	font pango:DejaVu Sans Mono, Icons 8
-	font pango:Terminal 8
+	font pango: $font.bar_top
 
 	set $color00 #2c3338
 	set $color01 #87D7FF
 	set $color02 #268bd2
-
 	set $color03 #949ed0
-	#e74242 
-
 	set $color04 #e74242
 	set $color05 #D7D787
 	set $color07 #93a1a1
-
 	set $color06 #eee8d5
-	#fdf6e3
+	#fdf6e3 #e74242 
 
-	#### i3bar PALETTE
+	# i3bar PALETTE
 	colors {
-		separator $color02
+		separator  $color02
 		background $color00
 		statusline $color07
-		focused_workspace $color01 $color00 $color01
-		active_workspace $color06 $color00 $color06
+		focused_workspace  $color01 $color00 $color01
+		active_workspace   $color06 $color00 $color06
 		inactive_workspace $color05 $color00 $color05 
-		urgent_workspace $color04 $color04 $color06
+		urgent_workspace   $color04 $color04 $color06
 	}
 
 }
 
+# Bottom bar
 bar {
 
-#	status_command lemonbar
-#	status_command i3status -c /etc/i3status.conf
-#	status_command i3blocks -c /etc/i3blocks.conf
 	status_command $HOME/.config/i3/conky-wrapper-i3 "conkyrc-i3-bottom"
-
 	position bottom 
-	font pango:Terminal 8
+	font pango: $font.bar_bottom
 
 	set $color00 #2c3338
 	set $color01 #87D7FF
@@ -287,19 +294,19 @@ bar {
 	set $color07 #93a1a1
 
 	colors {
-		separator $color02
+		separator  $color02
 		background $color00
 		statusline $color07
-		focused_workspace $color01 $color00 $color01
-		active_workspace $color06 $color00 $color06
+		focused_workspace  $color01 $color00 $color01
+		active_workspace   $color06 $color00 $color06
 		inactive_workspace $color05 $color00 $color05 
-		urgent_workspace $color04 $color04 $color06
+		urgent_workspace   $color04 $color04 $color06
 	}
 
 }
 
 #### TITLE BAR PALETTE
-client.focused $color00 $color00 $color03 $color00 
+client.focused		$color00 $color00 $color03 $color00 
 client.focused_inactive $color00 $color00 $color06 $color00
-client.unfocused $color00 $color00 $color07 $color00
-client.urgent $color04 $color04 $color06 #dc322f
+client.unfocused	$color00 $color00 $color07 $color00
+client.urgent		$color04 $color04 $color06 #dc322f
