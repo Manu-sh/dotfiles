@@ -1,12 +1,17 @@
-#gtk-icon-theme-name = "Vivacious-NonMono-Dark-Blue"
-#gtk-theme-name = "Greybird-Ocean"
-#gtk-font-name = "Sawasdee 8"
-#gtk-icon-theme-name = "Acvamarin-Icons"
+# https://developer.gnome.org/gtk2/stable/GtkSettings.html#Properties
 
-#gtk-icon-theme-name = "NeonFvwmIcon"
-#gtk-theme-name = "NeonFvwmGtk"
-#gtk-font-name = "Terminus 8"
+gtk-font-name="Cantarell"
+gtk-theme-name="Adapta-Nokto"
+gtk-icon-theme-name="Paper"
+gtk-cursor-theme-name="deepin"
+gtk-cursor-theme-size=0
 
-gtk-icon-theme-name = "Paper"
-gtk-theme-name = "Adapta-Nokto"
-gtk-font-name = "Cantarell"
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintfull"
+gtk-xft-rgba="rgb"
+
+gtk-enable-animations=TRUE
+gtk-recent-files-limit=0
+gtk-toolbar-style="text and icons"
+#gtk-toolbar-icon-size=

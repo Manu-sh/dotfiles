@@ -17,12 +17,12 @@ assign [class="(?i)$filemanager"] $filemanager $filemanager.icon
 
 set $browser chromium
 set $browser.icon 
-assign [class="(?i)$browser $browser.icon"] $browser
+assign [class="(?i)$browser"] $browser $browser.icon
 
 set $mail thunderbird
-set $mail.icon 
+set $mail.icon  
 for_window [class="(?i)$mail*"] title_format " %title"
-assign [class="(?i)$mail"] 7 # put mail client in workspace 7
+assign [class="(?i)$mail"] $mail $mail.icon
 
 set $font Monospace 10.5 
 set $font.bar_top Monospace 8
