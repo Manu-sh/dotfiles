@@ -17,6 +17,7 @@ assign [class="(?i)$filemanager"] $filemanager $filemanager.icon
 
 set $browser chromium
 set $browser.icon 
+for_window [instance="(?i)$browser*"] title_format "$browser.icon %title"
 assign [class="(?i)$browser"] $browser $browser.icon
 
 set $mail thunderbird
