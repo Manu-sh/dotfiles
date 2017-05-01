@@ -22,7 +22,7 @@ assign [class="(?i)$browser"] $browser $browser.icon
 
 set $mail thunderbird
 set $mail.icon  
-for_window [class="(?i)$mail*"] title_format " %title"
+for_window [class="(?i)$mail*"] title_format " %title"
 assign [class="(?i)$mail"] $mail $mail.icon
 
 set $font Monospace 10.5 
