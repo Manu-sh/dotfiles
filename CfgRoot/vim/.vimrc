@@ -1,8 +1,7 @@
 syntax on
 
 set backupdir=~/.tmp
-
-filetype plugin indent off
+filetype plugin indent on    " required
 set noautoindent
 set title
 
@@ -32,12 +31,12 @@ colorscheme neon "blue
 "blue.vim      default.vim  desert.vim   evening.vim   koehler.vim  murphy.vim  peachpuff.vim  ron.vim    slate.vim  zellner.vim
 "darkblue.vim  delek.vim    elflord.vim  industry.vim  morning.vim  pablo.vim   README.txt     shine.vim  torte.vim
 
-if has("autocmd")  
+if has('autocmd')  
 	autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
 endif
 
 if has('mouse')
- set mouse=a
+	set mouse=a
 endif
 
 set statusline=%F%m%r%h%w\ %y\ [row=%l/%L]\ [col=%02v]\ [%02p%%]\
@@ -67,7 +66,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -79,6 +77,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 

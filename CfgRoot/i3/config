@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
-
 # Set some variables
 set $terminal urxvt
 set $terminal.icon   
