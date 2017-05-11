@@ -35,13 +35,6 @@ tmuxcfg() {
 
 i3cfg() {
 	dosym "i3" ".config"
-
-	# i have problem with win key on my desktop pc
-	if [ "$(nproc --all)" == "8" ]; then
-		sed -i s'/set $mod Mod4/set $mod Mod1/'g "$HOME/.config/i3/config"
-	elif [ "$(nproc --all)" == "2" ]; then
-		sed -i s'/set $mod Mod1/set $mod Mod4/'g "$HOME/.config/i3/config"
-	fi
 }
 
 gtkcfg() {
