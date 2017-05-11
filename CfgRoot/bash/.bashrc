@@ -387,7 +387,7 @@ echo -ne "Data: $(date)\n
 PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
 # PS1="\u@\h[\t]\w ⚡}➤"
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.bash-scripts/:/opt/javamm:$PATH
+export PATH=$HOME/.scripts/:/opt/javamm:$PATH
 }
 
 regen
