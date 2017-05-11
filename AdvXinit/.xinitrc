@@ -1,62 +1,48 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
 WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_35.jpg
-bash $CFGROOT/Xresources/Xresources-load.sh "alpha"
-setxkbmap it
 
-
-pantheon_de() {
-	gsettings-data-convert &
-	xdg-user-dirs-gtk-update &
-	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-	/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
-	/usr/lib/gnome-user-share/gnome-user-share &
-	eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
-	export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
-	exec cerbere
+loadXresources() {
+	local xresources="$CFGROOT/Xresources"
+	xrdb "${xresources}/${1}"
 }
 
+setxkbmap it
 
 all_wm() {
 	dunst &
 #	conky
 	mpd ~/.mpd/mpd.conf
 	case $1 in
+
 		i3)
-			bash $CFGROOT/Xresources/Xresources-load.sh "i3"
+			loadXresources "Xresources-urxvt-i3"
 			compton -b
 			feh --bg-fill ${WALLPAPER}
 			i3
 		;;
-		fvwm2) fvwm2 ;;
-		dwm) dwm ;;
+
+		fvwm2) 
+			loadXresources "Xresources-urxvt-alpha"
+			fvwm2
+		;;
+
 		openbox)
 			feh --bg-fill ${WALLPAPER}
 			openbox
 		;;
+
+		spectrwm)
+			loadXresources "Xresources-urxvt-i3"
+			feh --bg-fill ${WALLPAPER}
+			spectrwm
+		;;
+
 		fluxbox) fluxbox ;;
 		blackbox) blackbox ;;
+		dwm) dwm ;;
+		ratpoison) ratpoison ; break ;;
 	esac
 }
-
-
-#pekwm
-#icewm
-#twin
-#cde
-#jwm
-#lwm
-
-#cinnamon-session
-#mate-session
-#startlxde
-#wmaker
-#fvwm-crystal
-
-#all_wm i3
-#all_wm fvwm2
-#gnome-session
-#xfce4-session
-#dwm
 
 for i in ${@}; do
 	case "$i" in
@@ -64,16 +50,16 @@ for i in ${@}; do
 		dwm) all_wm dwm ; break ;;
 		fvwm|fvwm2) all_wm fvwm2 ; break ;;
 		xfce) xfce4-session ; break ;;
-		gnome) bash $CFGROOT/Xresources/Xresources-load.sh "i3" ; gnome-session ; break ;;
+		gnome) loadXresources "Xresources-urxvt-i3" ; gnome-session ; break ;;
 		wmaker) wmaker ; break ;;
 		mate) mate-session ; break ;;
 		cinnamon) cinnamon-session ; break  ;;
 		en) enlightenment_start ; break ;;
-		spectrwm) spectrwm ; break ;;
-		cde) /usr/dt/bin/dtcm ;;
-		ratpoison) ratpoison ; break ;;
+		spectrwm) all_wm spectrwm ; break ;;
+		#cde) /usr/dt/bin/dtcm ;;
+		ratpoison) all_wm ratpoison ; break ;;
 	esac
 done
 
 unset WALLPAPER CFGROOT
-unset -f all_wm pantheon_de
+unset -f all_wm loadXresources 

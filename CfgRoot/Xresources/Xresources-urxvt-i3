@@ -1,3 +1,33 @@
+! COMMENTS
+
+! set your locale
+! URxvt*imlocale: it_IT-UTF-8
+
+! set your browser
+! URxvt*url-select*launcher: chromium
+
+URxvt*perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt*url-select*underline: true
+URxvt*keysym*M-u: perl:url-select:select_next
+URxvt*keysym*M-Escape: perl:keyboard-select:activate
+URxvt*keysym*M-s: perl:keyboard-select:search
+
+! invert color (es* selection) this can cause some problem with fg colors
+! URxvt*reverseVideo: true
+
+URxvt*perl-lib: /usr/lib/URxvt/perl/
+URxvt*urlLauncher: /usr/bin/jumanji
+URxvt*matcher*button: 1
+
+Xft*dpi: 96
+Xft*antialias: true
+Xft*hinting: slight
+Xft*rgba: rgb
+Xft*hintstyle: hintslight
+Xft*lcdfilter: lcddefault
+
+URxvt*saveLines: 3000
+URxvt*preeditType: Root
 ! URxvt*geometry: 90x25+180+200
 ! URxvt*scrollBar_right: true
 ! URxvt*scrollColor: #60b48a
@@ -9,18 +39,18 @@ URxvt*scrollBar: false
 ! URxvt*font: xft:Tamsyn:size=13:antialias=true
 ! URxvt*font: xft:Terminal:size=11:antialias=true
 ! URxvt*font: xft:Monospace:size=10:antialias=true
-URxvt.font: -*-terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+URxvt*font: -*-terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
 
 URxvt*cursorColor: #60b48a
 URxvt*cursorUnderline: false 
 URxvt*pointerColor: #60b48a
 
 ! keep disable for real trasparency
-! URxvt.inheritPixmap: true
-! URxvt.tintColor: #3f3f3f
+! URxvt*inheritPixmap: true
+! URxvt*tintColor: #3f3f3f
 
 ! enable trasparency
-! URxvt.transparent: true
+! URxvt*transparent: true
 
 ! set shadow
 URxvt*shading: 80
