@@ -87,6 +87,14 @@ polybarcfg() {
 	dosym "polybar" ".config"
 }
 
+ratpoisoncfg() {
+	dosym "ratpoison/.ratpoisonrc"
+}
+
+spectrwmcfg() {
+	dosym "spectrwm/.spectrwm.conf"
+}
+
 
 vimcfg
 nanocfg
@@ -102,3 +110,5 @@ comptoncfg
 conkycfg
 fvwmcfg
 polybarcfg
+ratpoisoncfg
+spectrwmcfg

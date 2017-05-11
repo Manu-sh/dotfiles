@@ -1,6 +1,6 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
 WALLPAPER=$HOME/Immagini/385.jpg
-bash $CFGROOT/Xresources/Xresources-load.sh "alpha"
+bash $CFGROOT/Xresources/Xresources-load.sh "i3"
 
 setxkbmap it
 
@@ -69,6 +69,9 @@ for i in ${@}; do
 		wmaker) wmaker ; break ;;
 		mate) mate-session ; break ;;
 		cinnamon) cinnamon-session ; break  ;;
+		en) enlightenment_start ; break ;;
+		spectrwm) spectrwm ; break ;;
+		ratpoison) ratpoison ; break ;;
 	esac
 done
 
