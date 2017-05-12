@@ -28,9 +28,9 @@ set winfmt %t
 set framefmt  current frame 
 
 # window borders
-set border 5
+set border 1
 set gap 10
-set fwcolor orange3
+set fwcolor red
 set bwcolor #6C7C87
 
 # be like screen

@@ -40,7 +40,10 @@ all_wm() {
 		fluxbox) fluxbox ;;
 		blackbox) blackbox ;;
 		dwm) dwm ;;
-		ratpoison) ratpoison ; break ;;
+		ratpoison)
+			loadXresources "Xresources-urxvt-i3"
+			ratpoison
+		;;
 	esac
 }
 
