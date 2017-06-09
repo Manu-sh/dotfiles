@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_35.jpg
+WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_48.png
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -32,7 +32,7 @@ all_wm() {
 		;;
 
 		spectrwm)
-			loadXresources "Xresources-urxvt-i3"
+			loadXresources "Xresources-urxvt-alpha"
 			feh --bg-fill ${WALLPAPER}
 			spectrwm
 		;;
