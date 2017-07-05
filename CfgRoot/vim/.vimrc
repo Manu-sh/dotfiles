@@ -26,7 +26,6 @@ set undolevels=1000
 
 set background=dark
 colorscheme neon "blue
-
 " hybrid
 "blue.vim      default.vim  desert.vim   evening.vim   koehler.vim  murphy.vim  peachpuff.vim  ron.vim    slate.vim  zellner.vim
 "darkblue.vim  delek.vim    elflord.vim  industry.vim  morning.vim  pablo.vim   README.txt     shine.vim  torte.vim
@@ -56,12 +55,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'artur-shaik/vim-javacomplete2'
+" Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'mileszs/ack.vim'
 " Plugin 'tyok/nerdtree-ack'
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" To use the default mappings, add the following to your vimrc
+set runtimepath^=~/.vim/bundle/*
+
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 
 " All of your Plugins must be added before the following line
@@ -78,7 +86,6 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 " JavaComplete Plugin
