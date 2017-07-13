@@ -115,9 +115,28 @@ cat > $PWD/$1.tex << "EOF"
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{cancel,amsmath,xspace,chemarrow,graphicx,url,hyperref}
-\usepackage{listings} %mathpazo
 % \usepackage[ocr-b]{ocr}
 \usepackage{xcolor}
+\usepackage{listings} %mathpazo
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\small,
+	numberstyle=\footnotesize,
+	numbers=left,
+	backgroundcolor=\color{gray!10},
+	frame=single,
+	tabsize=2,
+	rulecolor=\color{black!30},
+	title=\lstname,
+	escapeinside={\%*}{*)},
+	breaklines=true,
+	breakatwhitespace=true,
+	framextopmargin=2pt,
+	framexbottommargin=2pt,
+	inputencoding=latin1,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {è}{{\'e}}1,
+}
 
 \newcommand{\frecciadx}{\ensuremath{\mathrel{%
     \mkern1.5mu\textrm{\arro\symbol{71}}%
