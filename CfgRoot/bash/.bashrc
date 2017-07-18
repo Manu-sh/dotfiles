@@ -135,7 +135,7 @@ cat > $PWD/$1.tex << "EOF"
 	framexbottommargin=2pt,
 	inputencoding=latin1,
 	extendedchars=true,
-	literate={á}{{\'a}}1 {ã}{{\~a}}1 {è}{{\'e}}1 {ù}{{\'u}}1 {ò}{{\'o}}1,
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {è}{{\'e}}1 {ù}{{\'u}}1 {ò}{{\'o}}1 {à}{{\a'}}1,
 }
 
 \newcommand{\frecciadx}{\ensuremath{\mathrel{%
