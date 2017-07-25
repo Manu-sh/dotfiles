@@ -1,3 +1,11 @@
+
+function Private()
+	: s/^/private /g
+endfunction
+
+map T :call Private()<LF>
+
+
 syntax on
 
 set backupdir=~/.tmp
@@ -89,7 +97,13 @@ call vundle#end()            " required
 
 
 " JavaComplete Plugin
+
+
 map jg : JCgenerateAccessorGetter<LF>
+
+
+
+
 
 " To enable smart (trying to guess import option) inserting class imports with F4
 " http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
@@ -144,4 +158,3 @@ map jg : JCgenerateAccessorGetter<LF>
 "  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 "
 "  nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
-"  nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
