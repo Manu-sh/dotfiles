@@ -55,7 +55,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
@@ -89,6 +89,7 @@ call vundle#end()            " required
 
 
 " JavaComplete Plugin
+map jg : JCgenerateAccessorGetter<LF>
 
 " To enable smart (trying to guess import option) inserting class imports with F4
 " http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
@@ -127,12 +128,12 @@ call vundle#end()            " required
 "
 "  nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
 "  nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-"  nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
 "  nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 "  nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
 "  nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
 "  nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
 "  nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
+
 "
 "  imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
 "  imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
