@@ -1,9 +1,9 @@
 
 function Private()
-	: s/^/private /g
+	:s/^\t/\tprivate\ /g
 endfunction
 
-map T :call Private()<LF>
+map _ :call Private()<LF>
 
 
 syntax on
@@ -99,7 +99,7 @@ call vundle#end()            " required
 " JavaComplete Plugin
 
 
-map jg : JCgenerateAccessorGetter<LF>
+map à : JCgenerateAccessorGetter<LF>
 
 
 
