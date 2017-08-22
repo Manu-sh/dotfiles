@@ -6,8 +6,12 @@ endfunction
 map _ :call Private()<LF>
 
 
+
 syntax on
 
+" help starstart (** is for recursive find)
+" the path variable is used for every operation about file
+set path +=**
 set backupdir=~/.tmp
 filetype plugin indent on    " required
 set noautoindent
@@ -99,7 +103,7 @@ call vundle#end()            " required
 " JavaComplete Plugin
 
 
-map à : JCgenerateAccessorGetter<LF>
+""" map à : JCgenerateAccessorGetter<LF>
 
 
 
