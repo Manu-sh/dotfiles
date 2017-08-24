@@ -45,11 +45,12 @@ URxvt*font: xft:Monospace:size=10:antialias=true
 
 URxvt.cursorColor: #60b48a
 URxvt.pointerColor: #60b48a
+URxvt.cursorUnderline: false
 
 ! keep disable for real trasparency
 ! URxvt.inheritPixmap: true
 !#FC005A !#8700d7
-URxvt.tintColor: #ff5fff #ff5fff 
+URxvt.tintColor: #ff5fff #ff5fff
 
 ! should to be real trasparency with compositor enabled
 !urxvt*depth: 32
