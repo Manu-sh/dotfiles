@@ -51,7 +51,7 @@ Style QuickTerminal Sticky, !Title, !Handles, !Borders, BorderWidth 0, HandleWid
 
 
 InfoStoreAdd terminal urxvt
-InfoStoreAdd file_manager thunar
+InfoStoreAdd file_manager nautilus
 InfoStoreAdd browser chromium
 InfoStoreAdd editor nano
 InfoStoreAdd ide geany

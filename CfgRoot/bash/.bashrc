@@ -174,25 +174,25 @@ f_i3edit() {
 #### BEGIN COMPLETION BLOCK OF FUNCTION
 
 sendaringa() {
-local cur prev frst
+	local cur prev frst
 
-COMPREPLY=()
 	cur="${COMP_WORDS[$COMP_CWORD]}";
-	prev="${COMP_WORDS[$COMP_CWORD - 1]}";
-	sub="${COMP_WORDS[1]}";
+	#prev="${COMP_WORDS[$COMP_CWORD - 1]}";
+	#sub="${COMP_WORDS[1]}";
 
-OPTS="`ls -a`"
+	OPTS="`ls -a`"
 
-case $cur in
-	*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
-	return 0
-	;;
-	
-	sendaringa) COMPREPLY=( $(compgen -W "${OPTS}" $cur) )
-	return 0
-	;;
-esac
+	case $cur in
+		*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
+			return 0
+		;;
+
+		#sendaringa) COMPREPLY=( $(compgen -W "${OPTS}" $cur) )
+			#return 0
+		#;;
+	esac
 }
+
 complete -o bashdefault -F sendaringa f_sendaringa
 
 
@@ -200,23 +200,32 @@ metaxec() {
 local cur prev frst
 
 COMPREPLY=()
+
 	cur="${COMP_WORDS[$COMP_CWORD]}";
-	prev="${COMP_WORDS[$COMP_CWORD - 1]}";
-	sub="${COMP_WORDS[1]}";
+	#prev="${COMP_WORDS[$COMP_CWORD - 1]}";
+	#sub="${COMP_WORDS[1]}";
 
-OPTS="`compgen -c`"
+	OPTS="`compgen -c`"
 
-case $cur in
-	*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
-	return 0
-	;;
-	
-	sendaringa) COMPREPLY=( $(compgen -W "${OPTS}" $cur) )
-	return 0
-	;;
-esac
+	case $cur in
+		*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
+			return 0
+		;;
+	esac
 }
+
 complete -o bashdefault -F metaxec f_metaxec
+
+<<COMMENT
+fishcompletion() {
+	local cur prev
+	mapfile COMPREPLY -n 0 < "${HISTFILE}"
+
+}
+
+complete -o bashdefault -F fishcompletion f_fishcompletion
+f_fishcompletion() { return 0; }
+COMMENT
 
 #### END COMPLETION BLOCK OF FUNCTION
 
