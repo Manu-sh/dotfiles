@@ -261,20 +261,10 @@ f_modelc() {
 cat > $PWD/$1.c << "EOF"
 #include <stdio.h>
 
-
-	/* prototipo di funzione qui */
-
-
-int main(void)
-{
+int main() {
 
 
 }
-
-
-	/* funzione qui */
-
-
 
 EOF
 }

@@ -11,7 +11,7 @@ syntax on
 
 " help starstart (** is for recursive find)
 " the path variable is used for every operation about file
-set path +=**
+" set path +=**
 set backupdir=~/.tmp
 filetype plugin indent on    " required
 set noautoindent
