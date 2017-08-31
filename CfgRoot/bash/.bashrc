@@ -55,13 +55,13 @@ gitrpi() {
 
 man() {
 env \
-LESS_TERMCAP_mb=$'\033[01;32m' \
-LESS_TERMCAP_md=$'\033[01;36m' \
-LESS_TERMCAP_me=$'\033[0m' \
-LESS_TERMCAP_se=$'\033[0m' \
-LESS_TERMCAP_so=$'\033[01;44;36m' \
-LESS_TERMCAP_ue=$'\033[0m' \
-LESS_TERMCAP_us=$'\033[01;35m' \
+LESS_TERMCAP_mb='\033[01;32m' \
+LESS_TERMCAP_md='\033[01;36m' \
+LESS_TERMCAP_me='\033[0m' \
+LESS_TERMCAP_se='\033[0m' \
+LESS_TERMCAP_so='\033[01;44;36m' \
+LESS_TERMCAP_ue='\033[0m' \
+LESS_TERMCAP_us='\033[01;35m' \
 man "$@"
 }
 
@@ -69,10 +69,13 @@ man "$@"
 f_screenshot() {
 
 	# notify has not an exit code for failure
-
-	! [ "$1" == "-s" ] && notify-send "Screenshot in 3.."; sleep 1
-	! [ "$1" == "-s" ] && notify-send "2.. "; sleep 1
-	! [ "$1" == "-s" ] && notify-send "1.."; sleep 1
+	if [ "$1" != "-s" ]; then
+		notify-send "Screenshot in 3.."; sleep 1
+		notify-send "2.. "; sleep 1
+		notify-send "1.."; sleep 1
+	else
+		sleep 3
+	fi
 
 	import -window root "$(date "+%d_%m_%Y-%H:%M:%S")"_xorg.png
 }
@@ -82,25 +85,23 @@ f_buildlatex() {
 	rm -v "${1%%.tex}.aux"
 }
 
-
 f_modeljava() {
+[ -e "$PWD/$1.java" ] && return 1
+cat > $PWD/$1.java << "EOF"
+	public class $1 {
 
-echo -n "public class ${1} {" >$PWD/$1.java
+		public static void main(String[] args) {
 
-echo -e '
+			System.out.println(3+2);
 
-	public static void main(String[] args) {
-
-		System.out.println(3+2);
+		}
 
 	}
-
-}' >>$PWD/$1.java
-
+EOF
 }
 
-
 f_modelatex() {
+[ -e "$PWD/$1.tex" ] && return 1
 cat > $PWD/$1.tex << "EOF"
 \documentclass[a4paper,10.5pt]{report}
 
@@ -149,97 +150,22 @@ cat > $PWD/$1.tex << "EOF"
 EOF
 }
 
-f_metaxec() {
-	exec $1 &>/dev/null &
-}
-
-f_editx11() {
-	local archlinux=/etc/X11/xinit/xinitrc
-	$EDITOR $archlinux
-}
-
-
-f_editurxvt() {
-	local __conf=$HOME/dotfiles/CfgRoot/Xresources/Xresources-urxvt
-	$EDITOR $__conf
-	bash $HOME/dotfiles/CfgRoot/Xresources/Xresources-load.sh
-}
-
-
-f_i3edit() {
-	$EDITOR $HOME/.config/i3/config
-}
-
+f_metaxec() { exec $1 &>/dev/null & }
+f_i3edit() { $EDITOR $HOME/.config/i3/config; }
 
 #### BEGIN COMPLETION BLOCK OF FUNCTION
-
-sendaringa() {
-	local cur prev frst
-
-	cur="${COMP_WORDS[$COMP_CWORD]}";
-	#prev="${COMP_WORDS[$COMP_CWORD - 1]}";
-	#sub="${COMP_WORDS[1]}";
-
-	OPTS="`ls -a`"
-
-	case $cur in
-		*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
-			return 0
-		;;
-
-		#sendaringa) COMPREPLY=( $(compgen -W "${OPTS}" $cur) )
-			#return 0
-		#;;
-	esac
-}
-
-complete -o bashdefault -F sendaringa f_sendaringa
-
-
-metaxec() {
-local cur prev frst
-
-COMPREPLY=()
-
-	cur="${COMP_WORDS[$COMP_CWORD]}";
-	#prev="${COMP_WORDS[$COMP_CWORD - 1]}";
-	#sub="${COMP_WORDS[1]}";
-
-	OPTS="`compgen -c`"
-
-	case $cur in
-		*) COMPREPLY=( $(compgen -W "${OPTS}" -- $cur) )
-			return 0
-		;;
-	esac
-}
-
-complete -o bashdefault -F metaxec f_metaxec
-
-<<COMMENT
-fishcompletion() {
-	local cur prev
-	mapfile COMPREPLY -n 0 < "${HISTFILE}"
-
-}
-
-complete -o bashdefault -F fishcompletion f_fishcompletion
-f_fishcompletion() { return 0; }
-COMMENT
-
+complete -A file f_sendaringa
+complete -A command f_metaxec
 #### END COMPLETION BLOCK OF FUNCTION
 
 ##BEGIN FUNCTION MAIN BLOCK 
 
 #SEND FILE TO ARINGA
 f_sendaringa() {
-for FILE in $@; do
-	curl -F "aringa=<$FILE" arin.ga
-done
+	for FILE in $@; do
+		curl -F "aringa=<$FILE" arin.ga
+	done
 }
-
-
-
 
 #SEND FILE TO RPI HD 
 #f_send_scp() {
@@ -259,14 +185,9 @@ done
 #sftp $destination 
 #}
 
-#BUILD C SOURCE
-f_buildc() {
-	# gcc -o ${1%%.c} $1
-	make "${1%%.c}"
-}
-
 #CREATE C SOURCE FROM MODEL
 f_modelc() {
+[ -e "$PWD/$1.c" ] && return 1
 cat > $PWD/$1.c << "EOF"
 #include <stdio.h>
 
@@ -279,16 +200,10 @@ EOF
 }
 
 #EDIT BASHRC
-f_editrc() {
-local rc=$HOME/.bashrc
-	$EDITOR $rc && \
-	source $rc
-}
+f_editrc() { local rc=$HOME/.bashrc; $EDITOR $rc && source $rc; }
 
 #SAVE SESSION FOR MOZILLA
-f_save-session() {
-        kill 2 $(pidof firefox)
-}
+f_save-session() { kill 2 $(pidof firefox); }
 
 ##END FUNCTION MAIN BLOCK 
 
@@ -300,8 +215,8 @@ f_save-session() {
 # for examples
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+	*i*) ;;
+	*) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -328,12 +243,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+	xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -342,26 +257,26 @@ esac
 #force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+		# We have color support; assume it's compliant with Ecma-48
+		# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+		# a case would tend to support setf rather than setaf.)
+		color_prompt=yes
+	else
+		color_prompt=
+	fi
 fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 fi
 
 alias ll='ls -alF'
@@ -379,27 +294,27 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
-	# this, if it's already enabled in /etc/bash.bashrc and 
-/etc/profile
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
 fi
 
 regen() {
+#\b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
 clear
 figlet -c "AC/DC"
 echo -ne "Data: $(date)\n
 \b Kernel: $(uname -smr)
-\b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
+\b CPU: $(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
 PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
