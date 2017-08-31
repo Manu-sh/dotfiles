@@ -55,13 +55,13 @@ gitrpi() {
 
 man() {
 env \
-LESS_TERMCAP_mb='\033[01;32m' \
-LESS_TERMCAP_md='\033[01;36m' \
-LESS_TERMCAP_me='\033[0m' \
-LESS_TERMCAP_se='\033[0m' \
-LESS_TERMCAP_so='\033[01;44;36m' \
-LESS_TERMCAP_ue='\033[0m' \
-LESS_TERMCAP_us='\033[01;35m' \
+LESS_TERMCAP_mb=$'\033[01;32m' \
+LESS_TERMCAP_md=$'\033[01;36m' \
+LESS_TERMCAP_me=$'\033[0m' \
+LESS_TERMCAP_se=$'\033[0m' \
+LESS_TERMCAP_so=$'\033[01;44;36m' \
+LESS_TERMCAP_ue=$'\033[0m' \
+LESS_TERMCAP_us=$'\033[01;35m' \
 man "$@"
 }
 
