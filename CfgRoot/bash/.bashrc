@@ -87,16 +87,18 @@ f_buildlatex() {
 
 f_modeljava() {
 [ -e "$PWD/$1.java" ] && return 1
-cat > $PWD/$1.java << "EOF"
-	public class $1 {
 
-		public static void main(String[] args) {
+cat > "$PWD/$1".java << EOF
 
-			System.out.println(3+2);
+public class $1 {
 
-		}
+	public static void main(String[] args) {
+
+		System.out.println(3+2);
 
 	}
+
+}
 EOF
 }
 
