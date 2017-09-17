@@ -320,6 +320,10 @@ echo -ne "Data: $(date)\n
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
 PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
+
+#color0_256=
+#color1_256=
+#PS1="\[${color0_256}\u\[${normal}\]@\h[\[${bold}${color1_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
 # PS1="\u@\h[\t]\w ⚡}➤"
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.scripts/:/opt/javamm:$PATH
