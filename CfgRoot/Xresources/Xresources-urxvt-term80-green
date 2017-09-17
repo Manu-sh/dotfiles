@@ -57,7 +57,7 @@ URxvt.cursorUnderline: true
 URxvt.background: #142D20
 URxvt.foreground: #32DB90
 
-! unknow
+! unknow (HTOP and ?)
 ! URxvt.color0: #79FEBE
 ! URxvt.color1: #12FCD4
 ! URxvt.color2: #13FF77
