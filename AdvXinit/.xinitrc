@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_48.png
+WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_terminal80_green.png
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -32,7 +32,8 @@ all_wm() {
 		;;
 
 		spectrwm)
-			loadXresources "Xresources-urxvt-alpha"
+			#loadXresources "Xresources-urxvt-alpha"
+			loadXresources ""Xresources-urxvt-term80-green
 			feh --bg-fill ${WALLPAPER}
 			spectrwm
 		;;
@@ -53,7 +54,7 @@ for i in ${@}; do
 		dwm) all_wm dwm ; break ;;
 		fvwm|fvwm2) all_wm fvwm2 ; break ;;
 		xfce) xfce4-session ; break ;;
-		gnome) loadXresources "Xresources-urxvt-i3" ; gnome-session ; break ;;
+		gnome) loadXresources "Xresources-urxvt-alpha" ; gnome-session ; break ;;
 		wmaker) wmaker ; break ;;
 		mate) mate-session ; break ;;
 		cinnamon) cinnamon-session ; break  ;;
@@ -61,7 +62,8 @@ for i in ${@}; do
 		spectrwm) all_wm spectrwm ; break ;;
 		#cde) /usr/dt/bin/dtcm ;;
 		ratpoison) all_wm ratpoison ; break ;;
-	esac
+		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ; break ;;
+		esac
 done
 
 unset WALLPAPER CFGROOT
