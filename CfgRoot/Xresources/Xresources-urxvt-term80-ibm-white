@@ -38,11 +38,31 @@ URxvt*font: xft:VT323:size=15:antialias=true
 URxvt.transparent: true
 
 ! set shadow
-URxvt.shading: 70
+URxvt.shading: 20
 
-URxvt.cursorColor:     #FECD06
-URxvt.pointerColor:    #FECD06
+URxvt.cursorColor:     #BFD8FC
+URxvt.pointerColor:    #BFD8FC
 URxvt.cursorUnderline: true
 
-URxvt*background: #333000
-URxvt*foreground: #FDCD06
+URxvt*background: #292D32
+URxvt*foreground: #BFD8FC
+
+URxvt.color0: #E9FFFF
+URxvt.color1: #8293AB
+URxvt.color2: #6E7A8D
+URxvt.color3: #6D98C3
+URxvt.color4: #689881
+URxvt.color5: #667170
+URxvt.color6: #774649
+URxvt.color7: #608877
+URxvt.color8: #A6BCDC
+URxvt.color9: #3C5165
+URxvt.color10: #6C4B88
+
+URxvt.color11: #689881
+URxvt.color12: #667170
+URxvt.color13: #774649
+URxvt.color14: #608877
+URxvt.color15: #A6BCDC
+URxvt.color16: #3C5165
+URxvt.color17: #6C4B88

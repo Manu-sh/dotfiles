@@ -9,6 +9,7 @@ neon_purple_256='\033[38;5;207m'
 neon_other_256='\033[38;5;177m'
 normal='\033[0m'
 bold='\033[1m'
+color0_256='\033[38;5;122m'
 
 alias mutt='mutt -F /home/user/.mail_cfg/.muttrc'
 
@@ -32,7 +33,6 @@ export TZ='Europe/Rome'
 
 RPI_USER='pi'
 RPI_IP='192.168.1.12'
-
 
 
 f_scpget() {
@@ -321,10 +321,7 @@ echo -ne "Data: $(date)\n
 \b $(cal -n 2)\n"
 #PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
 
-color0_256=
-color1_256=
-PS1="\[${color0_256}\u\[${normal}\]@\h[\[${bold}${color1_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
-# PS1="\u@\h[\t]\w ⚡}➤"
+PS1="\[${color0_256}\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.scripts/:/opt/javamm:$PATH
 }

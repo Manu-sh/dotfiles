@@ -1,0 +1,84 @@
+! COMMENTS
+
+! set your locale
+! URxvt.imlocale: it_IT-UTF-8
+! URxvt.perl-ext-common: default,matcher
+
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+URxvt.perl-lib: /usr/lib/URxvt/perl/
+URxvt.urlLauncher: /usr/bin/jumanji
+URxvt.matcher.button: 1
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: slight
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+URxvt.saveLines: 3000
+URxvt.preeditType: Root
+URxvt.scrollBar: false
+! URxvt.font: xft:VT323:size=15:antialias=true
+
+! keep disable for real trasparency
+! URxvt.inheritPixmap: true
+! URxvt.tintColor: green
+
+! should to be real trasparency with compositor enabled
+URxvt.depth: 32
+!URxvt.background: rgba:0000/0000/0200/c800
+
+! enable trasparency
+URxvt.transparent: true
+
+! set shadow
+URxvt.shading: 55
+
+URxvt.cursorColor:     #32DB90
+URxvt.pointerColor:    #32DB90
+URxvt.cursorUnderline: true
+
+URxvt.background: #142D20
+URxvt.foreground: #32DB90
+
+! unknow
+! URxvt.color0: #79FEBE
+! URxvt.color1: #12FCD4
+! URxvt.color2: #13FF77
+! URxvt.color3: #32DB90
+! URxvt.color5: #29FFBB
+! URxvt.color7: #21FF95
+! URxvt.color8: #152019
+! URxvt.color11: #13FF77
+! URxvt.color15: #20DE4E
+! URxvt.color16: #21FF95
+! URxvt.color17: #8EB49E
+
+! less pager botton bar
+URxvt.color4: #142D20
+
+! dircolors
+
+! music
+URxvt.color6: #20DE4E
+
+! archives
+URxvt.color9: #7BC69C
+
+! executable
+URxvt.color10: #29FFBB
+
+! folder
+URxvt.color12: #32DB90
+
+! image
+URxvt.color13: #79FEBE
+
+! symlink
+URxvt.color14: #12FCD4
