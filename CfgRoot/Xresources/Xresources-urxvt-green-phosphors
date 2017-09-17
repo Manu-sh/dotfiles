@@ -28,17 +28,17 @@ URxvt*font: xft:VT323:size=15:antialias=true
 
 ! keep disable for real trasparency
 ! URxvt.inheritPixmap: true
-URxvt.tintColor: #030708 #FECD06
+! URxvt.tintColor: #030708 #FECD06
 
 ! should to be real trasparency with compositor enabled
 !urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0200/c800
 
 ! enable trasparency
-! URxvt.transparent: true
+URxvt.transparent: true
 
 ! set shadow
-URxvt.shading: 45
+URxvt.shading: 70
 
 URxvt.cursorColor:     #FECD06
 URxvt.pointerColor:    #FECD06
