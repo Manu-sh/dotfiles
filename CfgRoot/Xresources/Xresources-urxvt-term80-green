@@ -82,8 +82,8 @@ URxvt.color4: #142D20
 
 ! dircolors
 
-! music
-URxvt.color6: #20DE4E
+! music & screenfetch (#20DE4E)
+URxvt.color6: #29FFBB
 
 ! archives
 URxvt.color9: #7BC69C
