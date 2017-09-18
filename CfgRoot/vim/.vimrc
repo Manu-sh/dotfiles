@@ -37,8 +37,8 @@ set nocompatible
 set undolevels=1000
 
 set background=dark
-" colorscheme term80-green
-colorscheme neon "blue
+colorscheme term80-green
+" colorscheme neon "blue
 " hybrid
 "blue.vim      default.vim  desert.vim   evening.vim   koehler.vim  murphy.vim  peachpuff.vim  ron.vim    slate.vim  zellner.vim
 "darkblue.vim  delek.vim    elflord.vim  industry.vim  morning.vim  pablo.vim   README.txt     shine.vim  torte.vim
