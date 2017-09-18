@@ -56,11 +56,11 @@ endif
 "
 "
 
-hi NonText	ctermfg=42	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
-hi Normal	ctermfg=85	ctermbg=NONE	cterm=NONE	guifg=#d787ff		guibg=#0D151D
-hi Type		ctermfg=111	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi NonText	ctermfg=49	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+"hi Normal	ctermfg=85	ctermbg=NONE	cterm=NONE	guifg=#d787ff		guibg=#0D151D
+hi Type		ctermfg=122	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 hi LineNr	ctermfg=122	ctermbg=NONE	cterm=NONE	guifg=#87ffd7		"guibg=NONE
-hi Include	ctermfg=111	ctermbg=NONE	cterm=bold	guifg=#ff005f		"guibg=NONE
+hi Include	ctermfg=122	ctermbg=NONE	cterm=bold	guifg=#ff005f		"guibg=NONE
 hi Statement	ctermfg=122	ctermbg=NONE	cterm=NONE	guifg=#ff5fff		"guibg=NONE
 
 " the C string and <*.h>
@@ -71,13 +71,13 @@ hi Boolean	ctermfg=120	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
 hi Constant	ctermfg=120	ctermbg=NONE	cterm=NONE	guifg=#8700d7		"guibg=NONE
 hi Structure	ctermfg=157	ctermbg=NONE	cterm=bold	guifg=#ff5fff		"guibg=NONE
 hi Comment	ctermfg=225	ctermbg=NONE	cterm=NONE	guifg=#ffdfff		"guibg=NONE
-hi Character	ctermfg=42	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
-hi Number	ctermfg=42      ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Character	ctermfg=49	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Number	ctermfg=49      ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 hi Operator	ctermfg=225     ctermbg=NONE	cterm=NONE	guifg=#ffdfff		"guibg=NONE
 hi Repeat	ctermfg=120	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
 hi Conditional  ctermfg=120	ctermbg=NONE	cterm=NONE	guifg=#875fff		"guibg=NONE
-hi SpecialChar	ctermfg=42	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
-hi Label	ctermfg=42	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi SpecialChar	ctermfg=49	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
+hi Label	ctermfg=49	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 
 hi cBraces	 ctermfg=157	ctermbg=NONE	cterm=bold	guifg=#ff00ff		"guibg=NONE
 hi cAnsiFunction ctermfg=73	ctermbg=NONE	cterm=bold	guifg=#ffffaf		"guibg=NONE
