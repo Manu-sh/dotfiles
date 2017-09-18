@@ -77,8 +77,8 @@ URxvt.color1: #142D20
 ! URxvt.color16: #21FF95
 ! URxvt.color17: #8EB49E
 
-! less pager botton bar
-URxvt.color4: #142D20
+! less pager botton bar and search result highlighting
+URxvt.color4: #4DB166
 
 ! dircolors
 
