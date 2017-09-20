@@ -11,7 +11,7 @@ endfunction
 
 function ShowColor()
 	let var = expand('<cword>')
-	:execute 'silent !zenity --color-selection --color=\#'.var
+	:execute 'silent !zenity --color-selection --color=\#'.var' 2>/dev/null'
 	:redraw!
 endfunction
 
