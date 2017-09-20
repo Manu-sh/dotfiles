@@ -8,16 +8,28 @@ endfunction
 " https://stackoverflow.com/questions/666757/how-to-expand-variables-in-vim-commands
 " https://vi.stackexchange.com/questions/1942/how-to-execute-shell-commands-silently
 " https://stackoverflow.com/questions/7078538/refresh-vim-buffer
+" https://stackoverflow.com/questions/14717571/vimscript-how-to-get-current-filetype-as-a-variable
 
 function ShowColor()
-	let var = expand('<cword>')
-	:execute 'silent !zenity --color-selection --color=\#'.var' 2>/dev/null'
-	:redraw!
+	let cw = expand('<cword>')
+	execute 'silent !zenity --color-selection --color=\#'.cw' 2>/dev/null'
+	redraw!
 endfunction
 
 function FigletArt()
-	let var = expand('<cword>')
-	execute ':read !figlet '.var
+	let cw = expand('<cword>')
+	execute ':read !figlet '.cw
+endfunction
+
+function ShowManpages()
+	let word = expand('<cword>')
+	if &filetype == "c" || &filetype == "cpp"
+		execute 'silent !man 2 '.word' || man 3 '.word
+		redraw!
+	else
+		execute 'silent !man '.word
+		redraw!
+	endif
 endfunction
 
 map _ :call ShowColor()<LF>
@@ -60,6 +72,10 @@ colorscheme term80-green
 "blue.vim      default.vim  desert.vim   evening.vim   koehler.vim  murphy.vim  peachpuff.vim  ron.vim    slate.vim  zellner.vim
 "darkblue.vim  delek.vim    elflord.vim  industry.vim  morning.vim  pablo.vim   README.txt     shine.vim  torte.vim
 
+
+" disable auto-comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 if has('autocmd')  
 	autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
 endif
@@ -84,9 +100,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'bkad/CamelCaseMotion'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'artur-shaik/vim-javacomplete2'
+" Plugin 'bkad/CamelCaseMotion'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 

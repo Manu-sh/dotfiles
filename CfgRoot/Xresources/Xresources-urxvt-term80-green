@@ -74,10 +74,11 @@ URxvt.color5: #12FCD4
 
 ! URxvt.color7: #21FF95
 ! URxvt.color8: #152019
-! URxvt.color11: #13FF77
 ! URxvt.color15: #20DE4E
-! URxvt.color16: #21FF95
-! URxvt.color17: #8EB49E
+! #21FF95 #8EB49E
+
+! yaourt highlighting results
+URxvt.color11: #13FF77
 
 ! less pager botton bar and search result highlighting
 URxvt.color4: #4DB166
