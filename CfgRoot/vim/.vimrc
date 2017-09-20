@@ -6,10 +6,13 @@ endfunction
 " https://vi.stackexchange.com/questions/3537/copying-a-string-to-a-variable-or-a-register-from-within-a-function
 " http://learnvimscriptthehardway.stevelosh.com/chapters/30.html
 " https://stackoverflow.com/questions/666757/how-to-expand-variables-in-vim-commands
+" https://vi.stackexchange.com/questions/1942/how-to-execute-shell-commands-silently
+" https://stackoverflow.com/questions/7078538/refresh-vim-buffer
 
 function ShowColor()
 	let var = expand('<cword>')
-	:execute '!zenity --color-selection --color=\#'.var
+	:execute 'silent !zenity --color-selection --color=\#'.var
+	:redraw!
 endfunction
 
 function FigletArt()
@@ -17,7 +20,7 @@ function FigletArt()
 	execute ':read !figlet '.var
 endfunction
 
-map _ :call Private()<LF>
+map _ :call ShowColor()<LF>
 
 
 
