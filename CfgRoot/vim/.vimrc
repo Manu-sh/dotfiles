@@ -3,6 +3,20 @@ function Private()
 	:s/^\t/\tprivate\ /g
 endfunction
 
+" https://vi.stackexchange.com/questions/3537/copying-a-string-to-a-variable-or-a-register-from-within-a-function
+" http://learnvimscriptthehardway.stevelosh.com/chapters/30.html
+" https://stackoverflow.com/questions/666757/how-to-expand-variables-in-vim-commands
+
+function ShowColor()
+	let var = expand('<cword>')
+	:execute '!zenity --color-selection --color=\#'.var
+endfunction
+
+function FigletArt()
+	let var = expand('<cword>')
+	execute ':read !figlet '.var
+endfunction
+
 map _ :call Private()<LF>
 
 
