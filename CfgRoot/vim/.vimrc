@@ -65,6 +65,8 @@ set hlsearch
 set nocompatible
 set undolevels=1000
 
+set cryptmethod=blowfish2
+
 set background=dark
 colorscheme term80-green
 " colorscheme neon "blue
