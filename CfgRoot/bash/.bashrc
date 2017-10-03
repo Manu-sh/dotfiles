@@ -141,7 +141,6 @@ cat > $PWD/$1.tex << "EOF"
 	literate={á}{{\'a}}1 {ã}{{\~a}}1 {è}{{\'e}}1 {ù}{{\'u}}1 {ò}{{\'o}}1 {à}{{\a'}}1,
 }
 
-\usepackage{hyperref}
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
