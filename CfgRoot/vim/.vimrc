@@ -9,11 +9,29 @@ endfunction
 " https://vi.stackexchange.com/questions/1942/how-to-execute-shell-commands-silently
 " https://stackoverflow.com/questions/7078538/refresh-vim-buffer
 " https://stackoverflow.com/questions/14717571/vimscript-how-to-get-current-filetype-as-a-variable
+" http://vim.wikia.com/wiki/Get_the_name_of_the_current_file
 
 function ShowColor()
 	let cw = expand('<cword>')
 	execute 'silent !zenity --color-selection --color=\#'.cw' 2>/dev/null'
 	redraw!
+endfunction
+
+
+" im noob with VimL
+function BuildLatexAndShow() 
+
+	if &filetype != "tex"
+		return
+	endif
+
+	let wd    = expand('%:p:h')
+	let fname_noprefix = expand('%:r')
+
+	execute '!pdflatex '.wd."/".fname_noprefix.".tex"
+	execute 'silent !rm -f '.wd."/".fname_noprefix.".out" 'silent !rm -f '.wd."/".fname_noprefix.".log" 'silent !rm -f '.wd."/".fname_noprefix.".aux"
+	execute 'silent !mupdf '.wd."/".fname_noprefix.".pdf"
+
 endfunction
 
 function FigletArt()
@@ -34,7 +52,7 @@ endfunction
 
 map _ :call ShowColor()<LF>
 
-
+map ° :call BuildLatexAndShow()<LF>
 
 syntax on
 
