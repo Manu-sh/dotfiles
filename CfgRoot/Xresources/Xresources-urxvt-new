@@ -60,7 +60,7 @@ URxvt.cursorUnderline: true
 !URxvt.background: #33616B
 !URxvt.background: #023B4D
 
-!URxvt.background: #2F4C6F
+Rxvt.background: #2F4C6F
 
 URxvt.foreground: #5DA6B9
 
@@ -68,14 +68,14 @@ URxvt.foreground: #5DA6B9
 ! URxvt.color0: #79FEBE
 
 ! htop green
-URxvt.color2: #A0F696
+URxvt.color2: #C5E1B0
 
 ! htop yellow
-URxvt.color3: #FFD75F
+URxvt.color3: #FFFFAF
 
 ! htop red
 !URxvt.color1: #BE585C
-URxvt.color1: #D58787
+URxvt.color1: #D78787
 
 ! nmcli purple
 URxvt.color5: #5DA6B9
@@ -98,19 +98,19 @@ URxvt.color4: #5DA6B9
 URxvt.color6: #A0F696
 
 ! archives
-URxvt.color9: #A0F696
+URxvt.color9: #C5E1B0
 
 ! executable
 ! URxvt.color10: #D7D787
-URxvt.color10: #A0F696
+URxvt.color10: #C5E1B0
 
 ! folder
 ! URxvt.color12: #66AFAF
 !URxvt.color12: #BE585C
-URxvt.color12: #D58787
+URxvt.color12: #D78787
 
 ! image
 URxvt.color13: #96F6DE
 
 ! symlink
-URxvt.color14: #FFD75F
+URxvt.color14: #FFFFAF
