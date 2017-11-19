@@ -39,38 +39,45 @@ URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
 ! keep disable for real trasparency
 ! URxvt.inheritPixmap: true
 ! URxvt.tintColor: green
+! URxvt.background: rgba:0000/0000/0200/c800
 
 ! should to be real trasparency with compositor enabled
 URxvt.depth: 32
-!URxvt.background: rgba:0000/0000/0200/c800
 
 ! enable trasparency
-URxvt.transparent: true
+URxvt.transparent: false
 
 ! set shadow
-URxvt.shading: 55
+URxvt.shading: 65
 
-URxvt.cursorColor:     #32DB90
-URxvt.pointerColor:    #32DB90
+URxvt.cursorColor:     #326376
+URxvt.pointerColor:    #326376
 URxvt.cursorUnderline: true
 
-URxvt.background: #142D20
-URxvt.foreground: #32DB90
+!URxvt.background: #231F20
+!URxvt.background: #262626
+!URxvt.background: #1C1C1C
+!URxvt.background: #33616B
+URxvt.background: #2F4C6F
+!URxvt.background: #023B4D
+
+URxvt.foreground: #5DA6B9
 
 ! unknow (HTOP, git and ?)
 ! URxvt.color0: #79FEBE
 
 ! htop green
-URxvt.color2: #12FCD4
+URxvt.color2: #A0F696
 
 ! htop yellow
-URxvt.color3: #32DB90
+URxvt.color3: #FFD75F
 
 ! htop red
-URxvt.color1: #142D20
+!URxvt.color1: #BE585C
+URxvt.color1: #D58787
 
 ! nmcli purple
-URxvt.color5: #12FCD4
+URxvt.color5: #5DA6B9
 
 ! URxvt.color7: #21FF95
 ! URxvt.color8: #152019
@@ -78,27 +85,31 @@ URxvt.color5: #12FCD4
 ! #21FF95 #8EB49E
 
 ! yaourt highlighting results
-URxvt.color11: #13FF77
+URxvt.color11: #7AA7A8
 
+! TODO
 ! less pager botton bar and search result highlighting
-URxvt.color4: #4DB166
+URxvt.color4: #5DA6B9
 
 ! dircolors
 
 ! music & screenfetch (#20DE4E)
-URxvt.color6: #29FFBB
+URxvt.color6: #A0F696
 
 ! archives
-URxvt.color9: #7BC69C
+URxvt.color9: #A0F696
 
 ! executable
-URxvt.color10: #29FFBB
+! URxvt.color10: #D7D787
+URxvt.color10: #A0F696
 
 ! folder
-URxvt.color12: #32DB90
+! URxvt.color12: #66AFAF
+!URxvt.color12: #BE585C
+URxvt.color12: #D58787
 
 ! image
-URxvt.color13: #79FEBE
+URxvt.color13: #96F6DE
 
 ! symlink
-URxvt.color14: #12FCD4
+URxvt.color14: #FFD75F
