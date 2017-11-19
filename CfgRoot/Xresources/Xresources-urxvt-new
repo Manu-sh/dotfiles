@@ -58,8 +58,9 @@ URxvt.cursorUnderline: true
 !URxvt.background: #262626
 !URxvt.background: #1C1C1C
 !URxvt.background: #33616B
-URxvt.background: #2F4C6F
 !URxvt.background: #023B4D
+
+!URxvt.background: #2F4C6F
 
 URxvt.foreground: #5DA6B9
 

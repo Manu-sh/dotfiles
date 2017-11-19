@@ -13,9 +13,9 @@ bold=$'\033[1m'
 
 #color0_256=$'\033[38;5;122m'
 #color1_256=$'\033[36;2;122m'
-color0_256=$'\033[33;2;122m'
-color1_256=$'\033[31;2;122m'
-color2_256=$'\033[35;2;3m'
+color0=$'\033[00;33m'
+color1=$'\033[00;31m'
+color2=$'\033[03;34m'
 
 alias mutt='mutt -F /home/user/.mail_cfg/.muttrc'
 
@@ -351,7 +351,7 @@ echo -ne "Data: $(date)\n
 #PS1="\[${color0_256}\]\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
 
 # ATTENTION you must write any escape into prompt as:  \[${escape}\]
-PS1="\[${color0_256}\]\u\[${color2_256}\]@\h\[${bold}\]\[${color0_256}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1_256}\]\w\[${color0_256}\]\[${normal}\]> "
+PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
 export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$PATH
