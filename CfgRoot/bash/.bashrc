@@ -351,6 +351,10 @@ echo -ne "Data: $(date)\n
 #PS1="\[${color0_256}\]\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
 
 # ATTENTION you must write any escape into prompt as:  \[${escape}\]
+
+# from archlinux wiki: Note: Wrapping the tput output in \[ \] is recommended by the Bash man page.
+# This helps Bash ignore non-printable characters so that it correctly calculates the size of the prompt.
+
 PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
