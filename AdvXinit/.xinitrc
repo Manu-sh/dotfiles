@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_terminal80_green.png
+WALLPAPER=$HOME/Immagini/wallpaper/new.jpg
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -11,7 +11,7 @@ setxkbmap it
 all_wm() {
 	dunst &
 #	conky
-	mpd ~/.mpd/mpd.conf
+#	mpd ~/.mpd/mpd.conf
 	case $1 in
 
 		i3)
@@ -33,7 +33,8 @@ all_wm() {
 
 		spectrwm)
 			#loadXresources "Xresources-urxvt-alpha"
-			loadXresources ""Xresources-urxvt-term80-green
+			#loadXresources ""Xresources-urxvt-term80-green
+			loadXresources ""Xresources-urxvt-new
 			feh --bg-fill ${WALLPAPER}
 			spectrwm
 		;;
@@ -50,19 +51,20 @@ all_wm() {
 
 for i in ${@}; do
 	case "$i" in
-		i3) all_wm i3 ; break ;;
-		dwm) all_wm dwm ; break ;;
-		fvwm|fvwm2) all_wm fvwm2 ; break ;;
-		xfce) xfce4-session ; break ;;
-		gnome) loadXresources "Xresources-urxvt-alpha" ; gnome-session ; break ;;
-		wmaker) wmaker ; break ;;
-		mate) mate-session ; break ;;
-		cinnamon) cinnamon-session ; break  ;;
-		en) enlightenment_start ; break ;;
-		spectrwm) all_wm spectrwm ; break ;;
+		i3) all_wm i3 ;;
+		dwm) all_wm dwm ;;
+		fvwm|fvwm2) all_wm fvwm2 ;;
+		xfce) xfce4-session ;;
+		gnome) loadXresources "Xresources-urxvt-alpha" ; gnome-session ;;
+		wmaker) wmaker ;;
+		mate) mate-session ;;
+		cinnamon) cinnamon-session ;;
+		en) enlightenment_start ;;
+		spectrwm) all_wm spectrwm ;;
 		#cde) /usr/dt/bin/dtcm ;;
-		ratpoison) all_wm ratpoison ; break ;;
-		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ; break ;;
+		ratpoison) all_wm ratpoison ;;
+		openbox) all_wm openbox ;;
+		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ;;
 		esac
 done
 
