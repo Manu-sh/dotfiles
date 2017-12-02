@@ -60,8 +60,7 @@ URxvt.cursorUnderline: true
 !URxvt.background: #33616B
 !URxvt.background: #023B4D
 
-Rxvt.background: #2F4C6F
-
+URxvt.background: #2F4C6F
 URxvt.foreground: #5DA6B9
 
 ! unknow (HTOP, git and ?)

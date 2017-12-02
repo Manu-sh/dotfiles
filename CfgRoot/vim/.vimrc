@@ -86,6 +86,7 @@ set nocompatible
 set undolevels=1000
 
 set cryptmethod=blowfish2
+set ttyfast
 
 set background=dark
 colorscheme new
