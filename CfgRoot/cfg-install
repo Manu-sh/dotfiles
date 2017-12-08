@@ -88,6 +88,10 @@ spectrwmcfg() {
 	dosym "spectrwm/.spectrwm.conf"
 }
 
+terminatorcfg() {
+	dosym "terminator" ".config"
+}
+
 
 vimcfg
 nanocfg
@@ -105,3 +109,4 @@ fvwmcfg
 polybarcfg
 ratpoisoncfg
 spectrwmcfg
+terminatorcfg
