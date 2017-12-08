@@ -1,0 +1,92 @@
+! COMMENTS
+
+! set your locale
+! URxvt.imlocale: it_IT-UTF-8
+! URxvt.perl-ext-common: default,matcher
+
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+URxvt.perl-lib: /usr/lib/URxvt/perl/
+URxvt.urlLauncher: /usr/bin/jumanji
+URxvt.matcher.button: 1
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: slight
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+URxvt.saveLines: 3000
+URxvt.preeditType: Root
+URxvt.scrollBar: false
+
+! on yaourt  the-ultimate-oldschool-pc-fonts and 3270-fonts (for lst all fonts names: fc-list)
+! https://int10h.org/oldschool-pc-fonts/fontlist/
+
+! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
+URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
+! URxvt.font: xft:Px437 IBM PS/2thin1:size=15:antialias=true
+! URxvt.font: xft:PxPlus AmstradPC1512:size=8:antialias=true
+! URxvt.font: xft:Px437 VGA SquarePx:size=20:antialias=true
+! URxvt.font: xft:Monospace:size=10:antialias=true
+
+! URxvt.font: xft:VT323:size=15:antialias=true
+! keep disable for real trasparency
+! URxvt.inheritPixmap: true
+! URxvt.tintColor: green
+! URxvt.background: rgba:0000/0000/0200/c800
+
+! should to be real trasparency with compositor enabled
+URxvt.depth: 32
+
+! enable trasparency
+URxvt.transparent: false
+
+! set shadow
+URxvt.shading: 65
+
+URxvt.cursorColor:     #326376
+URxvt.pointerColor:    #326376
+URxvt.cursorUnderline: true
+
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6

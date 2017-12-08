@@ -40,7 +40,6 @@ export TZ='Europe/Rome'
 RPI_USER='pi'
 RPI_IP='192.168.1.12'
 
-
 f_scpget() {
 	local serveroot=/home/${RPI_USER}/GIT
 	path=$(sed s@https://${RPI_IP}@@g <<< ${1%%/})
