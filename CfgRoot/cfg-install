@@ -92,6 +92,10 @@ terminatorcfg() {
 	dosym "terminator" ".config"
 }
 
+nemocfg() {
+	dosym "nemo" ".config"
+}
+
 
 vimcfg
 nanocfg
@@ -110,3 +114,4 @@ polybarcfg
 ratpoisoncfg
 spectrwmcfg
 terminatorcfg
+nemocfg
