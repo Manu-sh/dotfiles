@@ -88,7 +88,7 @@ URxvt.color5: #5DA6B9
 URxvt.color11: #7AA7A8
 
 ! TODO
-! less pager botton bar and search result highlighting
+! less pager botton bar and search results highlighting
 URxvt.color4: #5DA6B9
 
 ! dircolors
@@ -99,17 +99,17 @@ URxvt.color6: #C5E1B0
 ! archives
 URxvt.color9: #C5E1B0
 
-! executable
+! executables
 ! URxvt.color10: #D7D787
 URxvt.color10: #C5E1B0
 
-! folder
+! folders
 ! URxvt.color12: #66AFAF
 !URxvt.color12: #BE585C
 URxvt.color12: #D78787
 
-! image
+! images
 URxvt.color13: #96F6DE
 
-! symlink
+! symlinks
 URxvt.color14: #FFFFAF

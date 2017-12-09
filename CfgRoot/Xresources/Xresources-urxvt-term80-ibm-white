@@ -53,21 +53,46 @@ URxvt.cursorUnderline: true
 URxvt*background: #292D32
 URxvt*foreground: #BFD8FC
 
-URxvt.color0: #E9FFFF
-URxvt.color1: #8293AB
+!URxvt.color0: #E9FFFF
+
+! hop red
+! URxvt.color1: #8293AB
+URxvt.color1: #774649
+
+! htop green
 URxvt.color2: #6E7A8D
+
+! htop yellow
 URxvt.color3: #6D98C3
+
+! less pager botton bar and search results highlighting 
 URxvt.color4: #689881
+
+! nmcli
 URxvt.color5: #667170
+
+! music & screenfetch
 URxvt.color6: #774649
+
 URxvt.color7: #608877
 URxvt.color8: #A6BCDC
+
+! archives
 URxvt.color9: #3C5165
+
+! executables
 URxvt.color10: #6C4B88
 
+! yaourt hightlinghting results
 URxvt.color11: #689881
+
+! folders
 URxvt.color12: #667170
+
+! images
 URxvt.color13: #774649
+
+! symlinks
 URxvt.color14: #608877
 URxvt.color15: #A6BCDC
 URxvt.color16: #3C5165

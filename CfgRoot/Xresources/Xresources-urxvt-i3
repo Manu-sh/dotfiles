@@ -39,7 +39,15 @@ URxvt*scrollBar: false
 ! URxvt*font: xft:Tamsyn:size=13:antialias=true
 ! URxvt*font: xft:Terminal:size=11:antialias=true
 ! URxvt*font: xft:Monospace:size=10:antialias=true
-URxvt*font: -*-terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+! URxvt*font: -*-terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+
+! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
+URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
+! URxvt.font: xft:Px437 IBM PS/2thin1:size=15:antialias=true
+! URxvt.font: xft:PxPlus AmstradPC1512:size=8:antialias=true
+! URxvt.font: xft:Px437 VGA SquarePx:size=20:antialias=true
+! URxvt.font: xft:Monospace:size=10:antialias=true
+
 
 URxvt*cursorColor: #60b48a
 URxvt*cursorUnderline: false 
