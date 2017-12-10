@@ -33,10 +33,12 @@ all_wm() {
 
 		spectrwm)
 			#loadXresources "Xresources-urxvt-alpha"
-			#loadXresources ""Xresources-urxvt-term80-green
-			loadXresources ""Xresources-urxvt-new
+			#loadXresources "Xresources-urxvt-term80-green"
+			#loadXresources "Xresources-urxvt-new"
+			loadXresources "Xresources-urxvt-term80-ibm-white"
 			feh --bg-fill ${WALLPAPER}
 			spectrwm
+			#xfce4-panel
 		;;
 
 		fluxbox) fluxbox ;;
@@ -65,7 +67,7 @@ for i in ${@}; do
 		ratpoison) all_wm ratpoison ;;
 		openbox) all_wm openbox ;;
 		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ;;
-		esac
+	esac
 done
 
 unset WALLPAPER CFGROOT
