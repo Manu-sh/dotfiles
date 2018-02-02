@@ -3,10 +3,10 @@
 # THIS SCRIPT IS NOT FOR FINAL USER
 # CFG CAN BE OVERWRITTEN OR DAMAGED
 
-WORKDIR="$(dirname "$PWD/$0")"
+WORKDIR="$(dirname "$PWD/${0#./*}")"
 
 dosym() {
-	ln -snf "$WORKDIR/${1}" "$HOME/${2}"
+	ln -sfn "$WORKDIR/${1}" "$HOME/${2}/"
 }
 
 recdosym() {
