@@ -139,7 +139,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " To use the default mappings, add the following to your vimrc
 set runtimepath^=~/.vim/bundle/*
 
-call camelcasemotion#CreateMotionMappings('<leader>')
+" call camelcasemotion#CreateMotionMappings('<leader>')
 
 
 " All of your Plugins must be added before the following line
