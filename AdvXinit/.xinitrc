@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/wallpaper/nnew.jpg
+WALLPAPER=$HOME/Immagini/wallpaper/new.jpg
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -35,8 +35,7 @@ all_wm() {
 			#loadXresources "Xresources-urxvt-alpha"
 			#loadXresources "Xresources-urxvt-term80-green"
 			#loadXresources "Xresources-urxvt-new"
-			#loadXresources "Xresources-urxvt-term80-ibm-white"
-			loadXresources "Xresources-urxvt-gruvbox"
+			loadXresources "Xresources-urxvt-term80-ibm-white"
 			feh --bg-fill ${WALLPAPER}
 			spectrwm
 			#xfce4-panel
