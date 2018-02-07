@@ -45,10 +45,10 @@ URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
 URxvt.depth: 32
 
 ! enable trasparency
-URxvt.transparent: false
+URxvt.transparent: true
 
 ! set shadow
-URxvt.shading: 65
+URxvt.shading: 60
 
 URxvt.cursorColor:     #326376
 URxvt.pointerColor:    #326376
