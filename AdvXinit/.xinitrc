@@ -57,8 +57,8 @@ for i in ${@}; do
 		i3) all_wm i3 ;;
 		dwm) all_wm dwm ;;
 		fvwm|fvwm2) all_wm fvwm2 ;;
-		xfce) xfce4-session ;;
-		gnome) loadXresources "Xresources-urxvt-alpha" ; gnome-session ;;
+		xfce) loadXresources "Xresources-urxvt-gruvbox"; xfce4-session ;;
+		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
 		wmaker) wmaker ;;
 		mate) mate-session ;;
 		cinnamon) cinnamon-session ;;
@@ -67,7 +67,13 @@ for i in ${@}; do
 		#cde) /usr/dt/bin/dtcm ;;
 		ratpoison) all_wm ratpoison ;;
 		openbox) all_wm openbox ;;
+		deepin) loadXresources "Xresources-urxvt-gruvbox"; startdde ;;
 		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ;;
+		budgie) 
+			loadXresources "Xresources-urxvt-gruvbox"; 
+			export XDG_CURRENT_DESKTOP=Budgie:GNOME;
+			budgie-desktop
+		;;
 	esac
 done
 
