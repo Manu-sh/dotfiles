@@ -6,8 +6,8 @@
 WORKDIR="$(dirname "$PWD/${0#./*}")"
 
 dosym() {
-	# Dirty workaround
-	ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
+	# ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
+	echo "FIX THIS SHIT"
 	ln -sfn "$WORKDIR/${1}" "$HOME/${2}/"
 }
 
