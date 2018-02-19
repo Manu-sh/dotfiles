@@ -6,6 +6,8 @@
 WORKDIR="$(dirname "$PWD/${0#./*}")"
 
 dosym() {
+	# Dirty workaround
+	ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
 	ln -sfn "$WORKDIR/${1}" "$HOME/${2}/"
 }
 
@@ -38,9 +40,11 @@ i3cfg() {
 }
 
 gtkcfg() {
+	set -x
 	dosym "gtk/.gtkrc-2.0"
 	mkdir -p ~/.config/gtk-3.0
 	dosym "gtk/settings.ini" ".config/gtk-3.0/settings.ini"
+	set +x
 }
 
 rangercfg() {
