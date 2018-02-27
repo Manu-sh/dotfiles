@@ -38,6 +38,9 @@ all_wm() {
 			#loadXresources "Xresources-urxvt-term80-ibm-white"
 			loadXresources "Xresources-urxvt-gruvbox"
 			feh --bg-fill ${WALLPAPER}
+
+#			/home/user/Esercizi-C/gtkmm
+#                       polybar example
 			spectrwm
 			#xfce4-panel
 		;;
@@ -57,7 +60,12 @@ for i in ${@}; do
 		i3) all_wm i3 ;;
 		dwm) all_wm dwm ;;
 		fvwm|fvwm2) all_wm fvwm2 ;;
-		xfce) loadXresources "Xresources-urxvt-gruvbox"; xfce4-session ;;
+		xfce) 
+			loadXresources "Xresources-urxvt-gruvbox";
+			xfce4-session
+		;;
+
+
 		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
 		wmaker) wmaker ;;
 		mate) mate-session ;;
