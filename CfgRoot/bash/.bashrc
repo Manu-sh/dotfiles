@@ -100,6 +100,10 @@ man "$@"
 }
 
 
+f_screenrec() {
+	echo 'y'|ffmpeg -f x11grab -video_size 1920x1080 -i :0.0+0 -vcodec libx264 -threads 0 /tmp/out.mp4
+}
+
 f_screenshot() {
 
 	# notify has not an exit code for failure
@@ -220,7 +224,7 @@ complete -A command f_metaxec
 #SEND FILE TO ARINGA
 f_sendaringa() {
 	for FILE in $@; do
-		curl -F "aringa=<$FILE" arin.ga
+		curl -LF "aringa=<$FILE" --post301 arin.ga
 	done
 }
 
