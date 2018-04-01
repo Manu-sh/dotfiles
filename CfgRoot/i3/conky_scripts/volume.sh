@@ -5,9 +5,9 @@ ctl=${ctl%%,*}
 
 styleval() {
         # assuming that those value are expressed in %
-        [ "$1" -le 5 ] && echo -e "" "$1" && return 0
-        [ "$1" -ge 5 ] && echo -e "" "$1" && return 0
-        [ "$1" -ge 50 ] && echo -e "" "$1" && return 0
+        [ "$1" -le 5 ] && echo -e "\uf026" "$1" && return 0
+        [ "$1" -ge 5 ] && echo -e "\uf027" "$1" && return 0
+        [ "$1" -ge 50 ] && echo -e "\uf028" "$1" && return 0
 }
 
 
@@ -23,7 +23,7 @@ volume() {
 		volume=$(sed -u s'@\[@@'g <<<${volume:(-3)})
 		styleval "$volume"
 	else
-		echo " mute"
+		echo -e "\uf026 mute"
 	fi
 }
 
