@@ -5,9 +5,9 @@ wcl() { sed -u 's/^[ \t]*//;/^$/d'<<<"${1}"|wc -l; }
 
 styleval() {
 	# assuming that those value are expressed in %
-	[ "$1" -le 20 ] && echo -e "\uf244" "$1" && return 0
-	[ "$1" -le 50 ] && echo -e "\uf242" "$1" && return 0
-	[ "$1" -ge 50 ] && echo -e "\uf240" "$1" && return 0
+	[ "$1" -le 20 ] && echo -e "\Uf244" "$1" && return 0
+	[ "$1" -le 50 ] && echo -e "\Uf242" "$1" && return 0
+	[ "$1" -ge 50 ] && echo -e "\Uf240" "$1" && return 0
 }
 
 battery() {

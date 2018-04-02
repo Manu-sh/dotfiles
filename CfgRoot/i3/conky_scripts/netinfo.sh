@@ -15,9 +15,9 @@ netinfo() {
 case $1 in
 	ap)
 		if AP=$(netinfo "ap"); then
-			echo -e "\uf012 $AP"
+			echo -e "\Uf012 $AP"
 		else
-			echo -e "\uf012 ethernet"
+			echo -e "\Uf012 ethernet"
 		fi
 	;;
 
@@ -25,7 +25,7 @@ case $1 in
 		if IP=$(netinfo "gateway"); then
 			echo "$IP"
 		else
-			echo -e "\uf012 ip not found"
+			echo -e "\Uf012 ip not found"
 		fi
 	;;
 
