@@ -122,6 +122,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 
+" Plugin 'chriskempson/base16-vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 " Plugin 'ctrlpvim/ctrlp.vim'
@@ -133,6 +134,16 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'mileszs/ack.vim'
 " Plugin 'tyok/nerdtree-ack'
+
+" Deoplete
+set pyxversion=3
+set encoding=utf-8
+let g:python_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/bin/python3"
+let g:deoplete#enable_at_startup = 1
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'Shougo/deoplete.nvim'
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 

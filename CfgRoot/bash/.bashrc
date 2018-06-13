@@ -390,10 +390,16 @@ echo -ne "Data: $(date)\n
 PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$PATH
+export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:$PATH
 }
 
 regen
 
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 # source /usr/bin/virtualenvwrapper.sh
+
+PATH="/home/user/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/user/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/user/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/user/perl5"; export PERL_MM_OPT;
