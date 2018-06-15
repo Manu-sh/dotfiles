@@ -81,3 +81,8 @@ hi Label	ctermfg=222	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 
 hi cBraces	 ctermfg=NONE	ctermbg=NONE	cterm=bold	guifg=#ff00ff		"guibg=NONE
 hi cAnsiFunction ctermfg=73	ctermbg=NONE	cterm=bold	guifg=#ffffaf		"guibg=NONE
+
+hi Pmenu         ctermfg=73	ctermbg=Black	cterm=bold	guifg=#ffffaf		"guibg=NONE
+hi PmenuSel	 ctermfg=White	ctermbg=Black	cterm=bold	guifg=#ffffaf		"guibg=NONE
+hi PmenuSbar	 ctermfg=NONE	ctermbg=73	cterm=bold	guifg=#ffffaf		"guibg=NONE
+hi PmenuThumb	 ctermfg=White	ctermbg=NONE	cterm=bold	guifg=#ffffaf		"guibg=NONE

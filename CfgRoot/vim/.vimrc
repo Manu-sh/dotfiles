@@ -1,5 +1,44 @@
-"let g:ycm_python_binary_path = '/usr/bin/python2'
-"let g:ycm_server_python_interpreter='/usr/bin/python2'
+"include paths
+" let &path.="/usr/include,/usr/local/include"
+
+" YCM
+" let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = "$HOME/.ycm_extra_conf.py"
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_seed_identifiers_with_syntax=1
+
+let g:ycm_cache_omnifunc = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+set completeopt-=preview
+" let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_autoclose_preview_window_after_insertion  = "preview"
+" let g:ycm_autoclose_preview_window_after_completion = 1
+
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_auto_trigger = 1
+" let g:ycm_key_invoke_completion = "<TAB>"
+
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+  \             're!\[.*\]\s'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,cuda,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
+
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 function Private()
 	:s/^\t/\tprivate\ /g
@@ -89,7 +128,8 @@ set cryptmethod=blowfish2
 set ttyfast
 
 set background=dark
-colorscheme new
+colorscheme Tomorrow-Night
+" colorscheme new
 "term80-green
 " colorscheme neon "blue
 " hybrid
@@ -122,30 +162,44 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 
+
 " Plugin 'chriskempson/base16-vim'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ervandew/supertab'
 " Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'artur-shaik/vim-javacomplete2'
 " Plugin 'bkad/CamelCaseMotion'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-
-
-" Plugin 'Valloric/YouCompleteMe'
 " Plugin 'mileszs/ack.vim'
 " Plugin 'tyok/nerdtree-ack'
 
-" Deoplete
-set pyxversion=3
-set encoding=utf-8
-let g:python_host_prog = "/usr/bin/python2"
-let g:python3_host_prog = "/usr/bin/python3"
-let g:deoplete#enable_at_startup = 1
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'Shougo/deoplete.nvim'
+" OTHER
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'ervandew/supertab'
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" YCM
+Plugin 'Valloric/YouCompleteMe'
+
+" Airline Bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ChrisKempson/Tomorrow-Theme'
+
+
+
+" Deoplete
+" set pyxversion=3
+" set encoding=utf-8
+" let g:python_host_prog = "/usr/bin/python2"
+" let g:python3_host_prog = "/usr/bin/python3"
+" let g:deoplete#enable_at_startup = 0
+" Plugin 'roxma/nvim-yarp'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'zchee/deoplete-clang'
+
+" Deoplete-Clang
+" let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+" let g:deoplete#sources#clang#clang_header  = "/usr/bin/clang"
 
 " To use the default mappings, add the following to your vimrc
 set runtimepath^=~/.vim/bundle/*
@@ -231,3 +285,40 @@ call vundle#end()            " required
 "  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 "
 "  nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
+
+
+
+
+" deoplete.vim contains vim settings relevant to the deoplete autocompletion
+" plugin
+" for more details about my neovim setup see:
+" http://afnan.io/2018-04-12/my-neovim-development-setup/
+
+" deoplete options
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:clang_complete_auto=1
+
+" disable autocomplete by default
+" let b:deoplete_disable_auto_complete=1
+" let g:deoplete_disable_auto_complete=1
+" call deoplete#custom#buffer_option('auto_complete', v:false)
+
+" if !exists('g:deoplete#omni#input_patterns')
+    " let g:deoplete#omni#input_patterns = {}
+" endif
+
+" Disable the candidates in Comment/String syntaxes.
+" call deoplete#custom#source('_',
+            " \ 'disabled_syntaxes', ['Comment', 'String'])
+
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" set sources
+" let g:deoplete#sources = {}
+" let g:deoplete#sources.cpp = ['LanguageClient']
+" let g:deoplete#sources.python = ['LanguageClient']
+" let g:deoplete#sources.python3 = ['LanguageClient']
+" let g:deoplete#sources.rust = ['LanguageClient']
+" let g:deoplete#sources.c = ['LanguageClient']
+" let g:deoplete#sources.vim = ['vim']
