@@ -28,7 +28,7 @@ URxvt.scrollBar: false
 ! on yaourt  the-ultimate-oldschool-pc-fonts and 3270-fonts (for lst all fonts names: fc-list)
 ! https://int10h.org/oldschool-pc-fonts/fontlist/
 
-URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
+URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true:style=Medium
 
 ! URxvt.font: xft:c64 Pro:size=10:antialias=true
 ! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
@@ -47,7 +47,7 @@ URxvt.font: xft:IBM 3270 Narrow:size=14:antialias=true
 URxvt.depth: 32
 
 ! enable trasparency
-URxvt.transparent: true
+! URxvt.transparent: true
 
 ! set shadow
 URxvt.shading: 60
@@ -58,7 +58,8 @@ URxvt.cursorUnderline: true
 
 ! special
 *.foreground:   #c5c8c6
-*.background:   #1d1f21
+! *.background:   #1d1f21
+*.background:   #262626
 *.cursorColor:  #c5c8c6
 
 ! black
