@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/wallpaper/nnew.jpg
+WALLPAPER=$HOME/Immagini/Sun.png
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -36,11 +36,14 @@ all_wm() {
 			#loadXresources "Xresources-urxvt-term80-green"
 			#loadXresources "Xresources-urxvt-new"
 			#loadXresources "Xresources-urxvt-term80-ibm-white"
+			# LD_PRELOAD=/usr/lib/libswmhack.so -qof
+
+			mpd ~/.mpd/mpd.conf
 			loadXresources "Xresources-urxvt-gruvbox"
 			feh --bg-fill ${WALLPAPER}
 
-#			/home/user/Esercizi-C/gtkmm
-#                       polybar example
+			# gifview --animate --new-window root --no-interactive /home/user/Immagini/1703252125599569.gif
+			#compton -b
 			spectrwm
 			#xfce4-panel
 		;;
@@ -69,7 +72,7 @@ for i in ${@}; do
 		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
 		wmaker) wmaker ;;
 		mate) mate-session ;;
-		cinnamon) cinnamon-session ;;
+		cinnamon) loadXresources "Xresources-urxvt-gruvbox"; cinnamon-session ;;
 		en) enlightenment_start ;;
 		spectrwm) all_wm spectrwm ;;
 		#cde) /usr/dt/bin/dtcm ;;
