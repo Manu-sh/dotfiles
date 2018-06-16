@@ -36,4 +36,8 @@ case $1 in
 			echo "$IFACE"
 		fi
 	;;
+
+	polybar)
+		echo "$(netinfo "ap") $(netinfo "gateway")"
+	;;
 esac
