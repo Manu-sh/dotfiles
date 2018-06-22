@@ -179,23 +179,23 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     #background = "#2c3338"
-    background = "#87AFAF"
+    background = "#8700d7"
     #foreground = "#60B48A"
-    foreground = "#262626"
+    foreground = "#ff5fff"
     timeout = 3
 
 [urgency_normal]
     #background = "#2c3338"
-    background = "#87AFAF"
+    background = "#8700d7"
     #foreground = "#60B48A"
-    foreground = "#262626"
+    foreground = "#ff5fff"
     timeout = 3
 
 [urgency_critical]
     #background = "#2c3338"
-    background = "#87AFAF"
+    background = "#8700d7"
     #foreground = "#60B48A"
-    foreground = "#262626"
+    foreground = "#ff5fff"
     timeout = 3
 
 # Every section that isn't one of the above is interpreted as a rules to
