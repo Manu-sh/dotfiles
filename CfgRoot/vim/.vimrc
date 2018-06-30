@@ -1,3 +1,8 @@
+" TODO vim dictionary completion using tab
+" if &filetype == "" || &filetype == "txt"
+"	inoremap <Tab> <C-n>
+" endif
+
 "include paths
 " let &path.="/usr/include,/usr/local/include"
 
@@ -35,6 +40,8 @@ let g:ycm_semantic_triggers =  {
   \   'lua' : ['.', ':'],
   \   'erlang' : [':'],
   \ }
+
+let g:ycm_filetype_blacklist = { 'java' : 1, 'txt' : 1, '' : 1 }
 
 
 let g:airline#extensions#tabline#enabled = 1
@@ -228,6 +235,20 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ChrisKempson/Tomorrow-Theme'
 
+" Plugin 'chriskempson/base16-vim'
+Plugin 'sonph/onehalf'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'dracula/vim'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'mhartington/oceanic-next'
+Plugin 'joshdick/onedark.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'ajh17/Spacegray.vim'
+
+
+" Plugin 'flazz/vim-colorschemes'
 
 
 " Deoplete

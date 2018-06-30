@@ -138,7 +138,7 @@ label-mounted = FS %mountpoint% %free% (%fsname%)
 
 [module/memory]
 type     = internal/memory
-label    = RAM [ %gb_used%/%gb_free% ]
+label    = RAM [ %gb_used%/%gb_total% ]
 interval = 1
 
 
