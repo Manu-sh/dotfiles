@@ -1,5 +1,5 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/Sun.png
+WALLPAPER=$HOME/Immagini/wallpaper/wallpaper_15.jpg
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -36,14 +36,8 @@ all_wm() {
 			#loadXresources "Xresources-urxvt-term80-green"
 			#loadXresources "Xresources-urxvt-new"
 			#loadXresources "Xresources-urxvt-term80-ibm-white"
-			# LD_PRELOAD=/usr/lib/libswmhack.so -qof
-
-			mpd ~/.mpd/mpd.conf
 			loadXresources "Xresources-urxvt-gruvbox"
 			feh --bg-fill ${WALLPAPER}
-
-			# gifview --animate --new-window root --no-interactive /home/user/Immagini/1703252125599569.gif
-			#compton -b
 			spectrwm
 			#xfce4-panel
 		;;
@@ -63,28 +57,17 @@ for i in ${@}; do
 		i3) all_wm i3 ;;
 		dwm) all_wm dwm ;;
 		fvwm|fvwm2) all_wm fvwm2 ;;
-		xfce) 
-			loadXresources "Xresources-urxvt-gruvbox";
-			xfce4-session
-		;;
-
-
-		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
+		xfce) xfce4-session ;;
+		gnome) loadXresources "Xresources-urxvt-term80-ibm-white" ; gnome-session ;;
 		wmaker) wmaker ;;
 		mate) mate-session ;;
-		cinnamon) loadXresources "Xresources-urxvt-gruvbox"; cinnamon-session ;;
+		cinnamon) cinnamon-session ;;
 		en) enlightenment_start ;;
 		spectrwm) all_wm spectrwm ;;
 		#cde) /usr/dt/bin/dtcm ;;
 		ratpoison) all_wm ratpoison ;;
 		openbox) all_wm openbox ;;
-		deepin) loadXresources "Xresources-urxvt-gruvbox"; startdde ;;
 		kde) loadXresources "Xresources-urxvt-alpha" ; startkde ;;
-		budgie) 
-			loadXresources "Xresources-urxvt-gruvbox"; 
-			export XDG_CURRENT_DESKTOP=Budgie:GNOME;
-			budgie-desktop
-		;;
 	esac
 done
 
