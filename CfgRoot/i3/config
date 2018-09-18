@@ -307,6 +307,12 @@ bar {
 
 }
 
+# VBAR
+#bar {
+	#status_command vbar
+	#position top
+#}
+
 #### TITLE BAR PALETTE
 client.focused		$color00 $color00 $color03 $color00 
 client.focused_inactive $color00 $color00 $color06 $color00

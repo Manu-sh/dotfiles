@@ -390,7 +390,7 @@ echo -ne "Data: $(date)\n
 PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:$PATH
+export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:$PATH
 }
 
 regen
