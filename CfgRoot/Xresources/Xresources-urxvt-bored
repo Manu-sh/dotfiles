@@ -62,8 +62,11 @@ URxvt.cursorUnderline: true
 ! URxvt.fading: 15
 ! URxvt.fadeColor: #ffffff
 
+
+
 ! special
 *.foreground:   #c5c8c6
+! *.background:   #1d1f21
 *.background:   #262626
 *.cursorColor:  #c5c8c6
 
