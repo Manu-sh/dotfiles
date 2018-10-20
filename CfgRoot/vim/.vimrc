@@ -179,7 +179,8 @@ set cryptmethod=blowfish2
 set ttyfast
 
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme neon
+" colorscheme Tomorrow-Night
 " colorscheme new
 "term80-green
 " colorscheme neon "blue
@@ -228,7 +229,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " YCM
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Airline Bar
 Plugin 'vim-airline/vim-airline'

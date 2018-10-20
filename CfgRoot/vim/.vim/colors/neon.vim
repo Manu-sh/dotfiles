@@ -93,3 +93,7 @@ hi Label	ctermfg=197	ctermbg=NONE	cterm=NONE	guifg=#ff005f		"guibg=NONE
 
 hi cBraces	ctermfg=13	ctermbg=NONE	cterm=bold	guifg=#ff00ff		"guibg=NONE
 hi cAnsiFunction ctermfg=229	ctermbg=NONE	cterm=bold	guifg=#ffffaf		"guibg=NONE
+
+
+
+

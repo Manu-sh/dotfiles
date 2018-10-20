@@ -69,6 +69,11 @@ export TZ='Europe/Rome'
 RPI_USER='pi'
 RPI_IP='192.168.1.12'
 
+f_setextmonitor() {
+	xrandr --output HDMI1 --mode 1920x1080
+	setxkbmap it
+}
+
 f_scpget() {
 	local serveroot=/home/${RPI_USER}/GIT
 	path=$(sed s@https://${RPI_IP}@@g <<< ${1%%/})
@@ -390,7 +395,7 @@ echo -ne "Data: $(date)\n
 PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:$PATH
+export PATH=$HOME/.scripts/:/opt/javamm:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:/opt/pastebin/bin:$PATH
 }
 
 regen
