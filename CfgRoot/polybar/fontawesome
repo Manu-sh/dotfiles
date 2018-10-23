@@ -12,14 +12,13 @@ type			 = internal/date
 interval		 = 5
 date			 = %c
 format-prefix-foreground = ${colors.foreground-alt}
-label			 = %date% %time%
+label			 =  %date% %time%
 
 
 [module/cpu]
 type			    = internal/cpu
 interval		    = 1
-format-prefix		    = "CPU "
-label			    = %percentage:2%%
+label			    =  %percentage:2%%
 format                      = <label> <bar-load>
 bar-load-foreground-0       = #55aa55
 bar-load-foreground-1       = #55aa55
@@ -53,6 +52,7 @@ bar-load-empty-foreground = ${colors.foreground-alt}
 ;ramp-coreload-6		 = ▇
 ;ramp-coreload-7		 = █
 
+# BAT
 [module/battery]
 type			     = internal/battery
 battery		             = BAT0
@@ -67,16 +67,15 @@ animation-charging-3	     = 
 animation-charging-4	     = 
 animation-charging-framerate = 750
 
-
+# VOL
 [module/volume]
 type			    = internal/volume
-format-volume-prefix	    = "VOL "
+format-volume-prefix	    = " "
 format-volume		    = <label-volume> <bar-volume>
 label-volume		    = %percentage%%
 label-volume-foreground     = ${root.foreground}
-format-muted-prefix	    = " "
+format-muted-prefix	    = " "
 format-muted-foreground	    = ${colors.foreground-alt}
-label-muted		    = mute
 bar-volume-foreground-0     = #55aa55
 bar-volume-foreground-1     = #55aa55
 bar-volume-foreground-2     = #55aa55
@@ -94,34 +93,34 @@ bar-volume-fill-font	    = 2
 bar-volume-empty-font	    = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-
+# WEATHER
 [module/my-weather]
 type          = custom/script
 tail          = true
 interval      = 30
-format-prefix = "WEATHER "
+# format-prefix = "WEATHER "
 exec          = ~/dotfiles/CfgRoot/i3/conky_scripts/external_scripts/IconicWeather.sh florence
 
-
+# AP
 [module/my-network]
 type          = custom/script
 tail          = true
 interval      = 1
-format-prefix = "AP "
+format-prefix = " "
 exec          = ~/dotfiles/CfgRoot/i3/conky_scripts/netinfo.sh polybar
 
 
 [module/my-kernel]
 type          = custom/script
 interval      = 100
-format-prefix = "KERNEL "
+format-prefix = " "
 exec          = uname -r
 
 
 [module/my-cpu]
 type          = custom/script
 interval      = 100
-format-prefix = "PROC "
+format-prefix = " "
 exec          = grep -wm 1 'model\s*name\s*:\s*' /proc/cpuinfo|sed s/^model\\s*name\\s*:\\s*//g
 
 
@@ -138,10 +137,10 @@ mount-0       = /
 interval      = 10
 label-mounted = FS %mountpoint% %free% (%fsname%)
 
-
+# RAM
 [module/memory]
 type     = internal/memory
-label    = RAM [ %gb_used%/%gb_total% ]
+label    =  [ %gb_used%/%gb_total% ]
 interval = 1
 
 
@@ -169,7 +168,7 @@ line-color	    = #f00
 padding-right	    = 2
 module-margin-left  =
 module-margin-right = 2
-font-0		    = IBM 3270 Narrow:size=11:antialias=true
+font-0		    = Font Awesome 5 Free Solid:size=11:antialias=true
 padding-left        = 2
 modules-left        = date cpu my-weather battery volume my-network my-kernel my-cpu my-cpu-core filesystem memory
 modules-center      = mpd
