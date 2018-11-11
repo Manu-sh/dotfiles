@@ -28,7 +28,9 @@ URxvt.scrollBar: false
 ! on yaourt  the-ultimate-oldschool-pc-fonts and 3270-fonts (for lst all fonts names: fc-list)
 ! https://int10h.org/oldschool-pc-fonts/fontlist/
 
-URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
+URxvt.font: xft:Lucida Console:size=14:antialias=true
+
+! URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
 ! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
 
 ! http://style64.org/file/C64_TrueType_v1.2-STYLE.zip
@@ -42,7 +44,7 @@ URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
 
 ! keep disable for real trasparency
 URxvt.inheritPixmap: true
-URxvt.tintColor: cyan
+! URxvt.tintColor: cyan
 ! URxvt.background: rgba:0000/0000/0200/c800
 
 ! should to be real trasparency with compositor enabled

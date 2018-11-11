@@ -1,5 +1,7 @@
 CFGROOT=$HOME/dotfiles/CfgRoot
-WALLPAPER=$HOME/Immagini/IR-11.jpg
+WALLPAPER=$HOME/Immagini/222.png
+
+# WALLPAPER=$HOME/Immagini/IR-11.jpg
 
 loadXresources() {
 	local xresources="$CFGROOT/Xresources"
@@ -40,7 +42,8 @@ all_wm() {
 
 			mpd ~/.mpd/mpd.conf
 			# loadXresources "Xresources-urxvt-gruvbox"
-			loadXresources "Xresources-urxvt-bored"
+			# loadXresources "Xresources-urxvt-bored"
+			loadXresources "Xresources-urxvt-nord"
 			feh --bg-fill ${WALLPAPER}
 
 			# gifview --animate --new-window root --no-interactive /home/user/Immagini/1703252125599569.gif

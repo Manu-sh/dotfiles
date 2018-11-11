@@ -2,7 +2,9 @@
 nemo-icon-view-auto-layout=true
 nemo-icon-view-tighter-layout=false
 nemo-icon-view-keep-aligned=true
-nemo-icon-view-layout-timestamp=1524788207
+nemo-icon-view-layout-timestamp=1540946627
+nemo-icon-view-sort-by=detailed_type
+nemo-icon-view-zoom-level=3
 
 [computer]
 nemo-icon-position=91,31

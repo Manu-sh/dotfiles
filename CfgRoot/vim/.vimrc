@@ -179,7 +179,8 @@ set cryptmethod=blowfish2
 set ttyfast
 
 set background=dark
-colorscheme neon
+colorscheme nord
+" colorscheme neon
 " colorscheme Tomorrow-Night
 " colorscheme new
 "term80-green

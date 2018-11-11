@@ -29,6 +29,8 @@ URxvt.scrollBar: false
 ! https://int10h.org/oldschool-pc-fonts/fontlist/
 
 URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
+! URxvt.font: xft:Monospace:size=14:antialias=true
+! URxvt.font: xft:Lucida Console:size=14:antialias=true
 ! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
 
 ! http://style64.org/file/C64_TrueType_v1.2-STYLE.zip
@@ -37,7 +39,6 @@ URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
 ! URxvt.font: xft:Px437 IBM PS/2thin1:size=15:antialias=true
 ! URxvt.font: xft:PxPlus AmstradPC1512:size=8:antialias=true
 ! URxvt.font: xft:Px437 VGA SquarePx:size=20:antialias=true
-! URxvt.font: xft:Monospace:size=10:antialias=true
 
 ! URxvt.font: xft:VT323:size=15:antialias=true
 ! keep disable for real trasparency
