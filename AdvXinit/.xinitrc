@@ -52,6 +52,7 @@ all_wm() {
 			#xfce4-panel
 		;;
 
+		awesome) loadXresources "Xresources-urxvt-gruvbox" ; awesome ;;
 		fluxbox) fluxbox ;;
 		blackbox) blackbox ;;
 		dwm) dwm ;;
@@ -73,6 +74,7 @@ for i in ${@}; do
 		;;
 
 
+		awesome) all_wm awesome;;
 		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
 		wmaker) wmaker ;;
 		mate) mate-session ;;

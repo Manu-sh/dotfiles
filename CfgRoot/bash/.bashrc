@@ -1,3 +1,23 @@
+export DOCKER_HOST=127.0.0.1:2375
+
+laradock_docker() {
+
+	local laradock_docker_folder="$HOME/laradock/laradock"
+
+	case $1 in
+		'rebuild'|'start')
+			cd "$laradock_docker_folder" || return 2
+			sudo systemctl restart docker
+			[[ "$1" = 'rebuild' ]] && docker-compose build php-fpm workspace
+			docker-compose up -d nginx mysql phpmyadmin redis workspace php-fpm
+			docker-compose exec php-fpm bash
+		;;
+	esac
+}
+
+alias laradock_docker_start='laradock_docker 'start''
+alias laradock_docker_rebuild='laradock_docker 'rebuild''
+
 viper_ascii() {
 cat > /dev/stdout << EOF
           .000.               000.

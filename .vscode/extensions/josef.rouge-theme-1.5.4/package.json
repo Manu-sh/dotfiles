@@ -1,0 +1,59 @@
+{
+	"name": "rouge-theme",
+	"displayName": "Rouge Theme",
+	"description": "Dark Material Theme optimized for Operator Mono",
+	"version": "1.5.4",
+	"publisher": "josef",
+	"scripts": {
+		"build": "gulp"
+	},
+	"bugs": {
+		"url": "https://github.com/josefaidt/rouge-theme/issues"
+	},
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"rouge",
+		"dark",
+		"theme",
+		"color-theme"
+	],
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#172030",
+		"theme": "dark"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Rouge",
+				"uiTheme": "vs-dark",
+				"path": "./themes/rouge-theme-syntax.json"
+			},
+			{
+				"label": "Rouge No Italics",
+				"uiTheme": "vs-dark",
+				"path": "./themes/rouge-no-italics.json"
+			}
+		]
+	},
+	"homepage": "https://github.com/josefaidt/rouge-theme/readme.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/josefaidt/rouge-theme.git"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"gulp": "^4.0.0",
+		"gulp-strip-comments": "^2.5.2"
+	},
+	"__metadata": {
+		"id": "666c89a4-85ec-483b-8cdf-ec3d4764b87c",
+		"publisherId": "fe809442-43a4-4224-ba8a-55deab078c8a",
+		"publisherDisplayName": "josef"
+	}
+}
