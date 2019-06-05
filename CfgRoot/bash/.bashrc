@@ -18,6 +18,12 @@ laradock_docker() {
 alias laradock_docker_start='laradock_docker 'start''
 alias laradock_docker_rebuild='laradock_docker 'rebuild''
 
+f_ffmpeg_amp() {
+	for i in [^amp-]*.{mp3,wav,flac}; do
+		[ -f "$i" ] && echo ffmpeg -i \'${i}\' -filter:a "volume=10dB" \'amp-${i}\';
+	done
+}
+
 viper_ascii() {
 cat > /dev/stdout << EOF
           .000.               000.
