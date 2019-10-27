@@ -1,3 +1,8 @@
+f_artisan_clean() {
+	php artisan cache:clear && php artisan view:clear && php artisan config:clear
+}
+
+
 export DOCKER_HOST=127.0.0.1:2375
 
 laradock_docker() {
@@ -17,6 +22,8 @@ laradock_docker() {
 
 alias laradock_docker_start='laradock_docker 'start''
 alias laradock_docker_rebuild='laradock_docker 'rebuild''
+
+
 
 f_ffmpeg_amp() {
 	for i in [^amp-]*.{mp3,wav,flac}; do
@@ -405,12 +412,20 @@ fi
 regen() {
 #\b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
 clear
+
+
+#if false; then
 figlet -c "AC/DC"
 echo -ne "Data: $(date)\n
 \b Kernel: $(uname -smr)
 \b CPU: $(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
 \b Core: $(nproc --all)\n
 \b $(cal -n 2)\n"
+#fi
+
+#! [ -e /tmp/screenfetch.out ] && screenfetch > /tmp/screenfetch.out
+
+#cat /tmp/screenfetch.out
 
 #PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
 #PS1="\[${color0_256}\]\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
