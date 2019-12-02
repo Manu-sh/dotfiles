@@ -2,8 +2,60 @@ f_artisan_clean() {
 	php artisan cache:clear && php artisan view:clear && php artisan config:clear
 }
 
+f_artisan_trans() {
+	f_artisan_clean
 
-export DOCKER_HOST=127.0.0.1:2375
+php artisan translations:export actions
+php artisan translations:export app
+php artisan translations:export auth
+php artisan translations:export blog
+php artisan translations:export blog_frontend
+php artisan translations:export box
+php artisan translations:export box_categorie
+php artisan translations:export bravo
+php artisan translations:export capture_methods
+php artisan translations:export cookies
+php artisan translations:export country
+php artisan translations:export deals
+php artisan translations:export deals_box_categorie
+php artisan translations:export deals_status
+php artisan translations:export deals_types
+php artisan translations:export documenti
+php artisan translations:export frontend
+php artisan translations:export home
+php artisan translations:export log
+php artisan translations:export merchants
+php artisan translations:export merchants_categories
+php artisan translations:export merchants_paragraphs
+php artisan translations:export news
+php artisan translations:export pagination
+php artisan translations:export pagine
+php artisan translations:export pagine_categorie
+php artisan translations:export paragraphs_backend
+php artisan translations:export paragraphs_frontend
+php artisan translations:export partners
+php artisan translations:export passwords
+php artisan translations:export profile
+php artisan translations:export providers
+php artisan translations:export providers_merchants
+php artisan translations:export province
+php artisan translations:export regioni
+php artisan translations:export ruoli
+php artisan translations:export sem
+php artisan translations:export seo
+php artisan translations:export sidebar
+php artisan translations:export softonic
+php artisan translations:export stratifications
+php artisan translations:export transactions
+php artisan translations:export transactions_status
+php artisan translations:export users_deals_favorites
+php artisan translations:export users_merchants_favorites
+php artisan translations:export validation
+php artisan translations:export newsletter
+}
+
+#export DOCKER_HOST=127.0.0.1:2375
+# instead: sudo usermod user -a G docker
 
 laradock_docker() {
 
@@ -438,7 +490,7 @@ echo -ne "Data: $(date)\n
 PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
 
 [ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.scripts/:/opt/javamm:/opt/asdf-vm/bin:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:/opt/pastebin/bin:$PATH
+export PATH=$HOME/.scripts/:/opt/javamm:/opt/asdf-vm/bin:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:/opt/pastebin/bin:/home/user/.gem/ruby/2.6.0/bin:$PATH
 }
 
 regen
@@ -452,5 +504,7 @@ PERL_LOCAL_LIB_ROOT="/home/user/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_RO
 PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/user/perl5"; export PERL_MM_OPT;
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/completions/asdf.bash
+
+. ~/.fancy-git/prompt.sh
