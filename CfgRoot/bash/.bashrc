@@ -462,49 +462,51 @@ if ! shopt -oq posix; then
 fi
 
 regen() {
-#\b CPU: $(grep -w "model name" /proc/cpuinfo|uniq|cut -f2 -d ":"|sed s'/[ \t]*//')
-clear
+	clear
 
+	local prompt_date=$(date)
+	local prompt_kernel=$(uname -smr)
+	local prompt_cpu=$(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
+	local prompt_ncore=$(nproc --all)
+	local prompt_cal=$(cal -n 2)
 
-#if false; then
-figlet -c "AC/DC"
-echo -ne "Data: $(date)\n
-\b Kernel: $(uname -smr)
-\b CPU: $(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
-\b Core: $(nproc --all)\n
-\b $(cal -n 2)\n"
-#fi
+	figlet -c "AC/DC"
+	echo -ne "Data: ${prompt_date}\n\b Kernel: ${prompt_kernel}\n\b CPU: ${prompt_cpu}\n\b Core: ${prompt_ncore}\n\b\n${prompt_cal}\n"
 
-#! [ -e /tmp/screenfetch.out ] && screenfetch > /tmp/screenfetch.out
+	#! [ -e /tmp/screenfetch.out ] && screenfetch > /tmp/screenfetch.out
+	#cat /tmp/screenfetch.out
 
-#cat /tmp/screenfetch.out
+	# ATTENTION you must write any escape into prompt as:  \[${escape}\]
 
-#PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
-#PS1="\[${color0_256}\]\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
+	# from archlinux wiki: Note: Wrapping the tput output in \[ \] is recommended by the Bash man page.
+	# This helps Bash ignore non-printable characters so that it correctly calculates the size of the prompt.
 
-# ATTENTION you must write any escape into prompt as:  \[${escape}\]
+	_PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
+	#PS1="\[${neon_fucsia_256}\]\u\[${normal}\]@\h[\[${bold}${neon_other_256}\]\t\[${normal}\]]\w \[${neon_fucsia_256}\]⚡\[${normal}\]}➤"
+	#PS1="\[${color0_256}\]\u\[${normal}\]@\h[\[${bold}${color0_256}\]\t\[${normal}\]]\w \[${color0_256}\]\[${normal}\]> "
 
-# from archlinux wiki: Note: Wrapping the tput output in \[ \] is recommended by the Bash man page.
-# This helps Bash ignore non-printable characters so that it correctly calculates the size of the prompt.
+	# TTY fallback
+	[ "${TERM}" == 'linux' ] && _PS1="\u@\h[\t]\w}"
 
-PS1="\[${color0}\]\u\[${color2}\]@\h\[${bold}\]\[${color0}\]\[${normal}\][\[${bold}\]\t\[${normal}\]]\[${normal}\]\[${color1}\]\w\[${color0}\]\[${normal}\]> "
+	export PATH=$HOME/.scripts/:/opt/javamm:/opt/asdf-vm/bin:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:$HOME/.gem/ruby/2.6.0/bin/:$PATH
 
-[ "${TERM}" == 'linux' ] && PS1="\u@\h[\t]\w}"
-export PATH=$HOME/.scripts/:/opt/javamm:/opt/asdf-vm/bin:/usr/lib/jvm/java-9-openjdk/bin/:$HOME/Scaricati/Telegram:/opt/VSCode-linux-x64:/opt/pastebin/bin:/home/user/.gem/ruby/2.6.0/bin:$PATH
+	# If set, the value is executed as a command prior to issuing each
+	# primary prompt
+	PROMPT_COMMAND='f_show_git_branch_prompt'
+	PS1=${_PS1}
+}
+
+f_show_git_branch_prompt() {
+	local tmp=$?
+	local branch_name=$(git branch --show-current 2>/dev/null)
+	[ "$branch_name" != '' ] && PS1="[:${neon_cian_256}${branch_name}${normal}:] ${_PS1}" || PS1=${_PS1}
+	return $tmp # reset the prev exit status
 }
 
 regen
-
-# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-# source /usr/bin/virtualenvwrapper.sh
 
 PATH="/home/user/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/user/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/user/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/user/perl5"; export PERL_MM_OPT;
-
-#. $HOME/.asdf/asdf.sh
-#. $HOME/.asdf/completions/asdf.bash
-
-. ~/.fancy-git/prompt.sh
