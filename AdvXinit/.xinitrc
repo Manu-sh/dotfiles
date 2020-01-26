@@ -60,6 +60,7 @@ all_wm() {
 			loadXresources "Xresources-urxvt-i3"
 			ratpoison
 		;;
+		*) exec "$1" ;;
 	esac
 }
 
