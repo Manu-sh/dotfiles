@@ -6,9 +6,12 @@
 WORKDIR="$(dirname "$PWD/${0#./*}")"
 
 dosym() {
-	# ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
-	echo "FIX THIS SHIT"
-	ln -sfn "$WORKDIR/${1}" "$HOME/${2}/"
+	local name="$(basename "$WORKDIR/$1")"
+	local src="$WORKDIR/$1"
+	local dst="$HOME/${2}${name}"
+
+	echo "\"$src\" -> \"$dst\""
+	[ -e "$dst" ] && ! [ -L "$dst" ] && rm -rfi $dst && ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
 }
 
 recdosym() {
@@ -101,7 +104,7 @@ nemocfg() {
 }
 
 
-vimcfg
+#vimcfg
 nanocfg
 bashcfg
 tmuxcfg
