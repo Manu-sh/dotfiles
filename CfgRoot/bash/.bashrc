@@ -448,7 +448,7 @@ regen() {
 f_show_git_branch_prompt() {
 	local tmp=$?
 	local branch_name=$(git branch --show-current 2>/dev/null)
-	[ "$branch_name" != '' ] && PS1="[:${neon_cian_256}${branch_name}${normal}:] ${_PS1}" || PS1=${_PS1}
+	[ "$branch_name" != '' ] && PS1="[:\[${neon_cian_256}\]${branch_name}\[${normal}\]:] ${_PS1}" || PS1=${_PS1}
 	return $tmp # reset the prev exit status
 }
 
