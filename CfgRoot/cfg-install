@@ -32,7 +32,7 @@ bashcfg() {
 	recdosym "bash"
 }
 
-# ln -sf $PWD/tmux/.tmux.conf ~/.config/
+# ln -sf $PWD/tmux/.tmux.conf ~/
 tmuxcfg() {
 	dosym "tmux/.tmux.conf"
 }
