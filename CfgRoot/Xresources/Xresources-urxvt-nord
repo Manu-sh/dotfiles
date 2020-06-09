@@ -28,7 +28,11 @@ URxvt.scrollBar: false
 ! on yaourt  the-ultimate-oldschool-pc-fonts and 3270-fonts (for lst all fonts names: fc-list)
 ! https://int10h.org/oldschool-pc-fonts/fontlist/
 
-URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
+! URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
+! URxvt.font: xft:3270Narrow Nerd Font:size=14:style=Medium:antialias=true
+
+URxvt.font: xft:FiraCode Nerd Font:style=Bold:size=14:antialias=true
+
 
 ! URxvt.font: xft:c64 Pro:size=10:antialias=true
 ! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true

@@ -66,15 +66,31 @@ let g:ycm_semantic_triggers =  {
 
 let g:ycm_filetype_blacklist = { 'java' : 1, 'txt' : 1, '' : 1 }
 
-
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
+" let &t_SI = "\e[6 q"
+" let &t_EI = "\e[2 q"
 
 " optional reset cursor on start:
-augroup myCmds
-	au!
-	autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
+" augroup myCmds
+"	au!
+"	autocmd VimEnter * silent !echo -ne "\e[2 q"
+" augroup END
+
+" rxvt only accepts these escape sequences after version 9.21
+if &term =~ '^xterm\\|rxvt'
+
+  " solid underscore orange in insert mode
+  let &t_SI .= "\<Esc>]12;orange\<Esc>[4 q"
+
+  " solid block
+  let &t_EI .= "\<Esc>]12;orange\<Esc>[2 q"
+
+  " 1 or 0 -> blinking block
+  " 3 -> blinking underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
+
 
 
 let g:airline#extensions#tabline#enabled = 1

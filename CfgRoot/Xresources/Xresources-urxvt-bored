@@ -31,6 +31,7 @@ URxvt.scrollBar: false
 URxvt.font: xft:Lucida Console:size=14:antialias=true
 
 ! URxvt.font: xft:IBM 3270 Narrow:size=14:style=Medium
+! URxvt.font: xft:3270Narrow Nerd Font:size=14:style=Medium:antialias=true
 ! URxvt.font: xft:Px437 AT&T PC6300:size=14:antialias=true
 
 ! http://style64.org/file/C64_TrueType_v1.2-STYLE.zip
