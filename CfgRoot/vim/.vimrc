@@ -26,12 +26,27 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_use_clangd = 0
 
 
+" popup: https://github.com/ycm-core/YouCompleteMe/issues/3667
+set updatetime=1000 " set CursorHold timeout
+let g:ycm_auto_hover = 'CursorHold'
+
+" let g:ycm_hover = {'command': 'GetDoc', 'syntax': &filetype }
+" let g:ycm_hover = {'command': 'GetDoc', 'syntax': &syntax }
+" questo è in ~/.vim/after/syntax/vim.c
+
+nmap + <plug>(YCMHover)
+
+
+
 set completeopt-=preview
 " let g:ycm_add_preview_to_completeopt = 0
 " let g:ycm_autoclose_preview_window_after_insertion  = "preview"
 " let g:ycm_autoclose_preview_window_after_completion = 1
 
-let g:ycm_show_diagnostics_ui = 0
+" 0 to disable errors suggests
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_echo_current_diagnostic = 1
+
 let g:ycm_auto_trigger = 1
 " let g:ycm_key_invoke_completion = "<TAB>"
 

@@ -277,3 +277,5 @@ hi def link cDelimiter Delimiter
 hi def link cBraces Delimiter
 hi def link cBoolean Boolean
 
+" autocmd FileType c,cpp let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax }
+let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax }
