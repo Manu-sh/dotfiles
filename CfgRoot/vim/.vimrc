@@ -67,6 +67,16 @@ let g:ycm_semantic_triggers =  {
 let g:ycm_filetype_blacklist = { 'java' : 1, 'txt' : 1, '' : 1 }
 
 
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+	au!
+	autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
+
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
 
@@ -250,11 +260,37 @@ call vundle#begin()
 " OTHER
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+
 " Plugin 'ervandew/supertab'
 " let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " YCM
 Plugin 'Valloric/YouCompleteMe'
+
+" file manager
+Plugin 'preservim/nerdtree'
+
+" How can I open a NERDTree automatically when vim starts up?" 
+autocmd vimenter * NERDTree
+
+" How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" display/hide nerdtree
+map <F1> :NERDTreeToggle<CR>
+
+" change nerdtree working dir
+let g:NERDTreeMapChangeRoot ='<F2>'
+
+" openfile into a new tab (use C-PgUp and C-PgOn to switch between the tabs)
+let g:NERDTreeMapOpenInTab  ='<F5>'
+
+" git
+
+
+" icons
+set encoding=UTF-8
+Plugin 'ryanoasis/vim-devicons'
 
 " Airline Bar
 Plugin 'vim-airline/vim-airline'
@@ -275,7 +311,6 @@ Plugin 'ajh17/Spacegray.vim'
 
 
 " Plugin 'flazz/vim-colorschemes'
-
 
 " Deoplete
 " set pyxversion=3
