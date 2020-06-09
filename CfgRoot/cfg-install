@@ -3,108 +3,113 @@
 # THIS SCRIPT IS NOT FOR FINAL USER
 # CFG CAN BE OVERWRITTEN OR DAMAGED
 
-WORKDIR="$(dirname "$PWD/${0#./*}")"
+WORKDIR="$(readlink -f '.')"
+LN='ln -sf '
 
+:<< EOF
 dosym() {
 	local name="$(basename "$WORKDIR/$1")"
 	local src="$WORKDIR/$1"
-	local dst="$HOME/${2}${name}"
+
+	if [ -z $2 ]; then
+		local dst="$HOME/${2}/${name}"
+	else
+		local dst="${HOME}/${name}"
+	fi
 
 	echo "\"$src\" -> \"$dst\""
 	[ -e "$dst" ] && ! [ -L "$dst" ] && rm -rfi $dst && ln -sfn "$WORKDIR/${1}" "$HOME/${2}"
 }
+EOF
 
 recdosym() {
+
 	for i in $(ls -A $1); do
-		dosym "$1/$i" "$2"
+		$LN "$1/$i" "$2"
 	done
+
 	unset i
 }
 
 vimcfg() {
-	recdosym "vim"
+	recdosym "$PWD/vim" ~/
 	! [ -e "~/.vim/bundle/Vundle.vim" ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	mkdir -p ~/.tmp
 }
 
-
 bashcfg() {
-	recdosym "bash"
+	recdosym "$PWD/bash" ~/
 }
 
-# ln -sf $PWD/tmux/.tmux.conf ~/
 tmuxcfg() {
-	dosym "tmux/.tmux.conf"
+	$LN "$PWD/tmux/.tmux.conf" ~/
 }
-
 
 i3cfg() {
-	dosym "i3" ".config"
+	$LN "$PWD/i3" ~/.config
 }
 
 gtkcfg() {
-	set -x
-	dosym "gtk/.gtkrc-2.0"
+	$LN "$PWD/gtk/.gtkrc-2.0" ~/.config
 	mkdir -p ~/.config/gtk-3.0
-	dosym "gtk/settings.ini" ".config/gtk-3.0/settings.ini"
-	set +x
+	$LN "$PWD/gtk/settings.ini" ~/.config/gtk-3.0/settings.ini
 }
 
 rangercfg() {
-	dosym "ranger" ".config"
+	$LN "$PWD/ranger" ~/.config
 }
 
 icewmcfg() {
-	dosym "icewm"
+	$LN "$PWD/icewm" ~/.config
 }
 
 nanocfg() {
-	dosym "nano/.nanorc"
+	$LN "$PWD/nano/.nanorc" ~/.config
 }
 
 ncmpcppcfg() {
-	dosym "mpd/.mpd"
-	dosym "ncmpcpp/.ncmpcpp"
+	$LN "$PWD/mpd/.mpd" ~/.config
+	$LN "$PWD/ncmpcpp/.ncmpcpp" ~/.config
 }
 
 dunstcfg() {
-	dosym "dunst" ".config"
+	$LN "$PWD/dunst" ~/.config
 }
 
 comptoncfg() {
-	dosym "compton/compton.conf" ".config"
+	$LN "$PWD/compton/compton.conf" ~/.config
 }
 
 conkycfg() {
-	dosym "conky" ".config"
+	$LN "$PWD/conky" ~/.config
 }
 
 fvwmcfg() {
-	dosym "fvwm" ".fvwm"
+	$LN "$PWD/fvwm" ~/.config/.fvwm
 }
 
 polybarcfg() {
-	dosym "polybar" ".config"
+	$LN "$PWD/polybar" ~/.config
 }
 
 ratpoisoncfg() {
-	dosym "ratpoison/.ratpoisonrc"
+	$LN "$PWD/ratpoison/.ratpoisonrc" ~/.config
 }
 
 spectrwmcfg() {
-	dosym "spectrwm/.spectrwm.conf"
+	$LN "$PWD/spectrwm/.spectrwm.conf" ~/.config
 }
 
 terminatorcfg() {
-	dosym "terminator" ".config"
+	$LN "$PWD/terminator" ~/.config
 }
 
 nemocfg() {
-	dosym "nemo" ".config"
+	$LN "$PWD/nemo" ~/.config
 }
 
 
-#vimcfg
+vimcfg
 nanocfg
 bashcfg
 tmuxcfg
