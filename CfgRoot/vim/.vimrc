@@ -205,9 +205,10 @@ filetype plugin indent on    " required
 set noautoindent
 set title
 
-set tabstop=8
-set softtabstop=8
-set shiftwidth=8
+" set tab size .. 4 8 ..
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set noexpandtab
 "inoremap ^? ^H
 "set t_kb=^H
@@ -228,8 +229,8 @@ set cryptmethod=blowfish2
 set ttyfast
 
 set background=dark
-colorscheme Tomorrow-Night-Bright
-" colorscheme nord
+" colorscheme Tomorrow-Night-Bright
+colorscheme nord
 " colorscheme neon
 " colorscheme Tomorrow-Night
 " colorscheme new
