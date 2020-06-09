@@ -18,6 +18,10 @@ let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_cache_omnifunc = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
+" use libclang instead of clangd
+let g:ycm_use_clangd = 0
+
+
 set completeopt-=preview
 " let g:ycm_add_preview_to_completeopt = 0
 " let g:ycm_autoclose_preview_window_after_insertion  = "preview"
@@ -231,7 +235,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " YCM
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Airline Bar
 Plugin 'vim-airline/vim-airline'
