@@ -283,7 +283,7 @@ map <F1> :NERDTreeToggle<CR>
 let g:NERDTreeMapChangeRoot ='<F2>'
 
 " openfile into a new tab (use C-PgUp and C-PgOn to switch between the tabs)
-let g:NERDTreeMapOpenInTab  ='<F5>'
+let g:NERDTreeMapOpenInTab  ='<C-Home>'
 
 " git
 
