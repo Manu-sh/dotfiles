@@ -8,7 +8,11 @@
 
 " YCM
 " let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = "$HOME/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "$HOME/.vim/ycm_extra_conf/.ycm_extra_conf.py"
+
+" load without asking
+let g:ycm_confirm_extra_conf = 0
+
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
