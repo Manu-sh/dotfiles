@@ -325,6 +325,9 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" git show added/deleted lines
+Plugin 'airblade/vim-gitgutter'
+
 " tagbar
 Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
