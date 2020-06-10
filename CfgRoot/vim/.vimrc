@@ -332,6 +332,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
+" the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
+Plugin 'christoomey/vim-tmux-navigator'
+
 
 Plugin 'ChrisKempson/Tomorrow-Theme'
 
