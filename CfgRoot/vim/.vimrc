@@ -283,6 +283,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " YCM
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 
 " file manager
 Plugin 'preservim/nerdtree'
