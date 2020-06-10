@@ -317,7 +317,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" icons
+" icons for nerdtree and other plugins
 set encoding=UTF-8
 Plugin 'ryanoasis/vim-devicons'
 
