@@ -112,8 +112,10 @@ case "$mimetype" in
 		# to list all themes: highlight --list-scripts=themes
 		# to get an help about themes: highlight --help=theme
 
-        try safepipe highlight --style nord --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
-
+        # try safepipe highlight --style=nord --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        # try safepipe highlight --style=base16/onedark --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        # try safepipe highlight --style=base16/gruvbox-dark-hard --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        try safepipe highlight --style=base16/material --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
 
         try safepipe pygmentize -f ${pygmentize_format} "$path" && { dump | trim; exit 5; }
         exit 2;;
