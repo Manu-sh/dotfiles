@@ -324,6 +324,12 @@ Plugin 'ryanoasis/vim-devicons'
 " Airline Bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" tagbar
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+
 Plugin 'ChrisKempson/Tomorrow-Theme'
 
 " Plugin 'chriskempson/base16-vim'
