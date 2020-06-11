@@ -336,6 +336,13 @@ nmap <F8> :TagbarToggle<CR>
 " the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
 Plugin 'christoomey/vim-tmux-navigator'
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 Plugin 'ChrisKempson/Tomorrow-Theme'
 
