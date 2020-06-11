@@ -289,9 +289,10 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'preservim/nerdtree'
 
 " How can I open a NERDTree automatically when vim starts up?" 
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree | wincmd w
 
 " How can I close vim if the only window left open is a NERDTree?
+" https://vi.stackexchange.com/questions/15997/change-buffer-focus-on-enter
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " display/hide nerdtree
