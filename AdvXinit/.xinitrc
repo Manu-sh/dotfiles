@@ -15,7 +15,6 @@ all_wm() {
 #	conky
 #	mpd ~/.mpd/mpd.conf
 	case $1 in
-
 		i3)
 			loadXresources "Xresources-urxvt-i3"
 			#compton -b
@@ -53,7 +52,8 @@ all_wm() {
 		;;
 
 		awesome) loadXresources "Xresources-urxvt-gruvbox" ; awesome ;;
-		fluxbox) fluxbox ;;
+		#fluxbox) fluxbox ;;
+		fluxbox) startfluxbox ;;
 		blackbox) blackbox ;;
 		dwm) dwm ;;
 		ratpoison)
@@ -74,6 +74,8 @@ for i in ${@}; do
 			xfce4-session
 		;;
 
+		lxqt) startlxqt ;;
+		lxde) startlxde ;;
 
 		awesome) all_wm awesome;;
 		gnome) loadXresources "Xresources-urxvt-gruvbox" ; gnome-session ;;
