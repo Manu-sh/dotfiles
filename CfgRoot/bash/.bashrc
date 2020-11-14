@@ -1,3 +1,11 @@
+f_tmux_ag() {
+	#systemctl status postgresql &>/dev/null || sudo systemctl restart postgresql
+	systemctl is-active --quiet postgresql || sudo systemctl restart postgresql
+	pkill -9 php
+
+	tmux new-session -d 'cd ~/Agentscout && bash' \; splitw -h 'cd Agenscout_master && bash' \; attach \; splitw -v 'cd Agentscout && bash' \; attach
+}
+
 f_artisan_clean() {
 	php artisan cache:clear && php artisan view:clear && php artisan config:clear
 }
