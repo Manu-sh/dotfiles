@@ -1,3 +1,10 @@
+alias php='php72'
+alias composer='php72 /usr/bin/composer'
+alias phpd='php72 -dxdebug.remote_autostart=1'
+
+# php8
+#alias phpd='php -dxdebug.start_with_request=yes'
+
 f_tmux_ag() {
 	#systemctl status postgresql &>/dev/null || sudo systemctl restart postgresql
 	systemctl is-active --quiet postgresql || sudo systemctl restart postgresql
@@ -7,7 +14,7 @@ f_tmux_ag() {
 }
 
 f_artisan_clean() {
-	php artisan cache:clear && php artisan view:clear && php artisan config:clear
+	php artisan cache:clear && php artisan view:clear && php artisan config:clear && php artisan route:clear
 }
 
 f_artisan_trans() {

@@ -109,7 +109,7 @@ nemocfg() {
 }
 
 
-vimcfg
+#vimcfg
 nanocfg
 bashcfg
 tmuxcfg
