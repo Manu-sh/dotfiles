@@ -1,0 +1,32 @@
+[/]
+list=['ce0761e1-08a9-41d3-9be9-8d0efbe92ab3']
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,0,0)'
+bold-color-same-as-fg=true
+bold-is-bright=true
+cursor-colors-set=false
+font='Fira Code Bold 13'
+foreground-color='rgb(234,234,234)'
+highlight-colors-set=false
+palette=['rgb(0,0,0)', 'rgb(213,78,83)', 'rgb(0,170,0)', 'rgb(231,197,71)', 'rgb(122,166,218)', 'rgb(170,0,170)', 'rgb(0,170,170)', 'rgb(170,170,170)', 'rgb(85,85,85)', 'rgb(213,78,83)', 'rgb(185,202,74)', 'rgb(231,197,71)', 'rgb(122,166,218)', 'rgb(195,151,216)', 'rgb(112,192,177)', 'rgb(234,234,234)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+
+[:ce0761e1-08a9-41d3-9be9-8d0efbe92ab3]
+audible-bell=false
+background-color='rgb(46,52,64)'
+bold-color='#d8dee9'
+bold-color-same-as-fg=true
+bold-is-bright=true
+cursor-colors-set=false
+font='Fira Code Bold 13'
+foreground-color='#d8dee9'
+highlight-colors-set=false
+palette=['#3b4252', '#bf616a', '#a3be8c', '#ebcb8b', '#81a1c1', '#b48ead', '#88c0d0', '#e5e9f0', '#4c566a', '#bf616a', '#a3be8c', '#ebcb8b', '#81a1c1', '#b48ead', '#8fbcbb', '#eceff4']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+visible-name='nord'
