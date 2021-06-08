@@ -1,9 +1,13 @@
-#alias php='php72'
-#alias composer='php72 /usr/bin/composer'
-#alias phpd='php72 -dxdebug.remote_autostart=1'
-
 # php8
-alias phpd='php -dxdebug.start_with_request=yes'
+alias php8='/usr/bin/php'
+alias composer='php8 /usr/bin/composer'
+alias phpd8='php8 -dxdebug.start_with_request=yes'
+
+# php7.2
+alias php='php72'
+alias composer='php72 /usr/bin/composer'
+alias phpd='php72 -dxdebug.remote_autostart=1'
+
 
 f_tmux_ag() {
 	#systemctl status postgresql &>/dev/null || sudo systemctl restart postgresql
