@@ -1,6 +1,6 @@
 # php8
 alias php8='/usr/bin/php'
-alias composer='php8 /usr/bin/composer'
+alias composer8='php8 /usr/bin/composer'
 alias phpd8='php8 -dxdebug.start_with_request=yes'
 
 # php7.2
