@@ -1,3 +1,8 @@
+// link utili
+// https://blog.stigok.com/2020/10/27/from-x11-xmodmap-to-wayland-xkb-custom-keyboard-layout.html
+// https://askubuntu.com/questions/1274475/remap-a-key-in-ubuntu-20-04-wayland/1274619#1274619
+
+
 // Common Latin alphabet layout
 
 default partial
@@ -43,8 +48,12 @@ xkb_symbols "basic" {
     key <TLDE>	{ [     grave, asciitilde,      notsign,      notsign ]	};
 
     key <BKSL>	{ [ backslash,        bar,   dead_grave,   dead_breve ]	};
+    
+    // tasti in questione: <>
     key <AB01>	{ [         z,          Z, guillemotleft,       U003C ]	};
     key <AB02>	{ [         x,          X, guillemotright,      U003E ]	};
+    
+    
     key <AB03>	{ [         c,          C,         cent,    copyright ]	};
     key <AB04>	{ [         v,          V,   doublelowquotemark, singlelowquotemark ]	};
     key <AB05>	{ [         b,          B,  leftdoublequotemark, leftsinglequotemark ] };
