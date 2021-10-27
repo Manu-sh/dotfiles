@@ -523,6 +523,7 @@ f_show_git_branch_prompt() {
 }
 
 regen
+#xmodmap -e "keycode 52 = z Z z Z less less" -e "keycode 53 = x X x X greater greater"
 
 PATH="/home/user/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/user/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
