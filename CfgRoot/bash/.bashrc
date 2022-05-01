@@ -488,9 +488,11 @@ regen() {
 	local prompt_cpu=$(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
 	local prompt_ncore=$(nproc --all)
 	local prompt_cal=$(cal -n 2)
+ 
+	local wrap_spaces=' '
 
 	figlet -c "AC/DC"
-	echo -ne "Data: ${prompt_date}\n\b Kernel: ${prompt_kernel}\n\b CPU: ${prompt_cpu}\n\b Core: ${prompt_ncore}\n\b\n${prompt_cal}\n"
+	echo -e "Data: ${prompt_date}\nKernel: ${prompt_kernel}\nCPU: ${prompt_cpu}\nCore: ${prompt_ncore}\n\n${prompt_cal}\n"| sed -E s"/(.*)/${wrap_spaces}\1/"g
 
 	#! [ -e /tmp/screenfetch.out ] && screenfetch > /tmp/screenfetch.out
 	#cat /tmp/screenfetch.out
@@ -530,3 +532,5 @@ PERL5LIB="/home/user/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/user/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/user/perl5"; export PERL_MM_OPT;
+
+source ~/.stripe/stripe-completion.bash
