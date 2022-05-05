@@ -16,8 +16,9 @@ all_wm() {
 #	mpd ~/.mpd/mpd.conf
 	case $1 in
 		i3)
-			loadXresources "Xresources-urxvt-i3"
-			#compton -b
+			#loadXresources "Xresources-urxvt-i3"
+			loadXresources "Xresources-urxvt-nord"
+			compton -b
 			feh --bg-fill ${WALLPAPER}
 			i3
 		;;

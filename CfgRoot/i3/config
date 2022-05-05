@@ -14,7 +14,7 @@ set $filemanager.icon 
 for_window [class="$filemanager"] border pixel normal
 assign [class="(?i)$filemanager"] $filemanager $filemanager.icon 
 
-set $browser chromium
+set $browser firefox
 set $browser.icon 
 for_window [instance="(?i)$browser*"] title_format "$browser.icon %title"
 assign [class="(?i)$browser"] $browser $browser.icon
@@ -25,8 +25,8 @@ for_window [class="(?i)$mail*"] title_format "$mail.icon %title"
 assign [class="(?i)$mail"] $mail $mail.icon
 
 set $font Monospace 10.5 
-set $font.bar_top Monospace 8
-set $font.bar_bottom Terminal 8
+set $font.bar_top Fira Code Bold 15px
+set $font.bar_bottom Fira Code Bold 15px
 
 #### QUICKTERMINAL
 #for_window [title="(?i)QuickTerminal*"] resize set 640 480 focus
@@ -120,7 +120,7 @@ bindsym $mod+Shift+q kill
 
 # browser
 bindsym $mod+Shift+f exec $browser
- 
+
 # editor
 # bindsym $mod+p exec vimb
 
@@ -184,8 +184,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-# bindsym $mod+1 workspace 1
-# bindsym $mod+2 workspace 2
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
