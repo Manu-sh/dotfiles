@@ -109,23 +109,23 @@ nemocfg() {
 }
 
 
-#vimcfg
-nanocfg
-bashcfg
-tmuxcfg
-i3cfg
-gtkcfg
-rangercfg
-icewmcfg
-ncmpcppcfg
-dunstcfg
-comptoncfg
-conkycfg
-fvwmcfg
-polybarcfg
-ratpoisoncfg
-spectrwmcfg
-terminatorcfg
-nemocfg
+vimcfg
+#nanocfg
+#bashcfg
+#tmuxcfg
+#i3cfg
+#gtkcfg
+#rangercfg
+#icewmcfg
+#ncmpcppcfg
+#dunstcfg
+#comptoncfg
+#conkycfg
+#fvwmcfg
+#polybarcfg
+#ratpoisoncfg
+#spectrwmcfg
+#terminatorcfg
+#nemocfg
 
-dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+#dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf

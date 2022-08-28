@@ -1,7 +1,12 @@
 # php8
-alias php8='/usr/bin/php'
+alias php8='/usr/bin/php80'
 alias composer8='php8 /usr/bin/composer'
-alias phpd8='php8 -dxdebug.start_with_request=yes'
+alias phpd8='php8 -dxdebug.start_with_request=yes'# php8
+
+# php 81
+alias php81='/usr/bin/php'
+alias composer81='php81 -c /etc/php/php.ini /usr/bin/composer'
+alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 # php7.2
 alias php='php72'

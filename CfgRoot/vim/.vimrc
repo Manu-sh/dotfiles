@@ -1,3 +1,8 @@
+" config files
+
+
+"source "include/ycm.cfg"
+
 " TODO vim dictionary completion using tab
 " if &filetype == "" || &filetype == "txt"
 "	inoremap <Tab> <C-n>
@@ -6,74 +11,6 @@
 "include paths
 " let &path.="/usr/include,/usr/local/include"
 
-" YCM
-" let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = "$HOME/.vim/ycm_extra_conf/.ycm_extra_conf.py"
-
-" load without asking
-let g:ycm_confirm_extra_conf = 0
-
-let g:ycm_python_binary_path = '/usr/bin/python3'
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_seed_identifiers_with_syntax=1
-
-let g:ycm_cache_omnifunc = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-" use libclang instead of clangd
-let g:ycm_use_clangd = 0
-
-
-" popup: https://github.com/ycm-core/YouCompleteMe/issues/3667
-set updatetime=1000 " set CursorHold timeout
-let g:ycm_auto_hover = 'CursorHold'
-
-" let g:ycm_hover = {'command': 'GetDoc', 'syntax': &filetype }
-" let g:ycm_hover = {'command': 'GetDoc', 'syntax': &syntax }
-" questo è in ~/.vim/after/syntax/vim.c
-
-nmap + <plug>(YCMHover)
-
-
-
-set completeopt-=preview
-" let g:ycm_add_preview_to_completeopt = 0
-" let g:ycm_autoclose_preview_window_after_insertion  = "preview"
-" let g:ycm_autoclose_preview_window_after_completion = 1
-
-" 0 to disable errors suggests
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_echo_current_diagnostic = 1
-
-let g:ycm_auto_trigger = 1
-" let g:ycm_key_invoke_completion = "<TAB>"
-
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,cuda,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
-
-let g:ycm_filetype_blacklist = { 'java' : 1, 'txt' : 1, '' : 1 }
-
-" let &t_SI = "\e[6 q"
-" let &t_EI = "\e[2 q"
-
-" optional reset cursor on start:
-" augroup myCmds
-"	au!
-"	autocmd VimEnter * silent !echo -ne "\e[2 q"
-" augroup END
 
 " rxvt only accepts these escape sequences after version 9.21
 if &term =~ '^xterm\\|rxvt'
@@ -281,9 +218,46 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Plugin 'ervandew/supertab'
 " let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" YCM
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
+" LSP
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+    " refer to doc to add more commands
+endfunction
+
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 
 " file manager
 Plugin 'preservim/nerdtree'
@@ -306,7 +280,7 @@ let g:NERDTreeMapOpenInTab  ='<C-Home>'
 
 " git
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom= {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
