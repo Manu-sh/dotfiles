@@ -13,6 +13,8 @@ alias php='php72'
 alias composer='php72 /usr/bin/composer'
 alias phpd='php72 -dxdebug.remote_autostart=1'
 
+alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
+
 
 f_tmux_ag() {
 	#systemctl status postgresql &>/dev/null || sudo systemctl restart postgresql
@@ -491,7 +493,8 @@ regen() {
 	local prompt_date=$(date)
 	local prompt_kernel=$(uname -smr)
 	local prompt_cpu=$(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
-	local prompt_ncore=$(nproc --all)
+	#local prompt_ncore=$(nproc --all)
+	local prompt_ncore=$(nproc)
 	local prompt_cal=$(cal -n 2)
  
 	local wrap_spaces=' '
@@ -539,3 +542,9 @@ PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/user/perl5"; export PERL_MM_OPT;
 
 source ~/.stripe/stripe-completion.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/user/google-cloud-sdk/path.bash.inc' ]; then . '/home/user/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/user/google-cloud-sdk/completion.bash.inc' ]; then . '/home/user/google-cloud-sdk/completion.bash.inc'; fi
