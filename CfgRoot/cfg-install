@@ -110,21 +110,21 @@ nemocfg() {
 
 
 vimcfg
-#nanocfg
-#bashcfg
-#tmuxcfg
+nanocfg
+bashcfg
+tmuxcfg
 #i3cfg
 #gtkcfg
-#rangercfg
+rangercfg
 #icewmcfg
-#ncmpcppcfg
+ncmpcppcfg
 #dunstcfg
 #comptoncfg
 #conkycfg
-#fvwmcfg
-#polybarcfg
+fvwmcfg
+polybarcfg
 #ratpoisoncfg
-#spectrwmcfg
+spectrwmcfg
 #terminatorcfg
 #nemocfg
 

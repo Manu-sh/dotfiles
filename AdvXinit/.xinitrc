@@ -49,7 +49,7 @@ all_wm() {
 			# gifview --animate --new-window root --no-interactive /home/user/Immagini/1703252125599569.gif
 			#compton -b
 			# strace -o log.spectr spectrwm
-			spectrwm
+			spectrwm -c $HOME/.config/.spectrwm.conf
 			#xfce4-panel
 		;;
 
