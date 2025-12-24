@@ -1,3 +1,5 @@
+alias android='XCURSOR_SIZE=24 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only waydroid show-full-ui'
+
 # php8
 alias php8='/usr/bin/php80'
 alias composer8='php8 /usr/bin/composer'
@@ -9,9 +11,9 @@ alias composer81='php81 -c /etc/php/php.ini /usr/bin/composer'
 alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 # php7.2
-alias php='php72'
-alias composer='php72 /usr/bin/composer'
-alias phpd='php72 -dxdebug.remote_autostart=1'
+#alias php='php72'
+#alias composer='php72 /usr/bin/composer'
+#alias phpd='php72 -dxdebug.remote_autostart=1'
 
 alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
 
@@ -535,7 +537,7 @@ f_show_git_branch_prompt() {
 regen
 #xmodmap -e "keycode 52 = z Z z Z less less" -e "keycode 53 = x X x X greater greater"
 
-PATH="/home/user/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PATH="/usr/local:/home/user/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/user/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/user/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/user/perl5\""; export PERL_MB_OPT;
