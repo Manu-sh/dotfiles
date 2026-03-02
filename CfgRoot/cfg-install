@@ -108,6 +108,14 @@ nemocfg() {
 	$LN "$PWD/nemo" ~/.config
 }
 
+opencode() {
+	$LN "$PWD/opencode" ~/.config
+}
+
+qwencode() {
+	recdosym "$PWD/qwen-code" ~/.qwen
+}
+
 
 vimcfg
 nanocfg
@@ -127,5 +135,7 @@ polybarcfg
 spectrwmcfg
 #terminatorcfg
 #nemocfg
+qwencode
+opencode
 
 #dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf

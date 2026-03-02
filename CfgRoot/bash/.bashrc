@@ -551,3 +551,6 @@ if [ -f '/home/user/google-cloud-sdk/path.bash.inc' ]; then . '/home/user/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/user/google-cloud-sdk/completion.bash.inc' ]; then . '/home/user/google-cloud-sdk/completion.bash.inc'; fi
+
+# è fondamentale esportare altrimenti qwen-code sovrascrive  "security": { "auth": { "selectedType": "openai" } } nel .qwen/settings.json e non va più niente
+export OLLAMA_API_KEY="ollama"

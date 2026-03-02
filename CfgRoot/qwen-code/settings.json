@@ -1,0 +1,39 @@
+{
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "qwen3:14b-q4_K_M",
+        "name": "qwen3:14b-q4_K_M",
+        "baseUrl": "http://localhost:11434/v1",
+        "envKey": "OLLAMA_API_KEY",
+        "generationConfig": {
+          "temperature": 0.2,
+          "maxTokens": 4096,
+          "contextWindowSize": 4096,
+          "extra_body": {
+            "enable_thinking": true
+          }
+        }
+      }
+    ]
+  },
+  "$version": 3,
+  "security": {
+    "auth": {
+	"selectedType": "openai"
+    }
+  },
+  "model": {
+    "name": "qwen3:14b-q4_K_M"
+  },
+  "general": {
+    "language": "en",
+    "outputLanguage": "it"
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "telemetry": {
+    "enabled": false
+  }
+}
