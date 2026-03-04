@@ -1,3 +1,5 @@
+alias hollama='docker run --rm -d -p 4173:4173 --name hollama ghcr.io/fmaclen/hollama:latest'
+
 alias android='XCURSOR_SIZE=24 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only waydroid show-full-ui'
 
 # php8
@@ -17,6 +19,22 @@ alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
 
+f_yt_short() {
+	name="${1%%.*}"
+	fout="short-${name}.mp4"
+	#if [ -e "$fout" ]; then # ffmpeg already ask
+	#	read -sn1 -p 'sovrascrivere? [y/N]: ' -a V
+	#	[[ "${V[0]}" != 'y' ]] && return 0
+	#fi
+
+	#ffmpeg -hwaccel cuda -i "${1}" -vf scale=1080:1920 -c:v h264_nvenc "${fout}"
+
+	ffmpeg -hwaccel cuda -i "${1}"                                                                   \
+		-vf 'scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2' \
+		-c:v h264_nvenc -crf 18 -preset fast                                                         \
+		"${fout}"
+
+}
 
 f_tmux_ag() {
 	#systemctl status postgresql &>/dev/null || sudo systemctl restart postgresql
@@ -554,3 +572,4 @@ if [ -f '/home/user/google-cloud-sdk/completion.bash.inc' ]; then . '/home/user/
 
 # è fondamentale esportare altrimenti qwen-code sovrascrive  "security": { "auth": { "selectedType": "openai" } } nel .qwen/settings.json e non va più niente
 export OLLAMA_API_KEY="ollama"
+
