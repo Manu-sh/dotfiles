@@ -20,7 +20,9 @@ alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
 
 f_yt_short() {
-	name="${1%%.*}"
+	name="$(basename "$1")" # strip path
+	name="${name%%.*}"      # strip ext
+
 	fout="short-${name}.mp4"
 	#if [ -e "$fout" ]; then # ffmpeg already ask
 	#	read -sn1 -p 'sovrascrivere? [y/N]: ' -a V
