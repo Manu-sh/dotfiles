@@ -1,6 +1,6 @@
 #alias hollama='docker run --rm -d -p 4173:4173 --name hollama ghcr.io/fmaclen/hollama:latest'
 alias hollama='docker run --rm -d -p 4173:4173 --name hollama-test mio-hollama:latest'
-alias chat_ui='docker run -e="HF_HUB_OFFLINE=1" -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data ghcr.io/open-webui/open-webui:main'
+alias chat_ui='docker run -e='HF_HUB_OFFLINE=1' --rm -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:cuda'
 
 alias android='XCURSOR_SIZE=24 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only waydroid show-full-ui'
 
