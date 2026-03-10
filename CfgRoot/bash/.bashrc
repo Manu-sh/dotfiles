@@ -22,6 +22,7 @@ alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
 alias dnsbench='dns-benchmark benchmark --resolvers="Cloudflare,Google,Quad9" --domains="ping-eu.ds.on.epicgames.com"'
 
+# f_yt_short file_path
 f_yt_short() {
 	name="$(basename "$1")" # strip path
 	name="${name%%.*}"      # strip ext
@@ -39,6 +40,12 @@ f_yt_short() {
 		-c:v h264_nvenc -crf 18 -preset fast                                                         \
 		"${fout}"
 
+}
+
+# f_yt_cut file_path 00:00:01 00:02:33
+f_yt_cut() {
+	name="$(basename "$1")" # strip path
+	ffmpeg -i "${1}" -ss "${2}" -to "${3}" -c:v copy -c:a copy "shrinked-${name}"
 }
 
 f_tmux_ag() {
