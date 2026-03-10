@@ -116,6 +116,9 @@ qwencode() {
 	recdosym "$PWD/qwen-code" ~/.qwen
 }
 
+zed_ide() {
+	$LN "$PWD/zed" ~/.config
+}
 
 vimcfg
 nanocfg
@@ -137,5 +140,6 @@ spectrwmcfg
 #nemocfg
 qwencode
 opencode
+zed_ide
 
 #dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
