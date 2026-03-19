@@ -22,6 +22,26 @@ alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/win32 wine'
 alias dnsbench='dns-benchmark benchmark --resolvers="Cloudflare,Google,Quad9" --domains="ping-eu.ds.on.epicgames.com"'
 
+
+f_docker_prune() {
+
+ #1995  pip cache purge
+ #1996  pipx cache purge
+ #1997  pipx lisr
+ #1998  pipx list
+ #1999  ls .cache/pipx
+ #2000  ls .cache/pip
+ #2001  pipx uninstall-all
+
+	sudo docker container prune -f
+	sudo docker image prune -a -f
+	sudo docker volume prune -f
+	sudo docker network prune -f
+	sudo docker system prune -a --volumes -f
+
+}
+
+
 # TODO: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031
 
 # f_yt_short file_path
@@ -210,6 +230,19 @@ export LESS=' -R '
 export PAGER=less
 export LESS_EDIT=$EDITOR
 export SYSTEMD_EDITOR=$EDITOR
+
+less_override() {
+
+	for src in "$@"; do
+		case $src in
+			*.md|*.MD) glow -p "$src" ;;
+			*) less "$src" ;;
+		esac
+	done
+}
+
+
+alias less='less_override'
 
 # https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
 export TZ='Europe/Rome'
