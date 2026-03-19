@@ -14,6 +14,12 @@ alias php81='/usr/bin/php'
 alias composer81='php81 -c /etc/php/php.ini /usr/bin/composer'
 alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
+
+f_asciirec() {
+	local tmp_file="$(mktemp)"
+	asciinema rec "$tmp_file" && asciinema upload "$tmp_file" && rm "$tmp_file"
+}
+
 # php7.2
 #alias php='php72'
 #alias composer='php72 /usr/bin/composer'
