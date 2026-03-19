@@ -16,8 +16,18 @@ alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 
 f_asciirec() {
+
 	local tmp_file="$(mktemp)"
-	asciinema rec "$tmp_file" && asciinema upload "$tmp_file" && rm "$tmp_file"
+	asciinema rec "$tmp_file"
+
+	if [ $? -ne 0 ]; then
+		rm "$tmp_file"
+		return
+	fi
+
+	read -n1 -p "Upload? [Y/n]: " answer
+	[ "${answer,,}" == 'y' ] && asciinema upload "$tmp_file"
+	rm "$tmp_file"
 }
 
 # php7.2
@@ -233,6 +243,7 @@ export LESS_CHARSET="utf-8"
 export GROFF_NO_SGR=1
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+export LESS_FPATH="$(which 'less')"
 export PAGER=less
 export LESS_EDIT=$EDITOR
 export SYSTEMD_EDITOR=$EDITOR
@@ -242,7 +253,7 @@ less_override() {
 	for src in "$@"; do
 		case $src in
 			*.md|*.MD) glow -p "$src" ;;
-			*) less "$src" ;;
+			*) "$LESS_FPATH" "$src" ;;
 		esac
 	done
 }
