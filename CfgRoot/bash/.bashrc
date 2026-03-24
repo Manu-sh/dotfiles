@@ -62,6 +62,7 @@ f_docker_prune() {
 
 # f_yt_short file_path
 f_yt_short() {
+
 	name="$(basename "$1")" # strip path
 	name="${name%%.*}"      # strip ext
 
@@ -73,10 +74,24 @@ f_yt_short() {
 
 	#ffmpeg -hwaccel cuda -i "${1}" -vf scale=1080:1920 -c:v h264_nvenc "${fout}"
 
-	ffmpeg -hwaccel cuda -i "${1}"                                                                   \
-		-vf 'scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2' \
-		-c:v h264_nvenc -crf 18 -preset fast                                                         \
-		"${fout}"
+	case "${2,,}" in
+
+		'crop')
+			# this perform crop instead
+			ffmpeg -hwaccel cuda -i "${1}"                                                \
+				-vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" \
+				-c:v h264_nvenc -crf 18 -preset fast                                      \
+				"${fout}"
+		;;
+	
+		*)
+			# this add letterbox (black stripes to keep the original aspect ratio)
+			ffmpeg -hwaccel cuda -i "${1}"                                                                   \
+				-vf 'scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2' \
+				-c:v h264_nvenc -crf 18 -preset fast                                                         \
+				"${fout}"
+		;;
+	esac
 
 }
 
