@@ -7,24 +7,49 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "huihui_ai/qwen3.5-abliterated:4B-q8_0",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "auto_discover": true,
+      "available_models": [
+        {
+          "name": "huihui_ai/qwen3.5-abliterated:4B-q8_0",
+          "display_name": "huihui_ai/qwen3.5-abliterated:4B-q8_0",
+          "max_tokens": 12288,
+          "supports_tools": true,
+          "supports_thinking": true,
+          "supports_images": true,
+        },
+      ],
+    },
+  },
+
   "title_bar": {
     "show_menus": true,
-    "show_branch_icon": true
+    "show_branch_icon": true,
   },
   "use_system_window_tabs": false,
   "debugger": {
-    "button": true
+    "button": true,
   },
   "terminal": {
-    "button": true
+    "button": true,
   },
   "status_bar": {
     "cursor_position_button": true,
-    "active_language_button": true
+    "active_language_button": true,
   },
-  "project_panel": {
-    
-  },
+  "project_panel": {},
   "file_types": {
     "Arduino": ["ino"],
   },

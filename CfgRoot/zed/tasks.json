@@ -1,5 +1,6 @@
 // Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
 [
+  // ollama run huihui_ai/qwen3.5-abliterated:4B-q8_0
   {
     "label": "Arduino detect",
     "command": "arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*'",
