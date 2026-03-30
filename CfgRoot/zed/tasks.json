@@ -8,13 +8,13 @@
 
   {
     "label": "Arduino: build",
-    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE -e",
+    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE -ej $(nproc --all)",
     "use_new_terminal": false,
   },
 
   {
     "label": "Arduino: load",
-    "command": "arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno $ZED_FILE",
+    "command": "arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno --build-path ./build/arduino.avr.uno",
     "use_new_terminal": false,
   },
 
@@ -25,16 +25,11 @@
   },
 
   {
-    "label": "Arduino: serial2",
+    "label": "Arduino: serial",
+    // "command": "arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --config 9600",
+    // "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
     // "command": "platformio device monitor -b 9600 -p /dev/ttyACM0",
     "command": "platformio device monitor -b 9600",
-    "use_new_terminal": true,
-  },
-
-  {
-    "label": "Arduino: serial",
-    //"command": "arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --config 9600",
-    "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
     "use_new_terminal": true,
   },
 ]
