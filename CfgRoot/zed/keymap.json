@@ -27,13 +27,19 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-p": "command_palette::Toggle",
+      "ctrl-add": "command_palette::Toggle",
     },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-add": "command_palette::Toggle",
-    },
+      "f12": "task::Spawn"
+    }
   },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "shift-f10": "task::Spawn"
+    }
+  }
 ]

@@ -7,6 +7,28 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": true
+  },
+  "use_system_window_tabs": false,
+  "debugger": {
+    "button": true
+  },
+  "terminal": {
+    "button": true
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true
+  },
+  "project_panel": {
+    
+  },
+  "file_types": {
+    "Arduino": ["ino"],
+  },
+
   "base_keymap": "JetBrains",
   "indent_guides": {
     "enabled": false,

@@ -274,7 +274,7 @@ less_override() {
 }
 
 
-alias less='less_override'
+#alias less='less_override'
 
 # https://blog.packagecloud.io/eng/2017/02/21/set-environment-variable-save-thousands-of-system-calls/
 export TZ='Europe/Rome'
