@@ -15,6 +15,12 @@ alias composer81='php81 -c /etc/php/php.ini /usr/bin/composer'
 alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 
+f_arduino_uno_detect() {
+	# arduino-cli board list|grep -Po '^(.*tty\S*)(?=.*arduino:avr:uno\s)'
+	arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\S*'
+}
+
+
 f_asciirec() {
 
 	local tmp_file="$(mktemp)"
