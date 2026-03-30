@@ -14,8 +14,20 @@
   },
 
   {
+    "label": "Arduino: build (platformio)",
+    "command": "pio run -c platformio.ini -v -j $(nproc --all)",
+    "use_new_terminal": false,
+  },
+
+  {
     "label": "Arduino: load",
     "command": "arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno --build-path ./build/arduino.avr.uno",
+    "use_new_terminal": false,
+  },
+
+  {
+    "label": "Arduino: load (platformio)",
+    "command": "pio run --target upload --disable-auto-clean --target nobuild",
     "use_new_terminal": false,
   },
 
@@ -26,11 +38,17 @@
   },
 
   {
+    "label": "Arduino: build/load (platformio)",
+    "command": "pio run -c platformio.ini -v -j $(nproc --all) --target upload",
+    "use_new_terminal": false,
+  },
+
+  {
     "label": "Arduino: serial",
     // "command": "arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --config 9600",
     // "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
-    // "command": "platformio device monitor -b 9600 -p /dev/ttyACM0",
-    "command": "platformio device monitor -b 9600",
+    // "command": "pio device monitor -b 9600 -p /dev/ttyACM0",
+    "command": "pio device monitor -b 9600",
     "use_new_terminal": true,
   },
 ]
