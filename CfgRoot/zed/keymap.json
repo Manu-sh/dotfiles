@@ -31,15 +31,9 @@
     },
   },
   {
-    "context": "Workspace",
+    "context": "Editor",
     "bindings": {
-      "f12": "task::Spawn"
-    }
+      "f12": "task::Spawn",
+    },
   },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "shift-f10": "task::Spawn"
-    }
-  }
 ]

@@ -1,0 +1,34 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+[
+  {
+    "label": "Arduino: build",
+    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE -e",
+    "use_new_terminal": false,
+  },
+  {
+    "label": "Arduino: load",
+    //"command": "arduino-cli upload -p /dev/ttyACM0 -b arduino:avr:uno $ZED_FILE",
+    "command": "arduino-cli upload -p /dev/ttyACM0 -b arduino:avr:uno $ZED_FILE",
+    "use_new_terminal": false,
+  },
+  {
+    "label": "Arduino: build/load",
+    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE && arduino-cli upload -p /dev/ttyACM0 -b arduino:avr:uno $ZED_FILE",
+    "use_new_terminal": false,
+  },
+
+  {
+    "label": "Arduino: serial",
+    //"command": "arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --config 9600",
+    "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
+    "use_new_terminal": true,
+  },
+
+  {
+    "label": "Arduino: serial2",
+    // "command": "platformio device monitor -b 9600 -p /dev/ttyACM0",
+    "command": "platformio device monitor -b 9600",
+    "use_new_terminal": true,
+  },
+]
+
