@@ -1,54 +1,62 @@
 // Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
 [
-  // ollama run huihui_ai/qwen3.5-abliterated:4B-q8_0
   {
-    "label": "Arduino detect",
-    "command": "arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*'",
+    "label": "Arduino UNO - disassembly (radare2)",
+    "command": "r2 -2q build/uno/firmware.elf <<< 'aaa;pdf@main'",
+    "use_new_terminal": false,
+  },
+  {
+    "label": "Arduino UNO - detect",
+    "command": "arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*' || echo $'\\033[38;5;9m' 'detect: arduino-uno undetected' $'\\033[0m'",
     "use_new_terminal": false,
   },
 
   {
-    "label": "Arduino: build",
-    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE -ej $(nproc --all)",
-    "use_new_terminal": false,
-  },
-
-  {
-    "label": "Arduino: build (platformio)",
+    "label": "Arduino UNO - build (platformio)",
     "command": "pio run -c platformio.ini -v -j $(nproc --all)",
     "use_new_terminal": false,
   },
 
   {
-    "label": "Arduino: load",
-    "command": "arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno --build-path ./build/arduino.avr.uno",
-    "use_new_terminal": false,
-  },
-
-  {
-    "label": "Arduino: load (platformio)",
+    "label": "Arduino UNO - load (platformio)",
     "command": "pio run --target upload --disable-auto-clean --target nobuild",
     "use_new_terminal": false,
   },
 
   {
-    "label": "Arduino: build/load",
-    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE && arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno $ZED_FILE",
-    "use_new_terminal": false,
-  },
-
-  {
-    "label": "Arduino: build/load (platformio)",
+    "label": "Arduino UNO - build & load (platformio)",
     "command": "pio run -c platformio.ini -v -j $(nproc --all) --target upload",
     "use_new_terminal": false,
   },
 
   {
-    "label": "Arduino: serial",
-    // "command": "arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --config 9600",
-    // "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
-    // "command": "pio device monitor -b 9600 -p /dev/ttyACM0",
+    "label": "Arduino UNO - serial (platformio)",
     "command": "pio device monitor -b 9600",
     "use_new_terminal": true,
   },
+
+  /*
+  {
+    "label": "Arduino UNO - build",
+    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE -ej $(nproc --all)",
+    "use_new_terminal": false,
+  },
+
+  {
+    "label": "Arduino UNO - load",
+    "command": "arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno --build-path ./build/arduino.avr.uno",
+    "use_new_terminal": false,
+  },
+
+  {
+    "label": "Arduino UNO - build/load",
+    "command": "arduino-cli compile -b arduino:avr:uno $ZED_FILE && arduino-cli upload -p \"$(arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\\S*')\" -b arduino:avr:uno $ZED_FILE",
+    "use_new_terminal": false,
+  },
+
+  {
+    "label": "Arduino UNO - serial",
+    "command": "arduino-cli monitor -b arduino:avr:uno --config 9600",
+    "use_new_terminal": true,
+  },*/
 ]
