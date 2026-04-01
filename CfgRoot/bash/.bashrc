@@ -15,6 +15,30 @@ alias composer81='php81 -c /etc/php/php.ini /usr/bin/composer'
 alias phpd81='php81 -c /etc/php/php.ini -dxdebug.start_with_request=yes'
 
 
+f_weather() {
+	#curl -s 'wttr.in/Florence?format=%l:+%c+%t+%h'
+	curl -s 'wttr.in/Florence?format=%l+%c%t'
+}
+
+f_weather_cached() {
+
+	declare -r CACHE_FPATH='/tmp/wattr.tmp'
+
+	[[ "$1" = '-c' ]] && rm -f "$CACHE_FPATH" && return
+
+	if [[ -a "$CACHE_FPATH" ]] && [[ $(( $(stat -c %Y "$CACHE_FPATH") - $EPOCHSECONDS )) -lt 3600 ]]; then
+		cat "$CACHE_FPATH"
+		return
+	fi
+
+	local weather=$(f_weather)
+	weather=${weather^}
+
+	echo -n "$weather" > "$CACHE_FPATH"
+	echo -n "$weather"
+}
+
+
 f_arduino_uno_detect() {
 	# arduino-cli board list|grep -Po '^(.*tty\S*)(?=.*arduino:avr:uno\s)'
 	arduino-cli board list -b arduino:avr:uno|grep -o '^.*tty\S*'
@@ -564,6 +588,7 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
+alias objdump='objdump --disassembler-color=terminal --visualize-jumps=color -CM intel'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -602,11 +627,12 @@ regen() {
 	#local prompt_ncore=$(nproc --all)
 	local prompt_ncore=$(nproc)
 	local prompt_cal=$(cal -n 2)
+ 	local prompt_weather=$(f_weather_cached 2>/dev/null)
  
 	local wrap_spaces=' '
 
 	figlet -c "AC/DC"
-	echo -e "Data: ${prompt_date}\nKernel: ${prompt_kernel}\nCPU: ${prompt_cpu}\nCore: ${prompt_ncore}\n\n${prompt_cal}\n"| sed -E s"/(.*)/${wrap_spaces}\1/"g
+	echo -e "${prompt_weather}\nData: ${prompt_date}\nKernel: ${prompt_kernel}\nCPU: ${prompt_cpu}\nCore: ${prompt_ncore}\n\n${prompt_cal}\n"| sed -E s"/(.*)/${wrap_spaces}\1/"g
 
 	#! [ -e /tmp/screenfetch.out ] && screenfetch > /tmp/screenfetch.out
 	#cat /tmp/screenfetch.out
