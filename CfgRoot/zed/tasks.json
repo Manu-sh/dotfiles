@@ -23,9 +23,17 @@
     "use_new_terminal": false,
   },
 
+  /*
   {
     "label": "Arduino UNO - build & load (platformio)",
     "command": "pio run -c platformio.ini -v -j $(nproc --all) --target upload",
+    "use_new_terminal": false,
+  },
+  */
+
+  {
+    "label": "Arduino UNO - release",
+    "command": "pio run -c platformio.ini -v -j $(nproc --all) && avr-strip -s build/uno/firmware.elf && pio run --target upload --disable-auto-clean --target nobuild",
     "use_new_terminal": false,
   },
 
