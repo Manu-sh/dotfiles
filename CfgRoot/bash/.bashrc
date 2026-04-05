@@ -26,7 +26,7 @@ f_weather_cached() {
 
 	[[ "$1" = '-c' ]] && rm -f "$CACHE_FPATH" && return
 
-	if [[ -a "$CACHE_FPATH" ]] && [[ $(( $(stat -c %Y "$CACHE_FPATH") - $EPOCHSECONDS )) -lt 3600 ]]; then
+	if [[ -a "$CACHE_FPATH" ]] && [[ $(( $EPOCHSECONDS - $(stat -c %Y "$CACHE_FPATH") )) -lt 3600 ]]; then
 		cat "$CACHE_FPATH"
 		return
 	fi
