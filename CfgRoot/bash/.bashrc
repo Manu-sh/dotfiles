@@ -1,3 +1,11 @@
+
+# radare 2
+# alias rd2='r2 -2q build/uno/firmware.elf <<< 'aaa;pdf@main''
+# f_radare2_show fbtest|less
+f_radare2_show() {
+	r2 -2q "$1" <<< 'aaa;pdf@main'
+}
+
 #alias hollama='docker run --rm -d -p 4173:4173 --name hollama ghcr.io/fmaclen/hollama:latest'
 alias hollama='docker run --rm -d -p 4173:4173 --name hollama-test mio-hollama:latest'
 alias chat_ui='docker run -e='HF_HUB_OFFLINE=1' --rm -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:cuda'
