@@ -31,11 +31,12 @@ endif
 
 
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+" let g:Powerline_symbols = 'fancy'
 
  if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-  endif
+ endif
 
   " unicode symbols
   let g:airline_left_sep = '»'
@@ -68,13 +69,13 @@ let g:airline#extensions#tabline#enabled = 1
   let g:airline_symbols.maxlinenr = ''
 
   " old vim-powerline symbols
-  let g:airline_left_sep = '⮀'
-  let g:airline_left_alt_sep = '⮁'
-  let g:airline_right_sep = '⮂'
-  let g:airline_right_alt_sep = '⮃'
-  let g:airline_symbols.branch = '⭠'
-  let g:airline_symbols.readonly = '⭤'
-  let g:airline_symbols.linenr = '⭡'
+  "let g:airline_left_sep = '⮀'
+  "let g:airline_left_alt_sep = '⮁'
+  "let g:airline_right_sep = '⮂'
+  "let g:airline_right_alt_sep = '⮃'
+  "let g:airline_symbols.branch = '⭠'
+  "let g:airline_symbols.readonly = '⭤'
+  "let g:airline_symbols.linenr = '⭡'
 
 
 function Private()
@@ -301,6 +302,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+
 " git show added/deleted lines
 Plugin 'airblade/vim-gitgutter'
 
@@ -331,8 +333,7 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'joshdick/onedark.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'junegunn/seoul256.vim'
-Plugin 'ajh17/Spacegray.vim'
-
+" Plugin 'ajh17/Spacegray.vim'
 
 " Plugin 'flazz/vim-colorschemes'
 
@@ -472,3 +473,4 @@ call vundle#end()            " required
 " let g:deoplete#sources.rust = ['LanguageClient']
 " let g:deoplete#sources.c = ['LanguageClient']
 " let g:deoplete#sources.vim = ['vim']
+
