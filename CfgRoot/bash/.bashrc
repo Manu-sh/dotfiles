@@ -32,7 +32,7 @@ f_weather_cached() {
 
 	declare -r CACHE_FPATH='/tmp/wattr.tmp'
 
-	[[ "$1" = '-c' ]] && rm -f "$CACHE_FPATH" && return
+	[[ "$1" = '-f' ]] && rm -f "$CACHE_FPATH" && return
 
 	if [[ -a "$CACHE_FPATH" ]] && [[ $(( $EPOCHSECONDS - $(stat -c %Y "$CACHE_FPATH") )) -lt 3600 ]]; then
 		cat "$CACHE_FPATH"
