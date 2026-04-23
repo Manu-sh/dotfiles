@@ -634,7 +634,7 @@ regen() {
 	local prompt_cpu=$(awk 'sub(/model name\t: /, ""){print;exit}' /proc/cpuinfo)
 	#local prompt_ncore=$(nproc --all)
 	local prompt_ncore=$(nproc)
-	local prompt_cal=$(cal -n 2)
+	local prompt_cal=$(cal -n 2 --color=always)
  	local prompt_weather=$(f_weather_cached 2>/dev/null)
  
 	local wrap_spaces=' '
